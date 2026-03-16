@@ -1213,7 +1213,7 @@ body {
         <div class="form__field"><label>Email</label><input type="email" placeholder="your@email.com"></div>
         <div class="form__field"><label>Password</label><input type="password" placeholder="Create a password"></div>
         <div class="form__field"><label>Target Industry</label>
-          <select><option value="" disabled selected>Select your industry</option><option>Construction — 建設</option><option>Manufacturing — 製造</option><option>Food Service — 外食</option><option>Hospitality — 宿泊</option><option>Other Services — その他</option></select>
+          <select><option value="" disabled selected>Select your industry</option><option>Construction — 建設</option><option>Manufacturing — 製造</option><option>Food Service — 外食</option><option>Hospitality — 宿泊</option><option>Retail — 小売</option></select>
         </div>
         <button class="btn--primary" onclick="navigateTo('screen-home','fade')">Create Account</button>
       </div>
@@ -3015,540 +3015,809 @@ body {
           <p style="font-size:12px;color:rgba(255,255,255,0.5);">業種別よくある質問と回答</p>
         </div>
       </div>
-      <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:12px;position:relative;">5 industries · 30 questions · <span id="qa-counter" style="color:rgba(255,255,255,0.7)">0 / 30 reviewed</span></div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:12px;position:relative;">5 industries · 48 questions · <span id="qa-counter" style="color:rgba(255,255,255,0.7)">0 / 48 reviewed</span></div>
     </div>
 
     <!-- Filter -->
     <div style="padding-top:16px;">
       <div class="filter-pills">
         <div class="filter-pill active" onclick="filterQA(this, 'all')">All</div>
+        <div class="filter-pill" onclick="filterQA(this, 'food')">🍽 Food</div>
+        <div class="filter-pill" onclick="filterQA(this, 'manufacturing')">🏭 Manufacturing</div>
         <div class="filter-pill" onclick="filterQA(this, 'construction')">🏗 Construction</div>
+        <div class="filter-pill" onclick="filterQA(this, 'retail')">🛒 Retail</div>
+        <div class="filter-pill" onclick="filterQA(this, 'hotel')">🏨 Hotel</div>
+      </div>
+    </div>
         <div class="filter-pill" onclick="filterQA(this, 'manufacturing')">🏭 Manufacturing</div>
         <div class="filter-pill" onclick="filterQA(this, 'food')">🍽 Food</div>
         <div class="filter-pill" onclick="filterQA(this, 'hotel')">🏨 Hotel</div>
-        <div class="filter-pill" onclick="filterQA(this, 'other')">🧹 Other</div>
+        <div class="filter-pill" onclick="filterQA(this, 'retail')">🛒 Retail</div>
       </div>
     </div>
 
     <!-- Q&A List -->
     <div class="qa-list">
-
-      <!-- ===== Construction (建設) ===== -->
-      <div class="qa-item" data-industry="construction">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Why did you choose construction?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="food">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">日本でどのくらい働きたいですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「建設業に興味を持ったのは、ものづくりを通じて社会に貢献できると考えたからです。母国でも建設現場を見て、日本の技術力の高さに感銘を受けました。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"I became interested in construction because I believe I can contribute to society through building things. Seeing construction sites in my home country, I was impressed by the high level of Japanese technology."</div></div>
+            <div class="qa-item__text qa-item__text--good">・日本でずっと働きたいです！<br>・ずっと日本で働いて、永住権を取りたいです！<br>・仕事を頑張って、将来はリーダーになりたいです！</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「特に理由はないですが、仕事があるので…」— Shows no motivation or interest.</div>
+            <div class="qa-item__text qa-item__text--ng">・5年・10年働きたいです<br>・経験を積んで数年後、母国に帰りたいです<br>・わからないです。今は考えておりません。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Connect your interest to a specific experience or observation. Generic answers suggest you haven't researched the industry.</div>
+            <div class="qa-item__text qa-item__text--tip">就職したら日本で長く働く働けることをアピール。併せて、具体的な目標を伝えるとすごく良い ◎<br>※何年って言ってしまうと、すぐに母国に帰ってしまうという印象になるため不合格に繋がりやすい</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="construction">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Do you have experience with physical work?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="food">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">仕事は大変ですけど大丈夫ですか？頑張れますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「大学時代にアルバイトで引越し作業を経験しました。体力には自信があり、安全管理の意識も大切にしています。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"During university, I worked part-time in a moving company. I'm confident in my physical strength and always prioritize safety awareness."</div></div>
+            <div class="qa-item__text qa-item__text--good">・はい！大丈夫です！頑張ります！<br>・一生懸命頑張ります！</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「体力はあると思います。」— Too vague. Give specific examples.</div>
+            <div class="qa-item__text qa-item__text--ng">・たぶんできます、できると思います<br>・少し難しいです<br>・、、、、、と無言で反応しない</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Even without direct construction experience, mention relevant physical activities, part-time jobs, or sports.</div>
+            <div class="qa-item__text qa-item__text--tip">企業様は前向きな方がいいので、やる気や誠意を伝えることが大切！</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="construction">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">How do you think about safety at work?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="food">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">接客の経験はありますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「安全は何よりも優先すべきものだと考えています。作業前の確認を怠らず、少しでも危険を感じたら必ず報告します。KY活動の重要性も理解しています。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"I believe safety should be the top priority. I never skip pre-work checks, and I always report if I sense even the slightest danger. I also understand the importance of KY (hazard prediction) activities."</div></div>
+            <div class="qa-item__text qa-item__text--good">・はい！あります！母国でレストランのアルバイトをしていました。注文を聞いたり料理を運んでいました。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「気をつけます。」— Too short. Show you understand specific safety practices.</div>
+            <div class="qa-item__text qa-item__text--ng">・ありません</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">KY活動 (Kiken Yochi = danger prediction) is a key concept in Japanese construction. Mentioning it shows industry knowledge.</div>
+            <div class="qa-item__text qa-item__text--tip">経験がなくても、「まだ経験はありませんが、一生懸命覚えます！」と言えると好印象！</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="construction">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Can you work in hot or cold weather?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="food">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">なぜ弊社で働きたいですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「はい、母国でも暑い環境で作業した経験があります。こまめな水分補給と休憩を取りながら、体調管理に気をつけて働きます。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"Yes, I have experience working in hot conditions in my home country. I take care of my health by staying hydrated and taking regular breaks."</div></div>
+            <div class="qa-item__text qa-item__text--good">・御社のHPを拝見しました。<br>・～の料理(人気メニュー)が美味しそうで、御社で働きたいと思いました。<br>・～という理念に共感した為、御社で働きたいと思いました。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「大丈夫です、暑さは慣れています。」— Overconfidence without mentioning health management is risky.</div>
+            <div class="qa-item__text qa-item__text--ng">・仕事が見つかったからです。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Show you take health seriously. Japanese companies value workers who manage their own condition proactively.</div>
+            <div class="qa-item__text qa-item__text--tip">企業様は興味を持っている人や働きたい人を採用したいのでやる気を伝えましょう</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="construction">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">What skills do you want to learn?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="food">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">立ち仕事は大丈夫ですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「まずは基礎的な施工技術をしっかり身につけたいです。将来的には施工管理技士の資格取得を目指し、長期的にこの業界で成長したいと考えています。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"First, I want to master basic construction techniques. In the future, I aim to obtain a Construction Management Engineer qualification and grow long-term in this industry."</div></div>
+            <div class="qa-item__text qa-item__text--good">・はい！大丈夫です！体力には自信があります。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「特にないです。言われたことをやります。」— Shows no ambition or growth mindset.</div>
+            <div class="qa-item__text qa-item__text--ng">・長時間は少し大変です</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Mentioning specific qualifications (施工管理技士, etc.) shows long-term commitment and serious research.</div>
+            <div class="qa-item__text qa-item__text--tip">飲食は基本的にずっと立ち仕事になる</div>
           </div>
         </div>
       </div>
-
-      <!-- ===== Manufacturing (製造) ===== -->
+      <div class="qa-item" data-industry="food">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">働く上で何を大切にして働こうと思いますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・チームワークを大切にして働きます<br>・自分から積極的に声をかけてコミュニケーションをとりながら働きます<br>・報告・連絡・相談を意識して働きます</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・、、、、、と無言で反応しない<br>・わかりません</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">飲食店では皆さんで協力しないと仕事が回らないチームプレーとなるので、自分の意見もまとめて伝えると◎</div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="food">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">今まで日本に来てからや、アルバイトをしてる中で大変だったことはありますか？→それをどのように乗り越えましたか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・日本のアルバイトでは、ルールが多くて最初は大変でした。<br>・例えば、時間を守ることや、言葉づかいです。<br>・今は日本の働き方が分かってきて、安心して仕事ができています。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・大変だったことは特にないです</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">自分の体験談の中でどう工夫して乗り越えたかまでを企業様は知りたいからシンプルに伝えると◎</div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="food">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">日本にきて苦労したことはありますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・日本語を覚えることが大変でした。<br>・最初は何も分からなかったですが、毎日勉強をして少しずつ覚えていきました。<br>・これからも続けて勉強していきます！</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・特にないです</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">どういうことに苦労したか、困ったかを知りたいので実際に経験したことを伝えると◎</div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="food">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">ミスをしたときはどう対応しますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・すぐ店長や先輩に報告して、早く対応します。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・怒られるので言わないことがあります。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">日本では報告がとても大事です！</div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="food">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">忙しい時はどうしますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・落ち着いて仕事の順番を考えます。チームで協力することが大切だと思います。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・忙しいとミスが増えます</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">飲食店はランチ、ディナーでとても忙しい時間があります</div>
+          </div>
+        </div>
+      </div>
       <div class="qa-item" data-industry="manufacturing">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">What interests you about manufacturing?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">どうしてこの製造業（何を？）を選びましたか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「日本の製造業の品質管理の高さに感銘を受けました。母国でも日本製品は信頼されており、その技術を直接学びたいと考えています。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"I was impressed by the high quality control standards in Japanese manufacturing. Japanese products are trusted in my country, and I want to learn these techniques firsthand."</div></div>
+            <div class="qa-item__text qa-item__text--good">・物を作る仕事に興味があり、自分が関わった製品が形になることに魅力を感じたためです。<br>・また、チームで協力して品質を守る仕事にやりがいがあると思いました。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「給料が良いと聞いたので。」— Never mention salary as your primary motivation.</div>
+            <div class="qa-item__text qa-item__text--ng">・仕事が見つからなかったからです。<br>・日本で働けるなら何でもいいと思いました。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Research the company's specific products. Saying "I admire Toyota's production system" is much stronger than generic praise.</div>
+            <div class="qa-item__text qa-item__text--tip">就職したら日本で長く働く働けることをアピール。併せて、具体的な目標を伝えるとすごく良い<br>何年って言ってしまうと、すぐに母国に帰ってしまうという印象になるため不合格に繋がりやすい</div>
           </div>
         </div>
       </div>
       <div class="qa-item" data-industry="manufacturing">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">How do you feel about detailed, precise work?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">チームで働くときに大切だと思うことは何ですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「細かい作業は得意です。学校の実習で電子部品の組み立てを経験し、0.1mmの精度で作業する集中力を身につけました。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"I'm good at detailed work. Through school practice assembling electronic parts, I developed the concentration to work with 0.1mm precision."</div></div>
+            <div class="qa-item__text qa-item__text--good">・報告・連絡・相談をしっかりすることだと思います。<br>・小さな問題でも伝えることで、トラブルを防げると思います。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「細かい作業は好きです。」— Saying you "like" it isn't enough. Prove it.</div>
+            <div class="qa-item__text qa-item__text--ng">・自分の仕事だけやればいいと思います。<br>・他の人とはあまり関わりたくないです。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Use numbers and specific examples. "0.1mm precision" or "checked 500 parts per day" makes your answer concrete.</div>
+            <div class="qa-item__text qa-item__text--tip">協調性、コミュニケーション、現場でのトラブル防止意識</div>
           </div>
         </div>
       </div>
       <div class="qa-item" data-industry="manufacturing">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Do you know what 5S means?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">あなたの長所と短所を教えてください？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「はい。整理・整頓・清掃・清潔・躾の5つです。職場を常に清潔に保ち、効率的に作業するための基本だと理解しています。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"Yes. They are Seiri (Sort), Seiton (Set in order), Seiso (Shine), Seiketsu (Standardize), and Shitsuke (Sustain). I understand they are the foundation for keeping the workplace clean and working efficiently."</div></div>
+            <div class="qa-item__text qa-item__text--good">・長所はコツコツ続けることができることです。<br>・短所は慎重になりすぎることですが、確認をしっかりすることでミスを防ぐようにしています。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「聞いたことはありますが、詳しくは…」— If you're applying to manufacturing, you MUST know 5S.</div>
+            <div class="qa-item__text qa-item__text--ng">・長所は特にありません。<br>・短所は怒りやすいことです。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">5S (整理 Seiri, 整頓 Seiton, 清掃 Seiso, 清潔 Seiketsu, 躾 Shitsuke) is fundamental. Memorize all five before any manufacturing interview.</div>
+            <div class="qa-item__text qa-item__text--tip">自己理解、短所を改善しようとしているか</div>
           </div>
         </div>
       </div>
       <div class="qa-item" data-industry="manufacturing">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Can you work night shifts?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">分からないことがあったときはどうしますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「はい、夜勤も対応できます。規則正しい生活リズムを維持し、シフト変更にも柔軟に対応いたします。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"Yes, I can work night shifts. I maintain a regular lifestyle rhythm and can flexibly adapt to shift changes."</div></div>
+            <div class="qa-item__text qa-item__text--good">・まず自分で確認しますが、分からない場合は早めに先輩や上司に質問します。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「できれば昼勤がいいですが…」— Showing reluctance for shifts reduces your chances significantly.</div>
+            <div class="qa-item__text qa-item__text--ng">・とりあえず自分の考えでやります。<br>・分からないまま続けます。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Most manufacturing jobs require shift work. Willingness to work any shift is almost a requirement for hiring.</div>
+            <div class="qa-item__text qa-item__text--tip">安全意識、報連相</div>
           </div>
         </div>
       </div>
       <div class="qa-item" data-industry="manufacturing">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">What would you do if you found a defective product?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">体力を使う仕事についてどう思いますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「すぐにラインを止めて上司に報告します。不良品を出荷することはお客様の信頼を損なうため、自己判断で流さず、必ず確認を取ります。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"I would immediately stop the line and report to my supervisor. Shipping defective products damages customer trust, so I would never let it pass on my own judgment."</div></div>
+            <div class="qa-item__text qa-item__text--good">・体を動かす仕事は問題ありません。<br>・健康管理をして体力を維持しながら働きたいと思います。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「少しくらいなら大丈夫かなと…」— NEVER overlook defects. This answer will immediately disqualify you.</div>
+            <div class="qa-item__text qa-item__text--ng">・できれば体力を使いたくありません。<br>・楽な仕事がいいです。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">"Stop, Call, Wait" (止める・呼ぶ・待つ) is the golden rule. Show you prioritize quality over speed.</div>
+            <div class="qa-item__text qa-item__text--tip">現場適性、継続性</div>
           </div>
         </div>
       </div>
+      <div class="qa-item" data-industry="manufacturing">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">今までで一番頑張ったことはなんですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・アルバイトで忙しい時でも責任を持って仕事を続けました<br>・毎日努力して日本語を覚えました。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・特にありません。<br>・覚えていません。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">努力できる人か、継続力</div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="manufacturing">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">今までで一番辛かったことはなんですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・日本語を覚えるのが大変でした。<br>・アルバイトで忙しい時間に仕事をするのが一番大変でした。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・辛いことがあったらすぐ辞めました。<br>・嫌なことは全部避けてきました。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">ストレス耐性、問題解決力</div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="manufacturing">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">将来の夢はなんですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・技術や経験を積み、長く会社に貢献できる人になりたいです。<br>・リーダーになって会社に役に立ちたいです。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・お金を貯めたらすぐ辞めます。<br>・自分の会社を作りたいです。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">特に期限なく、長期的に働く意思</div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="manufacturing">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">日本でこの仕事をいつまで続けたいですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・長く働き、技術を身につけたいと思っています。<br>・長く働き、永住権を獲得したいです。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・ビザがある間だけです。<br>・できればすぐ転職したいです。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">離職リスク</div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="manufacturing">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">汚れる仕事は嫌じゃないですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・製造業では必要なことだと思うので問題ありません。<br>・安全に気をつけて仕事をしたいです。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・汚れる仕事はできればしたくないです。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">現場への理解、仕事への覚悟</div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="construction">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">日本でどのくらい働きたいですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・日本でずっと働きたいです。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・3年働きたいです。わかりません。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">日本でずっと働きたいというアピールをすること</div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="construction">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">お仕事大変だけど大丈夫？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・大丈夫です、頑張ります。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・わかりません。</div>
+          </div>
 
-      <!-- ===== Food Service (外食・飲食) ===== -->
-      <div class="qa-item" data-industry="food">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Why do you want to work in food service?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="construction">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">たまに県外へ出張もあるけど大丈夫？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「日本の『おもてなし』の精神に感動し、接客を通じてお客様に喜んでいただける仕事がしたいと思いました。アルバイトでもお客様の笑顔がやりがいでした。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"I was moved by Japan's spirit of omotenashi (hospitality), and I want to work where I can make customers happy through service. Even in my part-time job, customers' smiles were my motivation."</div></div>
+            <div class="qa-item__text qa-item__text--good">・大丈夫です、出来ます。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「食べることが好きなので。」— Too casual. Focus on service mindset, not personal preferences.</div>
+            <div class="qa-item__text qa-item__text--ng">・嫌です。出来ないです。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Emphasize おもてなし (hospitality spirit) and teamwork. Mention specific experiences where you served customers.</div>
+            <div class="qa-item__text qa-item__text--tip">出張もできることをアピールする</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="food">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Do you have any restaurant experience?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="construction">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">現場の仕事だから夏は暑いし、冬は寒いけどそれは大丈夫？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「はい、コンビニで1年間接客のアルバイトをしていました。レジ対応やお客様への声かけを通じて、丁寧な接客の大切さを学びました。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"Yes, I worked part-time at a convenience store for one year. Through register service and greeting customers, I learned the importance of polite customer service."</div></div>
+            <div class="qa-item__text qa-item__text--good">・大丈夫です。暑くても寒くても頑張ります。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「飲食の経験はありません。」— Even without direct experience, mention any customer-facing work.</div>
+            <div class="qa-item__text qa-item__text--ng">・熱いのは苦手です。寒いのは苦手です。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Convenience stores, retail, event staff — any customer service counts. Focus on transferable skills like communication and teamwork.</div>
+            <div class="qa-item__text qa-item__text--tip">暑い寒い関係なく仕事ができることを話す。</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="food">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">How do you handle food hygiene?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="construction">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">重いもの持ったりするけど出来る？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「衛生管理はお客様の安全に直結するので、最も大切だと考えています。手洗い・消毒の徹底、食材の温度管理、調理器具の清潔を常に意識します。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"I consider hygiene management the most important thing because it directly affects customer safety. I always focus on thorough handwashing, sanitizing, temperature control, and clean equipment."</div></div>
+            <div class="qa-item__text qa-item__text--good">・重いもの持つことも出来ます。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「清潔にするようにしています。」— Too abstract. Name specific hygiene practices.</div>
+            <div class="qa-item__text qa-item__text--ng">・出来ません。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Key terms: 手洗い (handwashing), 消毒 (sanitizing), 温度管理 (temperature control), 食中毒防止 (food poisoning prevention). Know them all.</div>
+            <div class="qa-item__text qa-item__text--tip">今まで重いものを持って運ぶことをやってきたことがあればそれをアピールする</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="food">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">What would you do if a customer complains?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="construction">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">どうして建築業で働きたいの？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「まずお客様のお話をしっかり聞き、誠意を持って謝罪します。自分で対応できない場合はすぐに上司に報告し、指示を仰ぎます。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"First, I listen carefully to the customer and apologize sincerely. If I cannot handle it myself, I immediately report to my supervisor and follow their instructions."</div></div>
+            <div class="qa-item__text qa-item__text--good">・建築業の経験があります。　建築業に興味があります。体力に自信があります。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「自分は悪くないと説明します。」— NEVER argue with a customer. Listen first, always.</div>
+            <div class="qa-item__text qa-item__text--ng">・わかりません。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">The 3-step formula: ① Listen carefully ② Apologize sincerely ③ Report to supervisor. This works for any complaint situation.</div>
+            <div class="qa-item__text qa-item__text--tip">建築業で働きたい、体力に自信があることを話す</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="food">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Can you work weekends and holidays?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="construction">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">朝の集合が早いけどそれは平気なの？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「はい、土日祝日も勤務できます。飲食業は週末が忙しいことを理解しており、チームの一員としてシフトに柔軟に対応いたします。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"Yes, I can work weekends and holidays. I understand food service is busiest on weekends, and I'm flexible with shifts as a team member."</div></div>
+            <div class="qa-item__text qa-item__text--good">・朝早くても大丈夫です。朝は得意です。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「土日はできれば休みたいです。」— Food service peaks on weekends. This answer is a deal-breaker.</div>
+            <div class="qa-item__text qa-item__text--ng">・朝早くは苦手です。出来ないです。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Flexibility is essential in food service. Show enthusiasm for busy periods — that's when the team needs you most.</div>
+            <div class="qa-item__text qa-item__text--tip">朝早くに起きて生活していることを話す</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="food">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">How would you greet customers?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="construction">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">車の免許は持っているの？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「笑顔で『いらっしゃいませ』とお迎えし、お客様の目を見てハキハキと対応します。お帰りの際は『ありがとうございました、またお越しくださいませ』と心を込めて送り出します。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"I greet customers with a smile saying \"Irasshaimase,\" make eye contact and speak clearly. When they leave, I sincerely say \"Arigatou gozaimashita, mata okoshi kudasaimase.\"" </div></div>
+            <div class="qa-item__text qa-item__text--good">・今はありませんが、これから取りたいと思っています。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「いらっしゃいませ、と言います。」— Correct words but no energy. HOW you say it matters more.</div>
+            <div class="qa-item__text qa-item__text--ng">・免許は取りません。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Practice saying いらっしゃいませ with a bright voice and smile. The interviewer may ask you to demonstrate — be ready!</div>
+            <div class="qa-item__text qa-item__text--tip">今は持っていなくてもこれから取ることを伝える</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="food">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Can you work well in a team?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="construction">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">これからどうなりたいとか夢はありますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「はい、チームワークを大切にしています。忙しい時間帯は声を掛け合い、自分の担当以外でも積極的にフォローするようにしています。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"Yes, I value teamwork. During busy hours, we communicate with each other, and I actively help even outside my assigned area."</div></div>
+            <div class="qa-item__text qa-item__text--good">・将来はリーダーになりたい、仕事を覚えてきたら資格を取りたいです。長く働いて将来は家族も日本に呼びたいです。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「一人で黙々と作業する方が好きです。」— Food service is always teamwork. This shows a poor fit.</div>
+            <div class="qa-item__text qa-item__text--ng">・ありません。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Use 報連相 (ほうれんそう = Report, Contact, Consult). It's the foundation of Japanese workplace teamwork.</div>
+            <div class="qa-item__text qa-item__text--tip">仕事のことでどうなりたいかが話せると一番良い</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="food">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Do you know any Japanese food terms?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="construction">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">わからないことがあったらどうする？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「はい、基本的な料理名や食材の名前は覚えています。例えば和食の基本的な調理法（焼く・煮る・揚げる・蒸す）や、アレルギー食材の名前も勉強しています。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"Yes, I've memorized basic dish names and ingredient names. For example, I'm studying basic Japanese cooking methods (grilling, simmering, frying, steaming) and allergy ingredient names."</div></div>
+            <div class="qa-item__text qa-item__text--good">・自分で勝手にやらずに先輩や上司に聞きます。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「ラーメンと寿司は知っています。」— Too basic. Show you've studied beyond common dishes.</div>
+            <div class="qa-item__text qa-item__text--ng">・わかりません</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Learn allergy terms (小麦 wheat, 卵 egg, 乳 dairy, えび shrimp, etc.). Food allergies are taken very seriously in Japan.</div>
+            <div class="qa-item__text qa-item__text--tip">周りの人に聞くということを伝える</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="food">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">What are your career goals in food service?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="retail">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">なぜ当社（このお店）を志望しましたか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「まずはホールスタッフとして接客スキルを磨き、将来的には店長やマネージャーとしてお店の運営に携わりたいと考えています。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"First, I want to polish my service skills as hall staff. In the future, I'd like to be involved in restaurant management as a store manager."</div></div>
+            <div class="qa-item__text qa-item__text--good">・普段からよく利用しており、店員の方の接客が丁寧で雰囲気が良いと感じていました。私もお客様に気持ちよく買い物をしていただけるような接客をしたいと思い志望しました。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「とりあえず働ければいいです。」— No ambition = no motivation to grow. Companies want people who aim higher.</div>
+            <div class="qa-item__text qa-item__text--ng">・家から近いからです。</div>
           </div>
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Show a clear growth path: staff → senior staff → sub-manager → manager. Companies invest in people who want to stay long-term.</div>
-          </div>
-        </div>
-      </div>
-      <div class="qa-item" data-industry="food">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Do you have any questions for us?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
-        <div class="qa-item__a">
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「入社後の研修制度について教えていただけますか？ また、先輩社員の方はどのようにスキルアップされていますか？」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"Could you tell me about the training system after joining? Also, how do senior employees improve their skills?"</div></div>
-          </div>
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「特にありません。」— NEVER say this. Always prepare 2-3 questions to show interest.</div>
-          </div>
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Good topics: training system, team culture, career paths. Avoid asking about salary, holidays, or overtime in the first interview.</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- ===== Hospitality (宿泊) ===== -->
-      <div class="qa-item" data-industry="hotel">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">What makes you suitable for hospitality?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="retail">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">接客で大切だと思うことは何ですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「ベトナム語・英語・日本語の3か国語を話せることを活かし、海外からのお客様にも快適な滞在を提供したいと考えています。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"I want to leverage my ability to speak three languages — Vietnamese, English, and Japanese — to provide comfortable stays for international guests."</div></div>
+            <div class="qa-item__text qa-item__text--good">・お客様への挨拶と笑顔、そして丁寧な対応だと思います。お客様が安心して買い物できるよう、分かりやすく親切に対応することが大切だと考えています。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「ホテルで働くのが夢です。」— Too generic. Explain WHY hotels and HOW you can contribute.</div>
+            <div class="qa-item__text qa-item__text--ng">・特に考えたことないです。<br>・早く終わらせることです。<br>・ミスしなければいいと思います。</div>
           </div>
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Multilingual skills are your biggest advantage. Always state exactly which languages you speak and at what level.</div>
-          </div>
-        </div>
-      </div>
-      <div class="qa-item" data-industry="hotel">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">How would you handle a difficult guest?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
-        <div class="qa-item__a">
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「まずはお客様のお気持ちに寄り添い、丁寧にお話を伺います。ご要望に応えられない場合も、代替案をご提案し、上司と連携して最善の対応を心がけます。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"First, I empathize with the guest and listen carefully. Even when I can't fulfill their request, I propose alternatives and work with my supervisor for the best response."</div></div>
-          </div>
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「ルールなのでできません、と伝えます。」— Never just say "no." Always offer alternatives.</div>
-          </div>
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">The key phrase is 代替案 (だいたいあん = alternative proposal). Hospitality is about finding solutions, not enforcing rules.</div>
-          </div>
-        </div>
-      </div>
-      <div class="qa-item" data-industry="hotel">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Are you comfortable with early morning shifts?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
-        <div class="qa-item__a">
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「はい、早朝勤務も対応できます。ホテルは24時間お客様をお迎えする場所ですので、どの時間帯でも最高のサービスを提供したいです。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"Yes, I can work early morning shifts. Hotels welcome guests 24 hours a day, so I want to provide the best service at any time."</div></div>
-          </div>
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「朝は苦手ですが頑張ります。」— Saying you're "not good at" mornings is a red flag for a 24h business.</div>
-          </div>
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Hotels operate 24/7. Show that you understand and embrace this. Mention health management habits that keep you reliable.</div>
-          </div>
-        </div>
-      </div>
-      <div class="qa-item" data-industry="hotel">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">What do you know about Japanese hospitality?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
-        <div class="qa-item__a">
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「日本のおもてなしは、お客様が言葉にする前にニーズを察して行動することだと理解しています。例えば、雨の日に傘を用意したり、お子様連れのお客様に先回りして対応することです。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"I understand Japanese omotenashi means anticipating guests' needs before they speak. For example, preparing umbrellas on rainy days or proactively assisting families with children."</div></div>
-          </div>
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「お客様を大切にすることだと思います。」— Too vague. Give a concrete example of おもてなし.</div>
-          </div>
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">おもてなし = anticipating needs before being asked. Prepare 2-3 specific examples of proactive hospitality.</div>
-          </div>
-        </div>
-      </div>
-      <div class="qa-item" data-industry="hotel">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Why did you choose this hotel/company?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
-        <div class="qa-item__a">
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「御社のホームページで、外国人スタッフの活躍事例を拝見しました。多様性を大切にされている社風に共感し、私もその一員として貢献したいと思いました。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"I saw examples of international staff working actively on your website. I resonated with the company culture that values diversity, and I want to contribute as part of that team."</div></div>
-          </div>
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「家から近いからです。」— Location is never a good primary reason. Show you researched the company.</div>
-          </div>
-          <div class="qa-item__section">
-            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Always check the company website before the interview. Find something specific — awards, values, employee stories — and mention it.</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- ===== Other Services (その他サービス) ===== -->
-      <div class="qa-item" data-industry="other">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">How do you handle repetitive tasks?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="retail">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">チームで働くときに大切にしていることは何ですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「単純作業でも、効率化や品質向上を常に意識しています。以前のアルバイトでも作業手順を改善し、チームの生産性向上に貢献しました。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"Even in simple tasks, I always focus on efficiency and quality improvement. At my previous job, I improved work procedures and contributed to the team's productivity."</div></div>
+            <div class="qa-item__text qa-item__text--good">・報告・連絡・相談を大切にすることだと思います。スタッフ同士で協力しながら仕事を進めることで、お店全体のサービスが良くなると思っています。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「単純作業は得意です。」— Don't just say it; prove it with a concrete example.</div>
+            <div class="qa-item__text qa-item__text--ng">・一人で仕事する方が好きです。<br>・あまり人と関わりたくないです。<br>・自分の仕事だけやればいいと思います。</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="qa-item" data-industry="retail">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">土日・祝日の勤務は可能ですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・はい、可能です。お店が忙しい時間にもしっかり働きたいと考えています。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・できれば働きたくないです。<br>・基本平日だけがいいです。<br>・忙しい日は避けたいです。</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="qa-item" data-industry="retail">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">朝早い仕事や夜勤は可能か</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・はい、可能です。シフトに合わせてしっかり対応したいと思っています。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・朝は苦手です。<br>・夜は絶対無理です。<br>・できれば昼だけ働きたいです。</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="qa-item" data-industry="retail">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">引っ越しは可能ですか</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・はい、可能です。お店の近くに引っ越しがかのうです</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・難しいです</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="qa-item" data-industry="retail">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">長く働いてくれますか</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・はい、できるだけ長く働きたいと考えています。仕事を覚えてお店に貢献できるよう頑張りたいです。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・5年・10年働きたいです</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="qa-item" data-industry="retail">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">文字を書いて報告できるか</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・はい、できます。最初は難しくても慣れれば大丈夫です。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・あまり得意じゃないです。</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="qa-item" data-industry="retail">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">接客やコンビニのことが好きですか</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・はい、好きです。いろいろなお客様と関わることができる仕事だと思うので、接客を通してお店に貢献したいと思っています。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・人と話すのは苦手です。</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="qa-item" data-industry="retail">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">最後に何か質問はありますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・仕事を早く覚えるために、最初に意識した方がいいことがあれば教えていただきたいです。<br>・新人の方はどのような仕事から教えていただけますか？</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・特にないです。</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="qa-item" data-industry="hotel">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">日本でどのくらい働きたいですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・日本でずっと働きたいです！<br>・将来はリーダーになりたいです。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・5年働きたいです。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Show 改善 (kaizen = continuous improvement) mindset. Even small improvements demonstrate professionalism.</div>
+            <div class="qa-item__text qa-item__text--tip">就職したらずっと働けるアピールをして長い時間働けることをアピールする。</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="other">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Are you comfortable working alone?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="hotel">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">仕事は大変ですけど大丈夫ですか？ 頑張れますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「はい、一人でも責任を持って作業を完遂できます。清掃のアルバイト経験があり、チェックリストに沿って確実に作業を進める習慣が身についています。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"Yes, I can complete tasks responsibly even when working alone. From my cleaning job experience, I developed the habit of following checklists to ensure thorough work."</div></div>
+            <div class="qa-item__text qa-item__text--good">・はい！大丈夫です！頑張ります！どんな仕事でも頑張ります</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「一人の方が気楽でいいです。」— Sounds like you avoid teamwork. Frame it as responsibility, not preference.</div>
+            <div class="qa-item__text qa-item__text--ng">・返事をしない。わかりません。！</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Balance is key: show you can work independently AND as part of a team. Mention reporting/checking-in habits.</div>
+            <div class="qa-item__text qa-item__text--tip">企業の方はどんな仕事でも頑張れる方を採用したいです。</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="other">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">How do you ensure quality in your work?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="hotel">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">なぜ日本で働きたいですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「作業後に必ずセルフチェックを行い、見落としがないか確認します。また、先輩から教わった手順を忠実に守り、わからないことはすぐに質問します。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"I always perform a self-check after work to make sure nothing is missed. I faithfully follow procedures taught by seniors and ask questions immediately when unsure."</div></div>
+            <div class="qa-item__text qa-item__text--good">・日本の接客は技術は世界一なので有名なので、日本で働き接客の技術を学びたいと思います！</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「丁寧にやるようにしています。」— Vague. Describe your actual quality-checking process.</div>
+            <div class="qa-item__text qa-item__text--ng">・給料が高いからです。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Japanese workplaces love checklists (チェックリスト) and double-checking (ダブルチェック). Mention these habits specifically.</div>
+            <div class="qa-item__text qa-item__text--tip">お金の話をせずにどうして宿泊の仕事がしたいのかをはなす</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="other">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Can you follow instructions in Japanese?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="hotel">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">失敗したときどうしますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「はい、日常会話と仕事の指示は理解できます。わからない言葉があった場合は、必ず確認してからメモを取り、同じ質問を繰り返さないようにしています。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"Yes, I can understand daily conversation and work instructions. When I encounter unfamiliar words, I always confirm, take notes, and make sure not to ask the same question twice."</div></div>
+            <div class="qa-item__text qa-item__text--good">・すぐに上司に報告します。そして同じミスをしないように改善します。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「だいたいわかります。」— "Mostly" is not reassuring. Show your strategy for understanding fully.</div>
+            <div class="qa-item__text qa-item__text--ng">・怒られるので言いません。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">The magic words: 確認させてください (Let me confirm). Repeating instructions back shows diligence, not weakness.</div>
+            <div class="qa-item__text qa-item__text--tip">日本企業は<br>報告・連絡・相談（ホウレンソウ）</div>
           </div>
         </div>
       </div>
-      <div class="qa-item" data-industry="other">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">Why do you want to work in Japan long-term?</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+      <div class="qa-item" data-industry="hotel">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">日本でアルバイトをして接客をするときに苦労したことはありますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
-            <div class="qa-item__text qa-item__text--good">「日本で技術と経験を積み、長期的にキャリアを築きたいと考えています。日本の丁寧な仕事の進め方を学び、将来は後輩の指導にも貢献したいです。」<div style="margin-top:6px;font-size:11px;color:var(--stone);font-style:italic;line-height:1.5">"I want to build skills and experience in Japan and develop a long-term career. I want to learn Japan's meticulous work style and eventually contribute to mentoring juniors."</div></div>
+            <div class="qa-item__text qa-item__text--good">・最初は日本語は上手く伝わらなくて苦労しましたが、日本語を勉強して伝わるように努力をしました。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
-            <div class="qa-item__text qa-item__text--ng">「お金を貯めたら帰国する予定です。」— Companies want long-term employees. This answer kills your chances.</div>
+            <div class="qa-item__text qa-item__text--ng">・特にないです。</div>
           </div>
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
-            <div class="qa-item__text qa-item__text--tip">Even if you plan to return eventually, focus on what you want to ACHIEVE in Japan. Companies invest in people who plan to stay.</div>
+            <div class="qa-item__text qa-item__text--tip">企業の人は、具体的な経験からどのように成長をしたのかを聞きたいので特にないですはダメ</div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="hotel">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">シフト勤務（夜勤・土日）は大丈夫ですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・はい、大丈夫です。宿泊業はお客様のために時間が必要な仕事だと理解しています。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・できれば土日は休みたいです。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">宿泊業は365日営業なので、夜勤OK、土日OKと言うのが大事。</div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="hotel">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">日本のお客様と外国人のお客様、どちらも対応できますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・はい。日本語と英語を使って対応できます。お客様が安心できるようにゆっくり丁寧に話します。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・外国人のお客様の方がいいです。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">外国人＋日本人どちらも対応できる人が評価される。</div>
+          </div>
+        </div>
+      </div>
+      <div class="qa-item" data-industry="hotel">
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">忙しいときにどう対応しますか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__a">
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
+            <div class="qa-item__text qa-item__text--good">・まず優先順位を考えます。お客様をお待たせしないように、チームで協力します。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--ng">✗ NG Example</div>
+            <div class="qa-item__text qa-item__text--ng">・忙しいとパニックになります。</div>
+          </div>
+          <div class="qa-item__section">
+            <div class="qa-item__section-label qa-item__section-label--tip">💡 Point</div>
+            <div class="qa-item__text qa-item__text--tip">ホテルはチェックイン時間、朝食時間などかなり忙しい時間があるのでいつも通り働くのが大切。</div>
           </div>
         </div>
       </div>
