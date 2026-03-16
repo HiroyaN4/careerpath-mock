@@ -3379,7 +3379,7 @@ body {
         </div>
       </div>
       <div class="qa-item" data-industry="construction">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">日本でどのくらい働きたいですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)" data-en="How long do you want to work in Japan?">日本でどのくらい働きたいですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
@@ -3686,7 +3686,7 @@ body {
         </div>
       </div>
       <div class="qa-item" data-industry="hotel">
-        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)">日本でどのくらい働きたいですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
+        <div class="qa-item__q"><div class="qa-item__check" onclick="toggleCheck(event,this)">✓</div><div class="qa-item__q-text" onclick="toggleQA(this)" data-en="How long do you want to work in Japan?">日本でどのくらい働きたいですか？</div><div class="qa-item__q-expand" onclick="toggleQA(this)">＋</div></div>
         <div class="qa-item__a">
           <div class="qa-item__section">
             <div class="qa-item__section-label qa-item__section-label--good">✅ Model Answer</div>
@@ -4099,6 +4099,23 @@ function switchQALang(lang) {
       el.textContent = el.dataset.en;
     } else {
       el.textContent = el.dataset.ja;
+    }
+  });
+  // Switch section labels
+  document.querySelectorAll('.qa-item__section-label--good').forEach(el => {
+    el.textContent = lang === 'en' ? '✅ Model Answer (say this in Japanese)' : '✅ Model Answer';
+  });
+  document.querySelectorAll('.qa-item__section-label--ng').forEach(el => {
+    el.textContent = lang === 'en' ? '✗ NG Example (don\'t say this)' : '✗ NG Example';
+  });
+  document.querySelectorAll('.qa-item__section-label--tip').forEach(el => {
+    el.textContent = lang === 'en' ? '💡 Interview Tip' : '💡 Point';
+  });
+  // Toggle header text
+  const header = document.querySelector('#screen-qa .home__header p, #screen-qa [style*="業種別"]');
+  document.querySelectorAll('#screen-qa .detail__header p').forEach(p => {
+    if (p.textContent.includes('業種別') || p.textContent.includes('Industry')) {
+      p.textContent = lang === 'en' ? 'Industry-specific interview Q&A' : '業種別よくある質問と回答';
     }
   });
 }
