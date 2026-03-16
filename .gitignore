@@ -1,0 +1,18 @@
+# Internal docs - not for public
+docs/materials/
+docs/project-status.md
+docs/ui-development-guide.md
+docs/running-cost-estimate.html
+docs/mvp-architecture.html
+
+# Build artifacts
+node_modules/
+docs/*.png
+screenshot*.mjs
+
+# Internal files
+【追加要望】.docx
+【追加要望】.docx:Zone.Identifier
+rebuild.py
+rebuild2.py
+.claude/
