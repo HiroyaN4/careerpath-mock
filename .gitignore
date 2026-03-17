@@ -16,3 +16,4 @@ screenshot*.mjs
 rebuild.py
 rebuild2.py
 .claude/
+tests/__pycache__/
