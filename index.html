@@ -465,6 +465,30 @@ body {
   background: var(--shu); border-radius: 0 0 2px 2px;
 }
 
+/* ============ SCREEN: COURSE SELECT ============ */
+.screen--courses { background: var(--paper); padding-bottom: 76px; }
+.courses__header {
+  padding: 52px 20px 24px;
+  background: radial-gradient(ellipse at 80% 20%, rgba(61,98,145,0.2) 0%, transparent 50%), var(--ai);
+  border-radius: 0 0 24px 24px; position: relative; overflow: hidden; text-align: center;
+}
+.courses__header::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.courses__header h1 {
+  font-family: var(--font-head); font-size: 22px; font-weight: 700; color: #fff;
+  position: relative; margin-bottom: 6px;
+}
+.courses__header p {
+  font-size: 13px; color: rgba(255,255,255,0.6); position: relative;
+}
+.courses__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  padding: 20px;
+}
+
 /* ============ SCREEN 3: LESSON LIST ============ */
 .screen--lessons { background: var(--paper); padding-bottom: 76px; }
 .list__header {
@@ -679,6 +703,7 @@ body {
 }
 .culture-note__text { font-size: 12px; color: #5B3E7A; line-height: 1.6; opacity: 0.85; }
 .culture-note__text .jp { font-family: var(--font-jp-body); font-weight: 500; }
+.i18n-sub { font-size: 11px; color: var(--pebble); margin-top: 2px; font-family: var(--font-body); }
 
 /* Practice */
 .practice { background: var(--white); border: 1px solid var(--cloud); border-radius: var(--r-md); padding: 18px; }
@@ -1395,19 +1420,49 @@ body {
   </div>
 
 
+  <!-- ===== SCREEN: COURSE SELECT ===== -->
+  <div class="screen screen--courses" id="screen-courses">
+    <div class="courses__header">
+      <h1 id="courses-title">Lesson Courses</h1>
+      <p id="courses-subtitle">Master your interview skills step by step</p>
+    </div>
+    <div class="courses__grid">
+      <div class="cat-card" onclick="navigateTo('screen-lessons','forward')">
+        <div class="cat-card__icon cat-card__icon--1">👔</div>
+        <div class="cat-card__name" id="courses-grooming">身だしなみ</div><div class="cat-card__count" id="courses-grooming-count">5 lessons</div>
+        <div class="cat-bar"><div class="cat-bar__track"><div class="cat-bar__fill cat-bar__fill--1" style="width:40%;"></div></div><span class="cat-bar__pct">40%</span></div>
+      </div>
+      <div class="cat-card" onclick="navigateTo('screen-lessons-resume','forward')">
+        <div class="cat-card__icon cat-card__icon--3" style="background:var(--ai-pale);color:var(--ai);">📝</div>
+        <div class="cat-card__name" id="courses-resume">履歴書の書き方</div><div class="cat-card__count" id="courses-resume-count">5 lessons</div>
+        <div class="cat-bar"><div class="cat-bar__track"><div class="cat-bar__fill cat-bar__fill--3" style="width:20%;"></div></div><span class="cat-bar__pct">20%</span></div>
+      </div>
+      <div class="cat-card" onclick="navigateTo('screen-lessons-manners','forward')">
+        <div class="cat-card__icon cat-card__icon--4" style="background:var(--take-pale);color:var(--take);">🤝</div>
+        <div class="cat-card__name" id="courses-manners">面接マナー</div><div class="cat-card__count" id="courses-manners-count">5 lessons</div>
+        <div class="cat-bar"><div class="cat-bar__track"><div class="cat-bar__fill cat-bar__fill--4" style="width:40%;"></div></div><span class="cat-bar__pct">40%</span></div>
+      </div>
+      <div class="cat-card" onclick="navigateTo('screen-lessons-strategy','forward')">
+        <div class="cat-card__icon cat-card__icon--2" style="background:var(--kitsune-pale);color:var(--kitsune);">🎯</div>
+        <div class="cat-card__name" id="courses-strategy">面接対策</div><div class="cat-card__count" id="courses-strategy-count">5 lessons</div>
+        <div class="cat-bar"><div class="cat-bar__track"><div class="cat-bar__fill cat-bar__fill--2" style="width:40%;"></div></div><span class="cat-bar__pct">40%</span></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== COURSE 1: GROOMING & APPEARANCE ===== -->
 
   <div class="screen screen--lessons" id="screen-lessons">
     <div class="list__header">
       <div class="list__topbar">
-        <button class="btn-back" onclick="navigateTo('screen-home','back')">←</button>
+        <button class="btn-back" onclick="navigateTo('screen-courses','back')">←</button>
         <span class="list__topbar-title" id="lessons-title-1">Lessons</span>
       </div>
       <div class="list__info">
         <div class="list__cat-icon">👔</div>
         <div class="list__cat-details">
-          <h2>Grooming &amp; Appearance</h2>
-          <p>身だしなみをマスターしよう</p>
+          <h2 data-i18n="lessons.list.grooming.course_title">Grooming &amp; Appearance</h2>
+          <p data-i18n="lessons.list.grooming.course_subtitle">身だしなみをマスターしよう</p>
           <div class="list__progress"><div class="list__progress-bar"><div class="list__progress-fill" style="width:40%;"></div></div><span class="list__progress-text">2 / 5 done — 40%</span></div>
         </div>
       </div>
@@ -1416,31 +1471,31 @@ body {
       <div class="lesson-item lesson-item--done" onclick="navigateTo('screen-detail-mochimono','forward')">
         <div class="lesson-item__num">✓</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">What to Bring</div><div class="lesson-item__jp">持ち物チェックリスト</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.grooming.lesson1_title">What to Bring</div><div class="lesson-item__jp">持ち物チェックリスト</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">8 min</span><span class="lesson-item__badge badge--beginner">Basics</span></div>
         </div><div class="lesson-item__status">✓</div>
       </div>      <div class="lesson-item lesson-item--done" onclick="navigateTo('screen-detail-dansei','forward')">
         <div class="lesson-item__num">✓</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Men's Grooming</div><div class="lesson-item__jp">男性の身だしなみ</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.grooming.lesson2_title">Men's Grooming</div><div class="lesson-item__jp">男性の身だしなみ</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">15 min</span><span class="lesson-item__badge badge--beginner">Basics</span></div>
         </div><div class="lesson-item__status">✓</div>
       </div>      <div class="lesson-item lesson-item--active" onclick="navigateTo('screen-detail-josei','forward')">
         <div class="lesson-item__num">03</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Women's Grooming</div><div class="lesson-item__jp">女性の身だしなみ</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.grooming.lesson3_title">Women's Grooming</div><div class="lesson-item__jp">女性の身だしなみ</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">15 min</span><span class="lesson-item__badge badge--beginner">Basics</span></div>
         </div><div class="lesson-item__status">▶</div>
       </div>      <div class="lesson-item lesson-item--next" onclick="navigateTo('screen-detail-hyojo','forward')">
         <div class="lesson-item__num">04</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Expression &amp; Posture</div><div class="lesson-item__jp">表情・声・姿勢</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.grooming.lesson4_title">Expression &amp; Posture</div><div class="lesson-item__jp">表情・声・姿勢</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">12 min</span><span class="lesson-item__badge badge--elementary">Practical</span></div>
         </div><div class="lesson-item__status">○</div>
       </div>      <div class="lesson-item lesson-item--next" onclick="navigateTo('screen-quiz-grooming','forward')">
         <div class="lesson-item__num">05</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Final Check Quiz</div><div class="lesson-item__jp">総合チェックテスト（20問）</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.grooming.lesson5_title">Final Check Quiz</div><div class="lesson-item__jp">総合チェックテスト（20問）</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">15 min</span><span class="lesson-item__badge badge--intermediate">Advanced</span></div>
         </div><div class="lesson-item__status">○</div>
       </div>
@@ -1457,8 +1512,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>What to Bring &mdash; 持ち物チェックリスト</h1>
-        <div class="detail__title-jp">面接に必要なものを準備しよう</div>
+        <h1 data-i18n="lessons.detail.mochimono.title">What to Bring &mdash; 持ち物チェックリスト</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.mochimono.subtitle">面接に必要なものを準備しよう</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:20%;"></div></div>
         <div class="detail__bar-text">Section 1 of 5 &mdash; Key Points</div>
       </div>
@@ -1475,8 +1530,8 @@ body {
           <div class="check-card">
             <div class="check-card__check">&#10003;</div>
             <span class="check-card__icon">&#129531;</span>
-            <div class="check-card__jp">&#12473;&#12540;&#12484;</div>
-            <div class="check-card__en">Business suit</div>
+            <div class="check-card__jp" data-i18n-sub="lessons.detail.mochimono.item_suit">&#12473;&#12540;&#12484;</div>
+            <div class="check-card__en" data-i18n="lessons.detail.mochimono.item_suit">Business suit</div>
           </div>
           <div class="check-card">
             <div class="check-card__check">&#10003;</div>
@@ -1550,8 +1605,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Men's Grooming &mdash; 男性の身だしなみ</h1>
-        <div class="detail__title-jp">面接の身だしなみをマスターしよう（男性編）</div>
+        <h1 data-i18n="lessons.detail.dansei.title">Men's Grooming &mdash; 男性の身だしなみ</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.dansei.subtitle">面接の身だしなみをマスターしよう（男性編）</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:40%;"></div></div>
         <div class="detail__bar-text">Section 2 of 5 &mdash; Key Points</div>
       </div>
@@ -1641,8 +1696,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Women's Grooming &mdash; 女性の身だしなみ</h1>
-        <div class="detail__title-jp">面接の身だしなみをマスターしよう（女性編）</div>
+        <h1 data-i18n="lessons.detail.josei.title">Women's Grooming &mdash; 女性の身だしなみ</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.josei.subtitle">面接の身だしなみをマスターしよう（女性編）</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:60%;"></div></div>
         <div class="detail__bar-text">Section 3 of 5 &mdash; Key Points</div>
       </div>
@@ -1723,8 +1778,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Expression &amp; Posture &mdash; 表情と姿勢</h1>
-        <div class="detail__title-jp">第一印象を決める表情と姿勢</div>
+        <h1 data-i18n="lessons.detail.hyojo.title">Expression &amp; Posture &mdash; 表情と姿勢</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.hyojo.subtitle">第一印象を決める表情と姿勢</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:80%;"></div></div>
         <div class="detail__bar-text">Section 4 of 5 &mdash; Key Points</div>
       </div>
@@ -1787,8 +1842,8 @@ body {
         </div>
       </div>
       <div class="detail__title">
-        <h1>Grooming &mdash; 総合テスト</h1>
-        <div class="detail__title-jp">身だしなみコースの総まとめ（20問）</div>
+        <h1 data-i18n="lessons.detail.quiz_grooming.title">Grooming &mdash; 総合テスト</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.quiz_grooming.subtitle">身だしなみコースの総まとめ（20問）</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:100%;background:rgba(255,255,255,0.6)"></div></div>
         <div class="detail__bar-text">全レッスン完了後のまとめテスト</div>
       </div>
@@ -1863,14 +1918,14 @@ body {
   <div class="screen screen--lessons" id="screen-lessons-resume">
     <div class="list__header">
       <div class="list__topbar">
-        <button class="btn-back" onclick="navigateTo('screen-home','back')">←</button>
+        <button class="btn-back" onclick="navigateTo('screen-courses','back')">←</button>
         <span class="list__topbar-title" id="lessons-title-2">Lessons</span>
       </div>
       <div class="list__info">
         <div class="list__cat-icon">📝</div>
         <div class="list__cat-details">
-          <h2>Resume Writing</h2>
-          <p>履歴書の書き方をマスターしよう</p>
+          <h2 data-i18n="lessons.list.resume.course_title">Resume Writing</h2>
+          <p data-i18n="lessons.list.resume.course_subtitle">履歴書の書き方をマスターしよう</p>
           <div class="list__progress"><div class="list__progress-bar"><div class="list__progress-fill" style="width:20%;"></div></div><span class="list__progress-text">1 / 5 done — 20%</span></div>
         </div>
       </div>
@@ -1879,31 +1934,31 @@ body {
       <div class="lesson-item lesson-item--done" onclick="navigateTo('screen-detail-rirekisho','forward')">
         <div class="lesson-item__num">✓</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Resume Basics</div><div class="lesson-item__jp">履歴書の基本</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.resume.lesson1_title">Resume Basics</div><div class="lesson-item__jp">履歴書の基本</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">10 min</span><span class="lesson-item__badge badge--beginner">Basics</span></div>
         </div><div class="lesson-item__status">✓</div>
       </div>      <div class="lesson-item lesson-item--active" onclick="navigateTo('screen-detail-profile-qual','forward')">
         <div class="lesson-item__num">02</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Profile &amp; Qualifications</div><div class="lesson-item__jp">プロフィールと資格</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.resume.lesson2_title">Profile &amp; Qualifications</div><div class="lesson-item__jp">プロフィールと資格</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">15 min</span><span class="lesson-item__badge badge--beginner">Basics</span></div>
         </div><div class="lesson-item__status">▶</div>
       </div>      <div class="lesson-item lesson-item--next" onclick="navigateTo('screen-detail-shibodoki','forward')">
         <div class="lesson-item__num">03</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Motivation &amp; Self-PR</div><div class="lesson-item__jp">志望動機・自己PR</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.resume.lesson3_title">Motivation &amp; Self-PR</div><div class="lesson-item__jp">志望動機・自己PR</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">15 min</span><span class="lesson-item__badge badge--elementary">Practical</span></div>
         </div><div class="lesson-item__status">○</div>
       </div>      <div class="lesson-item lesson-item--next" onclick="navigateTo('screen-detail-sonota','forward')">
         <div class="lesson-item__num">04</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Other Fields</div><div class="lesson-item__jp">その他の記入欄</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.resume.lesson4_title">Other Fields</div><div class="lesson-item__jp">その他の記入欄</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">10 min</span><span class="lesson-item__badge badge--elementary">Practical</span></div>
         </div><div class="lesson-item__status">○</div>
       </div>      <div class="lesson-item lesson-item--locked" onclick="alert('This lesson is locked. Complete previous lessons first.')">
         <div class="lesson-item__num">🔒</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Resume Review Workshop</div><div class="lesson-item__jp">履歴書添削ワークショップ</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.resume.lesson5_title">Resume Review Workshop</div><div class="lesson-item__jp">履歴書添削ワークショップ</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">20 min</span><span class="lesson-item__badge badge--intermediate">Advanced</span></div>
         </div><div class="lesson-item__status">🔒</div>
       </div>
@@ -1920,8 +1975,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Resume Basics &mdash; 履歴書の基本</h1>
-        <div class="detail__title-jp">正しい履歴書の書き方を学ぼう</div>
+        <h1 data-i18n="lessons.detail.rirekisho.title">Resume Basics &mdash; 履歴書の基本</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.rirekisho.subtitle">正しい履歴書の書き方を学ぼう</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:20%;"></div></div>
         <div class="detail__bar-text">Section 1 of 5 &mdash; Key Points</div>
       </div>
@@ -2012,8 +2067,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Profile &amp; Qualifications &mdash; プロフィールと資格</h1>
-        <div class="detail__title-jp">学歴・職歴・資格を正しく記入しよう</div>
+        <h1 data-i18n="lessons.detail.profile_qual.title">Profile &amp; Qualifications &mdash; プロフィールと資格</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.profile_qual.subtitle">学歴・職歴・資格を正しく記入しよう</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:40%;"></div></div>
         <div class="detail__bar-text">Section 2 of 5 &mdash; Key Points</div>
       </div>
@@ -2097,8 +2152,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Motivation &amp; Self-PR &mdash; 志望動機・自己PR</h1>
-        <div class="detail__title-jp">自分の良さを上手にアピールしよう</div>
+        <h1 data-i18n="lessons.detail.shibodoki.title">Motivation &amp; Self-PR &mdash; 志望動機・自己PR</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.shibodoki.subtitle">自分の良さを上手にアピールしよう</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:60%;"></div></div>
         <div class="detail__bar-text">Section 3 of 5 &mdash; Key Points</div>
       </div>
@@ -2164,8 +2219,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Other Fields &mdash; その他の記入欄</h1>
-        <div class="detail__title-jp">残りの欄を正しく埋めよう</div>
+        <h1 data-i18n="lessons.detail.sonota.title">Other Fields &mdash; その他の記入欄</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.sonota.subtitle">残りの欄を正しく埋めよう</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:80%;"></div></div>
         <div class="detail__bar-text">Section 4 of 5 &mdash; Key Points</div>
       </div>
@@ -2245,14 +2300,14 @@ body {
   <div class="screen screen--lessons" id="screen-lessons-manners">
     <div class="list__header">
       <div class="list__topbar">
-        <button class="btn-back" onclick="navigateTo('screen-home','back')">←</button>
+        <button class="btn-back" onclick="navigateTo('screen-courses','back')">←</button>
         <span class="list__topbar-title" id="lessons-title-3">Lessons</span>
       </div>
       <div class="list__info">
         <div class="list__cat-icon">🤝</div>
         <div class="list__cat-details">
-          <h2>Interview Etiquette</h2>
-          <p>面接のマナーを身につけよう</p>
+          <h2 data-i18n="lessons.list.manners.course_title">Interview Etiquette</h2>
+          <p data-i18n="lessons.list.manners.course_subtitle">面接のマナーを身につけよう</p>
           <div class="list__progress"><div class="list__progress-bar"><div class="list__progress-fill" style="width:40%;"></div></div><span class="list__progress-text">2 / 5 done — 40%</span></div>
         </div>
       </div>
@@ -2261,31 +2316,31 @@ body {
       <div class="lesson-item lesson-item--done" onclick="navigateTo('screen-detail-nyutaishitsu','forward')">
         <div class="lesson-item__num">✓</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Entering &amp; Leaving</div><div class="lesson-item__jp">入退室のマナー</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.manners.lesson1_title">Entering &amp; Leaving</div><div class="lesson-item__jp">入退室のマナー</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">12 min</span><span class="lesson-item__badge badge--beginner">Basics</span></div>
         </div><div class="lesson-item__status">✓</div>
       </div>      <div class="lesson-item lesson-item--done" onclick="navigateTo('screen-detail-aisatsu','forward')">
         <div class="lesson-item__num">✓</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Greetings &amp; Self-Intro</div><div class="lesson-item__jp">挨拶と自己紹介</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.manners.lesson2_title">Greetings &amp; Self-Intro</div><div class="lesson-item__jp">挨拶と自己紹介</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">15 min</span><span class="lesson-item__badge badge--beginner">Basics</span></div>
         </div><div class="lesson-item__status">✓</div>
       </div>      <div class="lesson-item lesson-item--active" onclick="navigateTo('screen-detail-henji','forward')">
         <div class="lesson-item__num">03</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">How to Respond</div><div class="lesson-item__jp">返事の仕方</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.manners.lesson3_title">How to Respond</div><div class="lesson-item__jp">返事の仕方</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">8 min</span><span class="lesson-item__badge badge--beginner">Basics</span></div>
         </div><div class="lesson-item__status">▶</div>
       </div>      <div class="lesson-item lesson-item--next" onclick="navigateTo('screen-detail-online','forward')">
         <div class="lesson-item__num">04</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Online Interview Setup</div><div class="lesson-item__jp">オンライン面接の準備</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.manners.lesson4_title">Online Interview Setup</div><div class="lesson-item__jp">オンライン面接の準備</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">10 min</span><span class="lesson-item__badge badge--elementary">Practical</span></div>
         </div><div class="lesson-item__status">○</div>
       </div>      <div class="lesson-item lesson-item--locked" onclick="alert('This lesson is locked. Complete previous lessons first.')">
         <div class="lesson-item__num">🔒</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Mock Interview Practice</div><div class="lesson-item__jp">模擬面接練習</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.manners.lesson5_title">Mock Interview Practice</div><div class="lesson-item__jp">模擬面接練習</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">20 min</span><span class="lesson-item__badge badge--intermediate">Advanced</span></div>
         </div><div class="lesson-item__status">🔒</div>
       </div>
@@ -2302,8 +2357,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Entering &amp; Leaving &mdash; 入退室のマナー</h1>
-        <div class="detail__title-jp">入室から退室までの流れを覚えよう</div>
+        <h1 data-i18n="lessons.detail.nyutaishitsu.title">Entering &amp; Leaving &mdash; 入退室のマナー</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.nyutaishitsu.subtitle">入室から退室までの流れを覚えよう</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:20%;"></div></div>
         <div class="detail__bar-text">Section 1 of 5 &mdash; Key Points</div>
       </div>
@@ -2405,8 +2460,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Greetings &amp; Self-Intro &mdash; 挨拶と自己紹介</h1>
-        <div class="detail__title-jp">面接での自己紹介をマスターしよう</div>
+        <h1 data-i18n="lessons.detail.aisatsu.title">Greetings &amp; Self-Intro &mdash; 挨拶と自己紹介</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.aisatsu.subtitle">面接での自己紹介をマスターしよう</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:40%;"></div></div>
         <div class="detail__bar-text">Section 2 of 5 &mdash; Key Points</div>
       </div>
@@ -2485,8 +2540,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>How to Respond &mdash; 返事の仕方</h1>
-        <div class="detail__title-jp">面接での正しい返事を身につけよう</div>
+        <h1 data-i18n="lessons.detail.henji.title">How to Respond &mdash; 返事の仕方</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.henji.subtitle">面接での正しい返事を身につけよう</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:60%;"></div></div>
         <div class="detail__bar-text">Section 3 of 5 &mdash; Key Points</div>
       </div>
@@ -2569,8 +2624,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Online Interview Setup &mdash; オンライン面接の準備</h1>
-        <div class="detail__title-jp">カメラとマイクの準備をしよう</div>
+        <h1 data-i18n="lessons.detail.online.title">Online Interview Setup &mdash; オンライン面接の準備</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.online.subtitle">カメラとマイクの準備をしよう</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:80%;"></div></div>
         <div class="detail__bar-text">Section 4 of 5 &mdash; Key Points</div>
       </div>
@@ -2642,14 +2697,14 @@ body {
   <div class="screen screen--lessons" id="screen-lessons-strategy">
     <div class="list__header">
       <div class="list__topbar">
-        <button class="btn-back" onclick="navigateTo('screen-home','back')">←</button>
+        <button class="btn-back" onclick="navigateTo('screen-courses','back')">←</button>
         <span class="list__topbar-title" id="lessons-title-4">Lessons</span>
       </div>
       <div class="list__info">
         <div class="list__cat-icon">🎯</div>
         <div class="list__cat-details">
-          <h2>Interview Strategy</h2>
-          <p>面接でよく聞かれる質問に備えよう</p>
+          <h2 data-i18n="lessons.list.strategy.course_title">Interview Strategy</h2>
+          <p data-i18n="lessons.list.strategy.course_subtitle">面接でよく聞かれる質問に備えよう</p>
           <div class="list__progress"><div class="list__progress-bar"><div class="list__progress-fill" style="width:40%;"></div></div><span class="list__progress-text">2 / 5 done — 40%</span></div>
         </div>
       </div>
@@ -2658,31 +2713,31 @@ body {
       <div class="lesson-item lesson-item--done" onclick="navigateTo('screen-detail-shitsumon1','forward')">
         <div class="lesson-item__num">✓</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Common Questions ①</div><div class="lesson-item__jp">よく聞かれる質問（前半）</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.strategy.lesson1_title">Common Questions ①</div><div class="lesson-item__jp">よく聞かれる質問（前半）</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">15 min</span><span class="lesson-item__badge badge--beginner">Basics</span></div>
         </div><div class="lesson-item__status">✓</div>
       </div>      <div class="lesson-item lesson-item--done" onclick="navigateTo('screen-detail-shitsumon2','forward')">
         <div class="lesson-item__num">✓</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Common Questions ②</div><div class="lesson-item__jp">よく聞かれる質問（後半）</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.strategy.lesson2_title">Common Questions ②</div><div class="lesson-item__jp">よく聞かれる質問（後半）</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">15 min</span><span class="lesson-item__badge badge--beginner">Basics</span></div>
         </div><div class="lesson-item__status">✓</div>
       </div>      <div class="lesson-item lesson-item--active" onclick="navigateTo('screen-detail-naitei','forward')">
         <div class="lesson-item__num">03</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Post-Offer Steps</div><div class="lesson-item__jp">内定後の手続き</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.strategy.lesson3_title">Post-Offer Steps</div><div class="lesson-item__jp">内定後の手続き</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">10 min</span><span class="lesson-item__badge badge--elementary">Practical</span></div>
         </div><div class="lesson-item__status">▶</div>
       </div>      <div class="lesson-item lesson-item--next" onclick="navigateTo('screen-detail-kokorogamae','forward')">
         <div class="lesson-item__num">04</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Mental Preparation</div><div class="lesson-item__jp">心構え</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.strategy.lesson4_title">Mental Preparation</div><div class="lesson-item__jp">心構え</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">8 min</span><span class="lesson-item__badge badge--elementary">Practical</span></div>
         </div><div class="lesson-item__status">○</div>
       </div>      <div class="lesson-item lesson-item--locked" onclick="alert('This lesson is locked. Complete previous lessons first.')">
         <div class="lesson-item__num">🔒</div>
         <div class="lesson-item__body">
-          <div class="lesson-item__title">Practice Interview</div><div class="lesson-item__jp">実践トレーニング</div>
+          <div class="lesson-item__title" data-i18n="lessons.list.strategy.lesson5_title">Practice Interview</div><div class="lesson-item__jp">実践トレーニング</div>
           <div class="lesson-item__meta"><span class="lesson-item__dur">20 min</span><span class="lesson-item__badge badge--intermediate">Advanced</span></div>
         </div><div class="lesson-item__status">🔒</div>
       </div>
@@ -2699,8 +2754,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Common Questions ① &mdash; よく聞かれる質問(前)</h1>
-        <div class="detail__title-jp">面接でよく聞かれる質問に備えよう</div>
+        <h1 data-i18n="lessons.detail.shitsumon1.title">Common Questions ① &mdash; よく聞かれる質問(前)</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.shitsumon1.subtitle">面接でよく聞かれる質問に備えよう</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:20%;"></div></div>
         <div class="detail__bar-text">Section 1 of 5 &mdash; Key Points</div>
       </div>
@@ -2809,8 +2864,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Common Questions ② &mdash; よく聞かれる質問(後)</h1>
-        <div class="detail__title-jp">残りの頻出質問に備えよう</div>
+        <h1 data-i18n="lessons.detail.shitsumon2.title">Common Questions ② &mdash; よく聞かれる質問(後)</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.shitsumon2.subtitle">残りの頻出質問に備えよう</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:40%;"></div></div>
         <div class="detail__bar-text">Section 2 of 5 &mdash; Key Points</div>
       </div>
@@ -2881,8 +2936,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Post-Offer Steps &mdash; 内定後の手続き</h1>
-        <div class="detail__title-jp">内定をもらった後にやるべきこと</div>
+        <h1 data-i18n="lessons.detail.naitei.title">Post-Offer Steps &mdash; 内定後の手続き</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.naitei.subtitle">内定をもらった後にやるべきこと</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:60%;"></div></div>
         <div class="detail__bar-text">Section 3 of 5 &mdash; Key Points</div>
       </div>
@@ -2963,8 +3018,8 @@ body {
         <button class="detail__bookmark">&#9734;</button>
       </div>
       <div class="detail__title">
-        <h1>Mental Preparation &mdash; 心構え</h1>
-        <div class="detail__title-jp">自信を持って面接に臨もう</div>
+        <h1 data-i18n="lessons.detail.kokorogamae.title">Mental Preparation &mdash; 心構え</h1>
+        <div class="detail__title-jp" data-i18n="lessons.detail.kokorogamae.subtitle">自信を持って面接に臨もう</div>
         <div class="detail__bar"><div class="detail__bar-fill" style="width:80%;"></div></div>
         <div class="detail__bar-text">Section 4 of 5 &mdash; Key Points</div>
       </div>
@@ -3218,7 +3273,7 @@ body {
   <!-- ===== BOTTOM NAV (shared across all screens) ===== -->
   <nav class="nav" id="main-nav">
     <button class="nav__item active" data-screen="screen-home"><span class="nav__kanji">家</span><span class="nav__label">Home</span></button>
-    <button class="nav__item" data-screen="screen-lessons"><span class="nav__kanji">学</span><span class="nav__label">Learn</span></button>
+    <button class="nav__item" data-screen="screen-courses"><span class="nav__kanji">学</span><span class="nav__label">Learn</span></button>
     <button class="nav__item" data-screen="screen-qa"><span class="nav__kanji">面</span><span class="nav__label">Interview</span></button>
     <button class="nav__item" data-screen="screen-profile"><span class="nav__kanji">人</span><span class="nav__label">Profile</span></button>
   </nav>
@@ -3228,7 +3283,7 @@ body {
 <script>
 const mainNav = document.getElementById('main-nav');
 const navItems = mainNav.querySelectorAll('.nav__item');
-const screensWithNav = ['screen-lessons', 'screen-lessons-resume', 'screen-lessons-manners', 'screen-lessons-strategy', 'screen-detail-mochimono', 'screen-detail-dansei', 'screen-detail-josei', 'screen-detail-hyojo', 'screen-quiz-grooming', 'screen-detail-rirekisho', 'screen-detail-profile-qual', 'screen-detail-shibodoki', 'screen-detail-sonota', 'screen-detail-nyutaishitsu', 'screen-detail-aisatsu', 'screen-detail-henji', 'screen-detail-online', 'screen-detail-shitsumon1', 'screen-detail-shitsumon2', 'screen-detail-naitei', 'screen-detail-kokorogamae', 'screen-home', 'screen-practice', 'screen-profile', 'screen-qa'];
+const screensWithNav = ['screen-courses', 'screen-lessons', 'screen-lessons-resume', 'screen-lessons-manners', 'screen-lessons-strategy', 'screen-detail-mochimono', 'screen-detail-dansei', 'screen-detail-josei', 'screen-detail-hyojo', 'screen-quiz-grooming', 'screen-detail-rirekisho', 'screen-detail-profile-qual', 'screen-detail-shibodoki', 'screen-detail-sonota', 'screen-detail-nyutaishitsu', 'screen-detail-aisatsu', 'screen-detail-henji', 'screen-detail-online', 'screen-detail-shitsumon1', 'screen-detail-shitsumon2', 'screen-detail-naitei', 'screen-detail-kokorogamae', 'screen-home', 'screen-practice', 'screen-profile', 'screen-qa'];
 
 function navigateTo(id, direction) {
   const current = document.querySelector('.screen.active');
@@ -3251,7 +3306,7 @@ function navigateTo(id, direction) {
 
 function updateNavActive(screenId) {
   navItems.forEach(item => item.classList.remove('active'));
-  const navMap = { 'screen-lessons': 1, 'screen-lessons-resume': 1, 'screen-lessons-manners': 1, 'screen-lessons-strategy': 1, 'screen-detail-mochimono': 1, 'screen-detail-dansei': 1, 'screen-detail-josei': 1, 'screen-detail-hyojo': 1, 'screen-detail-rirekisho': 1, 'screen-detail-profile-qual': 3, 'screen-detail-shibodoki': 1, 'screen-detail-sonota': 1, 'screen-detail-nyutaishitsu': 1, 'screen-detail-aisatsu': 1, 'screen-detail-henji': 1, 'screen-detail-online': 1, 'screen-detail-shitsumon1': 1, 'screen-detail-shitsumon2': 1, 'screen-detail-naitei': 1, 'screen-detail-kokorogamae': 1, 'screen-home': 0, 'screen-practice': 2, 'screen-profile': 3, 'screen-qa': 2 };
+  const navMap = { 'screen-courses': 1, 'screen-lessons': 1, 'screen-lessons-resume': 1, 'screen-lessons-manners': 1, 'screen-lessons-strategy': 1, 'screen-detail-mochimono': 1, 'screen-detail-dansei': 1, 'screen-detail-josei': 1, 'screen-detail-hyojo': 1, 'screen-detail-rirekisho': 1, 'screen-detail-profile-qual': 3, 'screen-detail-shibodoki': 1, 'screen-detail-sonota': 1, 'screen-detail-nyutaishitsu': 1, 'screen-detail-aisatsu': 1, 'screen-detail-henji': 1, 'screen-detail-online': 1, 'screen-detail-shitsumon1': 1, 'screen-detail-shitsumon2': 1, 'screen-detail-naitei': 1, 'screen-detail-kokorogamae': 1, 'screen-home': 0, 'screen-practice': 2, 'screen-profile': 3, 'screen-qa': 2 };
   const idx = navMap[screenId];
   if (idx !== undefined && navItems[idx]) {
     navItems[idx].classList.add('active');
@@ -3407,6 +3462,18 @@ function applyUIStrings() {
   const goalProgEl = document.getElementById('home-daily-goal-progress');
   if (goalProgEl) goalProgEl.textContent = t('home.daily_goal_progress').replace('{done}', '1').replace('{total}', '2');
 
+  // ── Course Select Screen ──
+  s('courses-title', 'courses.title');
+  s('courses-subtitle', 'courses.subtitle');
+  s('courses-grooming', 'courses.grooming');
+  s('courses-resume', 'courses.resume');
+  s('courses-manners', 'courses.manners');
+  s('courses-strategy', 'courses.strategy');
+  const courseCounts = document.querySelectorAll('[id^="courses-"][id$="-count"]');
+  courseCounts.forEach(el => {
+    el.textContent = t('courses.lessons_count').replace('{count}', '5');
+  });
+
   // ── Lesson Lists ──
   s('lessons-title-1', 'lessons.title');
   s('lessons-title-2', 'lessons.title');
@@ -3449,6 +3516,30 @@ function applyUIStrings() {
   const qaLang = document.getElementById('qa-lang');
   if (loginLang) loginLang.value = currentLang;
   if (qaLang) qaLang.value = qaContentLang;
+
+  // ── Apply data-i18n attributes (lesson list & detail screens) ──
+  applyI18nAttributes();
+}
+
+function applyI18nAttributes() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const translated = t(key);
+    if (translated !== key) el.textContent = translated;
+  });
+  // data-i18n-sub: add/update a subtitle translation below Japanese text
+  document.querySelectorAll('[data-i18n-sub]').forEach(el => {
+    const key = el.getAttribute('data-i18n-sub');
+    const translated = t(key);
+    if (translated === key) return;
+    let sub = el.querySelector('.i18n-sub');
+    if (!sub) {
+      sub = document.createElement('div');
+      sub.className = 'i18n-sub';
+      el.appendChild(sub);
+    }
+    sub.textContent = translated;
+  });
 }
 
 // ── Q&A Dynamic Rendering ──

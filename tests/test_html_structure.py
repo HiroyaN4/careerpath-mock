@@ -276,3 +276,279 @@ class TestLessonListI18n:
     def test_apply_ui_strings_updates_lessons(self, html):
         """applyUIStringsがレッスン画面を更新すること"""
         assert "'lessons." in html
+
+
+class TestCourseSelectScreen:
+    """コース選択画面のテスト"""
+
+    def test_screen_courses_exists(self, html):
+        """screen-coursesというIDの画面が存在すること"""
+        assert 'id="screen-courses"' in html
+
+    def test_has_four_course_cards(self, html):
+        """4つのコースカード（身だしなみ、履歴書、面接マナー、面接対策）が含まれること"""
+        # screen-courses セクションを抽出
+        start = html.find('id="screen-courses"')
+        assert start != -1, "screen-courses not found"
+        # 次のscreen開始まで
+        end = html.find('<div class="screen', start + 1)
+        if end == -1:
+            end = len(html)
+        section = html[start:end]
+        assert 'screen-lessons' in section, "Grooming course card should link to screen-lessons"
+        assert 'screen-lessons-resume' in section, "Resume course card should link to screen-lessons-resume"
+        assert 'screen-lessons-manners' in section, "Manners course card should link to screen-lessons-manners"
+        assert 'screen-lessons-strategy' in section, "Strategy course card should link to screen-lessons-strategy"
+
+    def test_nav_learn_tab_points_to_courses(self, html):
+        """ナビの「学」タブがscreen-coursesを指していること"""
+        nav_pattern = re.search(r'class="nav__item"[^>]*data-screen="screen-courses"', html)
+        assert nav_pattern, "Learn nav tab should have data-screen='screen-courses'"
+
+    def test_apply_ui_strings_updates_courses(self, html):
+        """applyUIStringsでcourses.キーが更新されること"""
+        assert "'courses." in html
+
+    def test_screen_courses_in_screens_with_nav(self, html):
+        """screensWithNavにscreen-coursesが含まれること"""
+        screens_match = re.search(r'screensWithNav\s*=\s*\[([^\]]+)\]', html)
+        assert screens_match, "screensWithNav array not found"
+        assert "'screen-courses'" in screens_match.group(1), "screen-courses should be in screensWithNav"
+
+    def test_screen_courses_in_nav_map(self, html):
+        """navMapにscreen-coursesが含まれること"""
+        navmap_match = re.search(r'navMap\s*=\s*\{([^}]+)\}', html)
+        assert navmap_match, "navMap object not found"
+        assert "'screen-courses'" in navmap_match.group(1), "screen-courses should be in navMap"
+
+    def test_lesson_list_back_buttons_go_to_courses(self, html):
+        """レッスン一覧画面の戻るボタンがscreen-coursesに遷移すること"""
+        # 各レッスン一覧のback buttonを確認
+        for screen_id in ['screen-lessons', 'screen-lessons-resume', 'screen-lessons-manners', 'screen-lessons-strategy']:
+            start = html.find(f'id="{screen_id}"')
+            assert start != -1, f"{screen_id} not found"
+            # 最初のbtn-backを見つける
+            btn_pos = html.find('class="btn-back"', start)
+            assert btn_pos != -1, f"btn-back not found in {screen_id}"
+            # そのボタンのonclickを確認
+            line_start = html.rfind('<', 0, btn_pos)
+            line_end = html.find('>', btn_pos) + 1
+            button_html = html[line_start:line_end]
+            assert "screen-courses" in button_html, f"Back button in {screen_id} should navigate to screen-courses, got: {button_html}"
+
+
+class TestCourseSelectI18n:
+    """コース選択画面の多言語JSONテスト"""
+
+    def test_en_json_has_courses_keys(self):
+        """en.jsonにcoursesキーが存在すること"""
+        import json
+        path = os.path.join(os.path.dirname(__file__), '..', 'data', 'ui', 'en.json')
+        with open(path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        assert 'courses' in data, "en.json should have 'courses' key"
+        courses = data['courses']
+        for key in ['title', 'subtitle', 'grooming', 'resume', 'manners', 'strategy', 'lessons_count', 'progress']:
+            assert key in courses, f"en.json courses should have '{key}' key"
+
+    def test_ja_json_has_courses_keys(self):
+        """ja.jsonにcoursesキーが存在すること"""
+        import json
+        path = os.path.join(os.path.dirname(__file__), '..', 'data', 'ui', 'ja.json')
+        with open(path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        assert 'courses' in data, "ja.json should have 'courses' key"
+        courses = data['courses']
+        for key in ['title', 'subtitle', 'grooming', 'resume', 'manners', 'strategy', 'lessons_count', 'progress']:
+            assert key in courses, f"ja.json courses should have '{key}' key"
+
+    def test_vi_json_has_courses_keys(self):
+        """vi.jsonにcoursesキーが存在すること"""
+        import json
+        path = os.path.join(os.path.dirname(__file__), '..', 'data', 'ui', 'vi.json')
+        with open(path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        assert 'courses' in data, "vi.json should have 'courses' key"
+        courses = data['courses']
+        for key in ['title', 'subtitle', 'grooming', 'resume', 'manners', 'strategy', 'lessons_count', 'progress']:
+            assert key in courses, f"vi.json courses should have '{key}' key"
+
+    def test_all_json_keys_match(self):
+        """3言語のcoursesキー構造が完全一致すること"""
+        import json
+        keys_by_lang = {}
+        for lang in ['en', 'ja', 'vi']:
+            path = os.path.join(os.path.dirname(__file__), '..', 'data', 'ui', f'{lang}.json')
+            with open(path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            keys_by_lang[lang] = set(data.get('courses', {}).keys())
+        assert keys_by_lang['en'] == keys_by_lang['ja'] == keys_by_lang['vi'], \
+            f"courses keys mismatch: en={keys_by_lang['en']}, ja={keys_by_lang['ja']}, vi={keys_by_lang['vi']}"
+
+
+class TestLessonDetailI18n:
+    """レッスン詳細画面のdata-i18n多言語化テスト"""
+
+    DETAIL_SCREENS = [
+        'screen-detail-mochimono',
+        'screen-detail-dansei',
+        'screen-detail-josei',
+        'screen-detail-hyojo',
+        'screen-quiz-grooming',
+        'screen-detail-rirekisho',
+        'screen-detail-profile-qual',
+        'screen-detail-shibodoki',
+        'screen-detail-sonota',
+        'screen-detail-nyutaishitsu',
+        'screen-detail-aisatsu',
+        'screen-detail-henji',
+        'screen-detail-online',
+        'screen-detail-shitsumon1',
+        'screen-detail-shitsumon2',
+        'screen-detail-naitei',
+        'screen-detail-kokorogamae',
+    ]
+
+    LESSON_LIST_SCREENS = [
+        'screen-lessons',
+        'screen-lessons-resume',
+        'screen-lessons-manners',
+        'screen-lessons-strategy',
+    ]
+
+    def test_data_i18n_attributes_exist_in_detail_screens(self, html):
+        """各レッスン詳細画面にdata-i18nアトリビュートが存在すること"""
+        for screen_id in self.DETAIL_SCREENS:
+            start = html.find(f'id="{screen_id}"')
+            assert start != -1, f"{screen_id} not found"
+            # Find the end of this screen (next screen or end)
+            next_screen = html.find('<div class="screen', start + 1)
+            if next_screen == -1:
+                next_screen = len(html)
+            section = html[start:next_screen]
+            assert 'data-i18n=' in section, \
+                f"{screen_id} should have data-i18n attributes for i18n support"
+
+    def test_data_i18n_attributes_exist_in_lesson_lists(self, html):
+        """各レッスン一覧画面にdata-i18nアトリビュートが存在すること"""
+        for screen_id in self.LESSON_LIST_SCREENS:
+            start = html.find(f'id="{screen_id}"')
+            assert start != -1, f"{screen_id} not found"
+            next_screen = html.find('<div class="screen', start + 1)
+            if next_screen == -1:
+                next_screen = len(html)
+            section = html[start:next_screen]
+            assert 'data-i18n=' in section, \
+                f"{screen_id} should have data-i18n attributes for i18n support"
+
+    def test_apply_i18n_attributes_function_exists(self, html):
+        """applyI18nAttributes関数がJavaScriptに存在すること"""
+        assert 'function applyI18nAttributes()' in html
+
+    def test_apply_i18n_attributes_called_in_apply_ui_strings(self, html):
+        """applyI18nAttributesがapplyUIStrings内で呼ばれること"""
+        # Find applyUIStrings function body
+        start = html.find('function applyUIStrings()')
+        assert start != -1
+        # Find the next function declaration after applyUIStrings
+        end = html.find('\nfunction ', start + 30)
+        if end == -1:
+            end = html.find('\nasync function ', start + 30)
+        section = html[start:end] if end != -1 else html[start:]
+        assert 'applyI18nAttributes()' in section, \
+            "applyI18nAttributes() should be called inside applyUIStrings()"
+
+    def test_data_i18n_sub_support_in_js(self, html):
+        """data-i18n-subのサポートがJavaScriptに存在すること"""
+        assert 'data-i18n-sub' in html
+
+
+class TestLessonI18nData:
+    """レッスン詳細の多言語JSONテスト"""
+
+    DETAIL_SLUGS = [
+        'mochimono', 'dansei', 'josei', 'hyojo', 'quiz_grooming',
+        'rirekisho', 'profile_qual', 'shibodoki', 'sonota',
+        'nyutaishitsu', 'aisatsu', 'henji', 'online',
+        'shitsumon1', 'shitsumon2', 'naitei', 'kokorogamae',
+    ]
+
+    def _load_json(self, lang):
+        import json
+        path = os.path.join(os.path.dirname(__file__), '..', 'data', 'ui', f'{lang}.json')
+        with open(path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+
+    def _get_all_keys(self, d, prefix=''):
+        """再帰的に全キーパスを取得"""
+        keys = set()
+        for k, v in d.items():
+            full = f'{prefix}.{k}' if prefix else k
+            if isinstance(v, dict):
+                keys.update(self._get_all_keys(v, full))
+            else:
+                keys.add(full)
+        return keys
+
+    def test_en_json_has_lessons_detail_keys(self):
+        """en.jsonにlessons.detailキーが存在すること"""
+        data = self._load_json('en')
+        assert 'lessons' in data, "en.json should have 'lessons' key"
+        lessons = data['lessons']
+        assert 'detail' in lessons, "en.json lessons should have 'detail' key"
+        for slug in self.DETAIL_SLUGS:
+            assert slug in lessons['detail'], \
+                f"en.json lessons.detail should have '{slug}' key"
+
+    def test_ja_json_has_lessons_detail_keys(self):
+        """ja.jsonにlessons.detailキーが存在すること"""
+        data = self._load_json('ja')
+        assert 'lessons' in data
+        assert 'detail' in data['lessons']
+        for slug in self.DETAIL_SLUGS:
+            assert slug in data['lessons']['detail'], \
+                f"ja.json lessons.detail should have '{slug}' key"
+
+    def test_vi_json_has_lessons_detail_keys(self):
+        """vi.jsonにlessons.detailキーが存在すること"""
+        data = self._load_json('vi')
+        assert 'lessons' in data
+        assert 'detail' in data['lessons']
+        for slug in self.DETAIL_SLUGS:
+            assert slug in data['lessons']['detail'], \
+                f"vi.json lessons.detail should have '{slug}' key"
+
+    def test_all_detail_keys_match_across_languages(self):
+        """3言語のlessons.detailキー構造が完全一致すること"""
+        keys_by_lang = {}
+        for lang in ['en', 'ja', 'vi']:
+            data = self._load_json(lang)
+            detail = data.get('lessons', {}).get('detail', {})
+            keys_by_lang[lang] = self._get_all_keys(detail)
+
+        assert keys_by_lang['en'] == keys_by_lang['ja'], \
+            f"en/ja detail keys mismatch. en-only: {keys_by_lang['en'] - keys_by_lang['ja']}, ja-only: {keys_by_lang['ja'] - keys_by_lang['en']}"
+        assert keys_by_lang['en'] == keys_by_lang['vi'], \
+            f"en/vi detail keys mismatch. en-only: {keys_by_lang['en'] - keys_by_lang['vi']}, vi-only: {keys_by_lang['vi'] - keys_by_lang['en']}"
+
+    def test_no_empty_values_in_detail(self):
+        """lessons.detail内に空文字列の翻訳がないこと"""
+        for lang in ['en', 'ja', 'vi']:
+            data = self._load_json(lang)
+            detail = data.get('lessons', {}).get('detail', {})
+            for slug, entries in detail.items():
+                if isinstance(entries, dict):
+                    for key, val in entries.items():
+                        assert val != '', \
+                            f"{lang}.json lessons.detail.{slug}.{key} should not be empty"
+
+    def test_lesson_list_i18n_keys_exist(self):
+        """レッスン一覧用のi18nキーが3言語に存在すること"""
+        list_slugs = ['grooming', 'resume', 'manners', 'strategy']
+        for lang in ['en', 'ja', 'vi']:
+            data = self._load_json(lang)
+            lessons = data.get('lessons', {})
+            assert 'list' in lessons, f"{lang}.json lessons should have 'list' key"
+            for slug in list_slugs:
+                assert slug in lessons['list'], \
+                    f"{lang}.json lessons.list should have '{slug}' key"

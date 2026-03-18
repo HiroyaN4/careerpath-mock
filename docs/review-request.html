@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerPath - 確認依頼書</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,600;1,8..60,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1d23;
+  --ink-soft: #3d4150;
+  --ink-muted: #6b7084;
+  --ink-faint: #9ca0b0;
+  --surface: #fafaf7;
+  --surface-warm: #edece6;
+  --surface-card: #ffffff;
+  --accent: #2d5a3d;
+  --accent-light: #e8f0eb;
+  --accent-mid: #4a8c5a;
+  --highlight: #c4553a;
+  --highlight-light: #fdf0ed;
+  --gold: #b8941f;
+  --gold-light: #fdf8e8;
+  --blue: #2a5a8f;
+  --blue-light: #eaf1f8;
+  --border: #dddcd6;
+  --border-light: #eae9e3;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* ── Cover ── */
+.cover {
+  background: var(--ink);
+  color: #fff;
+  padding: 56px 40px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 50%;
+  background: linear-gradient(135deg, rgba(45,90,61,0.15), transparent);
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-mid), var(--gold), var(--highlight));
+}
+.cover-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-mid);
+  margin-bottom: 12px;
+  position: relative;
+}
+.cover h1 {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+  font-size: 2.2rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  position: relative;
+}
+.cover-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 20px;
+  position: relative;
+}
+.cover-meta {
+  display: flex;
+  gap: 24px;
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.5);
+  position: relative;
+}
+.cover-meta span { display: flex; align-items: center; gap: 6px; }
+
+/* ── Section ── */
+.section {
+  background: var(--surface-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 40px;
+  margin-top: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-mid);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.section h2 {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+  font-size: 1.45rem;
+  letter-spacing: -0.01em;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 24px;
+}
+.section p { color: var(--ink-soft); margin-bottom: 16px; }
+.section h3 {
+  font-size: 15px;
+  margin: 28px 0 16px;
+  color: var(--ink);
+}
+
+/* ── Callout ── */
+.callout {
+  background: var(--gold-light);
+  border: 1px solid rgba(184,148,31,0.2);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+.callout-info {
+  background: var(--blue-light);
+  border-color: rgba(42,90,143,0.2);
+  border-left-color: var(--blue);
+}
+.callout-accent {
+  background: var(--accent-light);
+  border-color: rgba(45,90,61,0.2);
+  border-left-color: var(--accent);
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+}
+.badge-green { background: #dcf5e4; color: #1a6b35; }
+.badge-blue { background: #dbeafe; color: #1e4d8c; }
+.badge-gray { background: #e8e8e8; color: #555; }
+.badge-yellow { background: #fef3c7; color: #92610a; }
+
+/* ── Scenario ── */
+.scenario {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+.scenario-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.scenario-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.scenario-step {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+.scenario-arrow {
+  color: var(--accent-mid);
+  font-size: 14px;
+}
+
+/* ── Question card (radio style) ── */
+.question-card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.question-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.question-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.question-title {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+}
+.question-body {
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  margin-bottom: 16px;
+  padding-left: 44px;
+}
+
+/* ── Radio options ── */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 44px;
+}
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.option:hover {
+  border-color: var(--accent-mid);
+  box-shadow: 0 0 0 1px rgba(45,90,61,0.1);
+}
+.option-letter {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--accent);
+  background: var(--accent-light);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.option-text { flex: 1; }
+.option-text .option-detail {
+  display: block;
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
+
+/* ── Recommendation badge ── */
+.recommend {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  margin-left: 44px;
+  padding: 5px 12px;
+  background: var(--accent-light);
+  border: 1px solid rgba(45,90,61,0.2);
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+}
+.recommend::before {
+  content: '\2192';
+  font-weight: 700;
+}
+
+/* ── Note under question ── */
+.question-note {
+  margin-top: 10px;
+  margin-left: 44px;
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+/* ── Tree ── */
+.tree-container {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 28px 24px;
+  overflow-x: auto;
+}
+.tree { list-style: none; font-size: 13.5px; }
+.tree ul { list-style: none; padding-left: 28px; }
+.tree li {
+  position: relative;
+  padding: 4px 0;
+  color: var(--ink-soft);
+}
+.tree li::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 0;
+  height: 100%;
+  border-left: 1px solid var(--border);
+}
+.tree li::after {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 14px;
+  width: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.tree li:last-child::before { height: 14px; }
+.tree > li::before, .tree > li::after { display: none; }
+.tree-icon { margin-right: 6px; font-size: 14px; }
+.tree-label { font-weight: 500; color: var(--ink); }
+.tree .badge { margin-left: 8px; }
+.tree-group { font-weight: 600; color: var(--ink); font-size: 14px; }
+
+/* ── Table ── */
+.table-wrap { overflow-x: auto; margin: 20px 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+th {
+  background: var(--surface);
+  font-weight: 600;
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 2px solid var(--border);
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  letter-spacing: 0.5px;
+}
+td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--ink-soft);
+}
+tr:hover td { background: rgba(45,90,61,0.02); }
+.check { color: var(--accent); font-weight: 600; }
+
+/* ── Legend ── */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 16px 0;
+  font-size: 12.5px;
+  color: var(--ink-muted);
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ── Phase grid ── */
+.phase-grid { display: grid; gap: 12px; margin-top: 20px; }
+.phase-card {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+.phase-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+}
+.phase-desc { color: var(--ink-soft); font-size: 13.5px; }
+.phase-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.phase-done { background: #dcf5e4; color: #1a6b35; }
+.phase-next { background: var(--blue-light); color: var(--blue); }
+.phase-planned { background: var(--surface-warm); color: var(--ink-muted); }
+
+/* ── Q&A structure display ── */
+.qa-structure {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+.qa-structure-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+}
+.qa-structure-item:not(:last-child) {
+  border-bottom: 1px dashed var(--border-light);
+}
+.qa-structure-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 20px;
+}
+.qa-structure-label {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+.qa-structure-desc {
+  font-size: 12.5px;
+  color: var(--ink-muted);
+}
+
+/* ── Answer example box ── */
+.answer-example {
+  background: var(--accent-light);
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin: 24px 0 0;
+}
+.answer-example-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.answer-example-body {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 2;
+  background: var(--surface-card);
+  border-radius: 6px;
+  padding: 16px 20px;
+  word-break: break-all;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ink-faint);
+  font-size: 12.5px;
+}
+.footer-line {
+  width: 60px;
+  height: 2px;
+  background: var(--border);
+  margin: 0 auto 16px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .cover { padding: 36px 24px 32px; }
+  .cover h1 { font-size: 1.6rem; }
+  .cover-meta { flex-direction: column; gap: 8px; }
+  .section { padding: 24px 20px; }
+  .question-body, .options, .recommend, .question-note { padding-left: 0; }
+  .phase-card {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .tree ul { padding-left: 20px; }
+  .legend { flex-direction: column; gap: 8px; }
+  .scenario-flow { flex-direction: column; align-items: flex-start; }
+  .scenario-arrow { transform: rotate(90deg); }
+}
+
+@media print {
+  body { background: #fff; }
+  .section { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; }
+  .cover { break-after: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-label">Review Request</div>
+  <h1>CareerPath &mdash; 確認依頼書</h1>
+  <div class="cover-sub">モック・画面構成・多言語・運用について</div>
+  <div class="cover-meta">
+    <span>Date: 2026-03-18</span>
+    <span>From: DX室</span>
+    <span>To: 金子様</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ===== お願い ===== -->
+<div class="callout callout-accent" style="margin-top: 24px;">
+  <strong>回答方法について</strong><br>
+  各確認事項は<strong>選択式（A / B / C）</strong>にしてあります。<br>
+  番号＋アルファベットでご回答いただくだけでOKです。<br>
+  例: 「&#10102; B &ensp; &#10103; C &ensp; &#10104; A &ensp; ...」
+</div>
+
+<!-- ===== SECTION 1: ユーザーシナリオ ===== -->
+<div class="section">
+  <div class="section-num">Section 01</div>
+  <h2>ユーザーシナリオの確認</h2>
+  <p>こういう使い方を想定しています。合っているかご確認ください。</p>
+
+  <div class="scenario">
+    <div class="scenario-title">&#x1F4F1; シナリオ1: 初回利用</div>
+    <div class="scenario-flow">
+      <span class="scenario-step">スタッフがアカウント発行</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">学生にURL+IDを共有</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">学生がログイン</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">言語選択（ベトナム語等）</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">ホーム画面</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">「身だしなみ」コースから学習開始</span>
+    </div>
+  </div>
+
+  <div class="scenario">
+    <div class="scenario-title">&#x1F688; シナリオ2: 日常学習（電車の中で10分）</div>
+    <div class="scenario-flow">
+      <span class="scenario-step">アプリを開く</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">前回の続きのレッスン</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">Practiceで確認問題</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">完了</span>
+    </div>
+  </div>
+
+  <div class="scenario">
+    <div class="scenario-title">&#x1F3AF; シナリオ3: 来週面接がある！（飲食業に応募）</div>
+    <div class="scenario-flow">
+      <span class="scenario-step">Q&Aを開く</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">「飲食」で絞り込み</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">10問をチェック</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">面接対策コースも復習</span>
+    </div>
+  </div>
+
+  <div class="scenario">
+    <div class="scenario-title">&#x1F4DD; シナリオ4: 履歴書を書く</div>
+    <div class="scenario-flow">
+      <span class="scenario-step">コース選択</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">履歴書の書き方</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">基本ルール・志望動機</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">書き方の例を参考に作成</span>
+    </div>
+  </div>
+
+  <div class="scenario">
+    <div class="scenario-title">&#x1F4CA; シナリオ5: スタッフの利用</div>
+    <div class="scenario-flow">
+      <span class="scenario-step">管理画面</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">学生の進捗確認</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">離脱リスクの学生に声かけ</span>
+      <span class="scenario-arrow">&rarr;</span>
+      <span class="scenario-step">Q&A分析</span>
+    </div>
+  </div>
+
+  <!-- ❶ -->
+  <div class="question-card">
+    <div class="question-header">
+      <div class="question-num">1</div>
+      <div class="question-title">アカウント発行の方法</div>
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-letter">A</span>
+        <span class="option-text">学生が自分でメールアドレスで登録する（自己登録型）</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">B</span>
+        <span class="option-text">
+          スタッフがアカウントを作成して学生に渡す（発行型）
+          <span class="option-detail">留学生はアプリ登録に不慣れな可能性あり</span>
+        </span>
+      </div>
+      <div class="option">
+        <span class="option-letter">C</span>
+        <span class="option-text">その他（具体的に:___）</span>
+      </div>
+    </div>
+    <div class="recommend">こちらの想定: B</div>
+  </div>
+
+  <!-- ❷ -->
+  <div class="question-card">
+    <div class="question-header">
+      <div class="question-num">2</div>
+      <div class="question-title">学習の進め方</div>
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-letter">A</span>
+        <span class="option-text">スタッフが「このコースをやってね」と指示する（指示型）</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">B</span>
+        <span class="option-text">学生が自分で好きなコースを選んで進める（自由型）</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">C</span>
+        <span class="option-text">
+          基本は順番に、でも興味のあるところから見てもOK（混合型）
+          <span class="option-detail">おすすめの順番は表示するが、強制はしない</span>
+        </span>
+      </div>
+    </div>
+    <div class="recommend">こちらの想定: C</div>
+  </div>
+
+  <!-- ❸ -->
+  <div class="question-card">
+    <div class="question-header">
+      <div class="question-num">3</div>
+      <div class="question-title">主な利用場面</div>
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-letter">A</span>
+        <span class="option-text">主に授業中（スタッフの指導のもと）</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">B</span>
+        <span class="option-text">主に自習時間（自宅・通学中など）</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">C</span>
+        <span class="option-text">
+          両方
+          <span class="option-detail">授業で導入して、自習で復習</span>
+        </span>
+      </div>
+    </div>
+    <div class="recommend">こちらの想定: C</div>
+  </div>
+
+  <!-- ❹ -->
+  <div class="question-card">
+    <div class="question-header">
+      <div class="question-num">4</div>
+      <div class="question-title">スタッフの関わり方</div>
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-letter">A</span>
+        <span class="option-text">
+          管理画面で進捗を見て、個別にフォローする
+          <span class="option-detail">「〇〇さん、面接マナーまだ見てないよ」など声かけ</span>
+        </span>
+      </div>
+      <div class="option">
+        <span class="option-letter">B</span>
+        <span class="option-text">全員に同じ課題を出して一斉に進める</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">C</span>
+        <span class="option-text">アプリは渡すだけで、基本的に放任</span>
+      </div>
+    </div>
+    <div class="recommend">こちらの想定: A</div>
+  </div>
+
+</div>
+
+<!-- ===== SECTION 2: 画面構成マップ ===== -->
+<div class="section">
+  <div class="section-num">Section 02</div>
+  <h2>画面構成マップ</h2>
+
+  <p>アプリの全画面構成です。各画面の横に現在の状態を表示しています。</p>
+
+  <div class="legend">
+    <div class="legend-item"><span class="legend-dot" style="background:#22c55e;"></span>モック完成</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#3b82f6;"></span>多言語対応済み</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#f59e0b;"></span>一部対応（UIラベル済、本文に未翻訳あり）</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#d1d5db;"></span>MVP実装予定</div>
+  </div>
+
+  <div class="tree-container">
+    <ul class="tree">
+      <li>
+        <span class="tree-icon">&#x1F510;</span>
+        <span class="tree-group">ログイン / 新規登録</span>
+        <span class="badge badge-green">モック完成</span>
+        <span class="badge badge-blue">多言語済</span>
+        <ul>
+          <li>
+            <span class="tree-icon">&#x1F3E0;</span>
+            <span class="tree-group">ホーム</span>
+            <span class="badge badge-green">モック完成</span>
+            <span class="badge badge-blue">多言語済</span>
+            <ul>
+              <li>
+                <span class="tree-icon">&#x1F4DA;</span>
+                <span class="tree-group">コース選択（4コース）</span>
+                <span class="badge badge-green">モック完成</span>
+                <span class="badge badge-blue">多言語済</span>
+                <ul>
+                  <li>
+                    <span class="tree-icon">&#x1F454;</span>
+                    <span class="tree-label">身だしなみ（5レッスン）</span>
+                    <span class="badge badge-green">モック完成</span>
+                    <span class="badge badge-yellow">一部対応</span>
+                  </li>
+                  <li>
+                    <span class="tree-icon">&#x1F4DD;</span>
+                    <span class="tree-label">履歴書の書き方（4レッスン）</span>
+                    <span class="badge badge-green">モック完成</span>
+                    <span class="badge badge-yellow">一部対応</span>
+                  </li>
+                  <li>
+                    <span class="tree-icon">&#x1F91D;</span>
+                    <span class="tree-label">面接マナー（4レッスン）</span>
+                    <span class="badge badge-green">モック完成</span>
+                    <span class="badge badge-yellow">一部対応</span>
+                  </li>
+                  <li>
+                    <span class="tree-icon">&#x1F3AF;</span>
+                    <span class="tree-label">面接対策（4レッスン）</span>
+                    <span class="badge badge-green">モック完成</span>
+                    <span class="badge badge-yellow">一部対応</span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="tree-icon">&#x1F4AC;</span>
+                <span class="tree-label">業種別Q&A（5業種 &times; 48問）</span>
+                <span class="badge badge-green">モック完成</span>
+                <span class="badge badge-blue">多言語済</span>
+              </li>
+              <li>
+                <span class="tree-icon">&#x1F3AF;</span>
+                <span class="tree-label">Practice</span>
+                <span class="badge badge-yellow">Coming Soon</span>
+              </li>
+              <li>
+                <span class="tree-icon">&#x1F464;</span>
+                <span class="tree-label">プロフィール</span>
+                <span class="badge badge-green">モック完成</span>
+                <span class="badge badge-blue">多言語済</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ❺ -->
+  <div class="question-card">
+    <div class="question-header">
+      <div class="question-num">5</div>
+      <div class="question-title">画面構成について</div>
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-letter">A</span>
+        <span class="option-text">この構成でOK。追加・変更なし</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">B</span>
+        <span class="option-text">追加したい画面がある（具体的に:___）</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">C</span>
+        <span class="option-text">不要な画面がある（具体的に:___）</span>
+      </div>
+    </div>
+    <div class="recommend">こちらの想定: A（Practice画面は今後AI面接機能として実装予定）</div>
+  </div>
+
+  <!-- ❻ -->
+  <div class="question-card">
+    <div class="question-header">
+      <div class="question-num">6</div>
+      <div class="question-title">コースの順番</div>
+    </div>
+    <div class="question-body">
+      現在: 身だしなみ &rarr; 履歴書 &rarr; 面接マナー &rarr; 面接対策
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-letter">A</span>
+        <span class="option-text">
+          この順番でOK
+          <span class="option-detail">面接準備の流れとして自然</span>
+        </span>
+      </div>
+      <div class="option">
+        <span class="option-letter">B</span>
+        <span class="option-text">別の順番がいい（具体的に:___）</span>
+      </div>
+    </div>
+    <div class="recommend">こちらの想定: A</div>
+  </div>
+</div>
+
+<!-- ===== SECTION 3: 多言語対応 ===== -->
+<div class="section">
+  <div class="section-num">Section 03</div>
+  <h2>多言語対応の確認</h2>
+
+  <p>
+    ログイン画面で言語を選択すると、アプリ全体がその言語に切り替わります。<br>
+    対応言語: 英語・日本語・ベトナム語（MVP時点）
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>画面</th>
+          <th style="text-align:center;">EN</th>
+          <th style="text-align:center;">JA</th>
+          <th style="text-align:center;">VI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ログイン</td><td class="check" style="text-align:center;">&#10003;</td><td class="check" style="text-align:center;">&#10003;</td><td class="check" style="text-align:center;">&#10003;</td></tr>
+        <tr><td>ホーム</td><td class="check" style="text-align:center;">&#10003;</td><td class="check" style="text-align:center;">&#10003;</td><td class="check" style="text-align:center;">&#10003;</td></tr>
+        <tr><td>コース選択</td><td class="check" style="text-align:center;">&#10003;</td><td class="check" style="text-align:center;">&#10003;</td><td class="check" style="text-align:center;">&#10003;</td></tr>
+        <tr><td>レッスン一覧</td><td style="text-align:center;color:#e89a00;">&#x1F536;</td><td style="text-align:center;color:#e89a00;">&#x1F536;</td><td style="text-align:center;color:#e89a00;">&#x1F536;</td></tr>
+        <tr><td>レッスン詳細</td><td style="text-align:center;color:#e89a00;">&#x1F536;</td><td style="text-align:center;color:#e89a00;">&#x1F536;</td><td style="text-align:center;color:#e89a00;">&#x1F536;</td></tr>
+        <tr><td>Q&A（48問）</td><td class="check" style="text-align:center;">&#10003;</td><td class="check" style="text-align:center;">&#10003;</td><td class="check" style="text-align:center;">&#10003;</td></tr>
+        <tr><td>プロフィール</td><td class="check" style="text-align:center;">&#10003;</td><td class="check" style="text-align:center;">&#10003;</td><td class="check" style="text-align:center;">&#10003;</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="font-size: 12.5px; color: var(--ink-muted);">
+    &#10003; = 完全対応 / &#x1F536; = UIラベル対応済み、コンテンツ本文の一部に未翻訳あり<br>
+    ※面接フレーズ（日本語）はあえて翻訳していません（面接は日本語で行うため）
+  </p>
+
+  <!-- ❼ -->
+  <div class="question-card">
+    <div class="question-header">
+      <div class="question-num">7</div>
+      <div class="question-title">UI言語の方針</div>
+    </div>
+    <div class="question-body">
+      現在の方式: 選んだ言語でアプリ全体が切り替わる
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-letter">A</span>
+        <span class="option-text">今の方式でOK（アプリ全体が切り替わる）</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">B</span>
+        <span class="option-text">日本語メインで、母国語は補助的に表示するだけがいい</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">C</span>
+        <span class="option-text">その他（具体的に:___）</span>
+      </div>
+    </div>
+    <div class="recommend">こちらの想定: A</div>
+  </div>
+
+  <!-- ❽ -->
+  <div class="question-card">
+    <div class="question-header">
+      <div class="question-num">8</div>
+      <div class="question-title">レッスン内容の翻訳</div>
+    </div>
+    <div class="question-body">
+      面接フレーズは日本語のまま＋解説を母国語で表示しています。
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-letter">A</span>
+        <span class="option-text">
+          現在の方式でOK
+          <span class="option-detail">面接フレーズは日本語のまま、解説を母国語で</span>
+        </span>
+      </div>
+      <div class="option">
+        <span class="option-letter">B</span>
+        <span class="option-text">もっと翻訳してほしい部分がある（具体的に:___）</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">C</span>
+        <span class="option-text">
+          翻訳しすぎ。日本語学習も兼ねるので日本語を多めに残してほしい
+        </span>
+      </div>
+    </div>
+    <div class="recommend">こちらの想定: A</div>
+  </div>
+
+  <!-- ❾ -->
+  <div class="question-card">
+    <div class="question-header">
+      <div class="question-num">9</div>
+      <div class="question-title">ベトナム語翻訳の品質チェック</div>
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-letter">A</span>
+        <span class="option-text">
+          まずこのまま見せてOK。チェックは後で
+          <span class="option-detail">チェック用データはスプレッドシート形式でこちらから用意します</span>
+        </span>
+      </div>
+      <div class="option">
+        <span class="option-letter">B</span>
+        <span class="option-text">ネイティブチェック後に見せたい</span>
+      </div>
+    </div>
+    <div class="recommend">こちらの想定: A</div>
+  </div>
+
+  <!-- ❿ -->
+  <div class="question-card">
+    <div class="question-header">
+      <div class="question-num">10</div>
+      <div class="question-title">MVP時の対応言語</div>
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-letter">A</span>
+        <span class="option-text">
+          英語＋ベトナム語でスタート（現在の想定通り）
+          <span class="option-detail">Phase 2以降で順次追加。追加順は在籍学生の国籍比率で決定</span>
+        </span>
+      </div>
+      <div class="option">
+        <span class="option-letter">B</span>
+        <span class="option-text">他の言語も最初から入れたい（具体的に:___）</span>
+      </div>
+    </div>
+    <div class="recommend">こちらの想定: A</div>
+  </div>
+</div>
+
+<!-- ===== SECTION 4: Q&Aの見せ方 ===== -->
+<div class="section">
+  <div class="section-num">Section 04</div>
+  <h2>Q&Aの見せ方</h2>
+
+  <p>現在のQ&Aは以下の構成です。5業種（飲食・製造・建築・小売・宿泊）&times; 各8&ndash;10問 = 48問</p>
+
+  <div class="qa-structure">
+    <div class="qa-structure-item">
+      <span class="qa-structure-num">1.</span>
+      <span>
+        <span class="qa-structure-label">質問文</span>
+        <span class="qa-structure-desc">（日本語 + 母国語）</span>
+      </span>
+    </div>
+    <div class="qa-structure-item">
+      <span class="qa-structure-num">2.</span>
+      <span>
+        <span class="qa-structure-label">&#10003; 模範回答</span>
+        <span class="qa-structure-desc">（日本語 + 母国語で薄字翻訳）</span>
+      </span>
+    </div>
+    <div class="qa-structure-item">
+      <span class="qa-structure-num">3.</span>
+      <span>
+        <span class="qa-structure-label">&#10007; NG例</span>
+        <span class="qa-structure-desc">（日本語 + 母国語で薄字翻訳）</span>
+      </span>
+    </div>
+    <div class="qa-structure-item">
+      <span class="qa-structure-num">4.</span>
+      <span>
+        <span class="qa-structure-label">&#x1F4A1; ワンポイント</span>
+        <span class="qa-structure-desc">（日本語 + 母国語で薄字翻訳）</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ⓫ -->
+  <div class="question-card">
+    <div class="question-header">
+      <div class="question-num">11</div>
+      <div class="question-title">Q&Aの構成</div>
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-letter">A</span>
+        <span class="option-text">この構成でOK</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">B</span>
+        <span class="option-text">変更したい（具体的に:___）</span>
+      </div>
+    </div>
+    <div class="recommend">こちらの想定: A</div>
+    <div class="question-note">
+      ※前回「実際に教えてるスタッフに確認します」とのことでしたが、結果はいかがでしたか？
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 5: 管理画面 ===== -->
+<div class="section">
+  <div class="section-num">Section 05</div>
+  <h2>管理画面について</h2>
+
+  <p>
+    前回お送りした管理画面モック（admin-dashboard.html）について。<br>
+    学習者の進捗状況や利用状況を一覧で確認できる画面です。
+  </p>
+
+  <!-- ⓬ -->
+  <div class="question-card">
+    <div class="question-header">
+      <div class="question-num">12</div>
+      <div class="question-title">管理画面の感想</div>
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-letter">A</span>
+        <span class="option-text">いい感じ。このままでOK</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">B</span>
+        <span class="option-text">追加で見たい情報がある（具体的に:___）</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">C</span>
+        <span class="option-text">まだ触れていない &rarr; 触ってから回答します</span>
+      </div>
+    </div>
+    <div class="recommend">こちらの想定: A</div>
+    <div class="question-note">
+      ※前回「本日中に触って報告します」とのことでしたが、いかがでしたか？
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 6: 今後の進め方 ===== -->
+<div class="section">
+  <div class="section-num">Section 06</div>
+  <h2>今後の進め方</h2>
+
+  <div class="phase-grid">
+    <div class="phase-card">
+      <div class="phase-label">Phase 0</div>
+      <div class="phase-desc"><strong>モック</strong> &mdash; UI画面・Q&Aデータ・多言語基盤</div>
+      <div class="phase-status phase-done">&#10003; 完了</div>
+    </div>
+    <div class="phase-card" style="border-left: 3px solid var(--blue);">
+      <div class="phase-label">Phase 1</div>
+      <div class="phase-desc"><strong>MVP</strong> &mdash; 認証・レッスン閲覧・進捗管理・管理画面</div>
+      <div class="phase-status phase-next">次ステップ</div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-label">Phase 2</div>
+      <div class="phase-desc"><strong>AI面接</strong> &mdash; テキスト入力 &rarr; フィードバック</div>
+      <div class="phase-status phase-planned">予定</div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-label">Phase 3</div>
+      <div class="phase-desc"><strong>音声対応</strong> &mdash; STT + TTS</div>
+      <div class="phase-status phase-planned">予定</div>
+    </div>
+  </div>
+
+  <!-- ⓭ -->
+  <div class="question-card" style="margin-top: 24px;">
+    <div class="question-header">
+      <div class="question-num">13</div>
+      <div class="question-title">Phase 1（MVP）への移行</div>
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-letter">A</span>
+        <span class="option-text">
+          上記確認事項がOKなら、MVP開発に着手してOK
+        </span>
+      </div>
+      <div class="option">
+        <span class="option-letter">B</span>
+        <span class="option-text">まだ決めたいことがある（具体的に:___）</span>
+      </div>
+      <div class="option">
+        <span class="option-letter">C</span>
+        <span class="option-text">社内で追加の相談が必要</span>
+      </div>
+    </div>
+    <div class="recommend">こちらの想定: A</div>
+  </div>
+</div>
+
+<!-- ===== 回答例 ===== -->
+<div class="section" style="border: 2px solid var(--accent);">
+  <div class="section-num" style="color: var(--accent);">How to Answer</div>
+  <h2>ご回答方法</h2>
+
+  <p>
+    番号（1〜13）＋アルファベット（A / B / C）でご回答ください。<br>
+    <strong>想定通りの場合は「想定通りでOK」の一言だけでも大丈夫です。</strong>
+  </p>
+
+  <div class="answer-example">
+    <div class="answer-example-title">回答例</div>
+    <div class="answer-example-body">
+      1.B  2.C  3.C  4.A  5.A  6.A<br>
+      7.A  8.A  9.A  10.A  11.A  12.C  13.A
+    </div>
+  </div>
+
+  <p style="margin-top: 16px;">
+    もし全部想定通りでしたら、<strong>「全部想定通りでOK」</strong>だけで大丈夫です。<br>
+    気になる点だけピックアップして回答いただいてもOKです。
+  </p>
+
+  <div class="callout" style="margin-top: 16px;">
+    ご不明点があればお気軽にお聞きください。<br>
+    モックは引き続きこちらからご確認いただけます。
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <div class="footer-line"></div>
+  <p>CareerPath Review Request &mdash; 2026-03-18</p>
+</div>
+
+</body>
+</html>
