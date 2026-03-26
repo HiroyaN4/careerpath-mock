@@ -241,10 +241,11 @@ tr.clickable{cursor:pointer}
       <div>
         <!-- Alerts -->
         <div class="panel">
-          <div class="panel__head"><div class="panel__title">通知・アラート</div><div class="panel__badge">3件</div></div>
+          <div class="panel__head"><div class="panel__title">通知・アラート</div><div class="panel__badge">4件</div></div>
           <div class="panel__body">
             <div class="alert"><div class="alert__icon">🚨</div><div class="alert__text"><strong>Pham Thi Mai</strong> — 14日間ログインなし</div><div class="alert__time">最終: 3/2</div></div>
             <div class="alert"><div class="alert__icon">⚠️</div><div class="alert__text"><strong>建設Q&A</strong> 完了率が他業種より20%低い</div><div class="alert__time">3/15</div></div>
+            <div class="alert"><div class="alert__icon">❌</div><div class="alert__text"><strong>Q&A正答率</strong> 「分からないことがあったら？」32%</div><div class="alert__time">3/26</div></div>
             <div class="alert"><div class="alert__icon">📊</div><div class="alert__text">今週の新規登録: <strong>12名</strong></div><div class="alert__time">3/16</div></div>
           </div>
         </div>
@@ -473,6 +474,26 @@ tr.clickable{cursor:pointer}
               <tr><td style="font-weight:600;color:var(--amber)">5</td><td style="font-size:12px">What interests you about manufacturing?</td><td>🏭</td><td style="font-weight:600">79</td></tr>
             </tbody>
           </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 正答率が低いQ&A -->
+    <div class="panel" style="margin-top:16px">
+      <div class="panel__head"><div class="panel__title">⚠️ 間違いが多い質問 TOP5</div><div class="panel__badge" style="background:var(--red-light);color:var(--red)">要改善</div></div>
+      <div class="panel__body">
+        <table>
+          <thead><tr><th>#</th><th>質問</th><th>業種</th><th>正答率</th><th>回答数</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;color:var(--red)">1</td><td style="font-size:12px">分からないことがあったときはどうしますか？</td><td>🏭 製造</td><td><span style="color:var(--red);font-weight:600">32%</span></td><td>25</td></tr>
+            <tr><td style="font-weight:600;color:var(--red)">2</td><td style="font-size:12px">なぜ弊社で働きたいですか？</td><td>🍽 飲食</td><td><span style="color:var(--red);font-weight:600">38%</span></td><td>42</td></tr>
+            <tr><td style="font-weight:600;color:var(--red)">3</td><td style="font-size:12px">最後に何か質問はありますか？</td><td>🛒 小売</td><td><span style="color:var(--amber);font-weight:600">41%</span></td><td>33</td></tr>
+            <tr><td style="font-weight:600;color:var(--red)">4</td><td style="font-size:12px">あなたの長所と短所を教えてください？</td><td>🏭 製造</td><td><span style="color:var(--amber);font-weight:600">45%</span></td><td>20</td></tr>
+            <tr><td style="font-weight:600;color:var(--red)">5</td><td style="font-size:12px">働く上で何を大切にして働こうと思いますか？</td><td>🍽 飲食</td><td><span style="color:var(--amber);font-weight:600">48%</span></td><td>31</td></tr>
+          </tbody>
+        </table>
+        <div style="padding:12px 16px;font-size:11px;color:var(--text3);border-top:1px solid var(--border-light)">
+          ※ 正答率はPracticeクイズの結果から算出。50%未満の質問を表示しています。
         </div>
       </div>
     </div>

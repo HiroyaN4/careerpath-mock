@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-17",
+  "last_updated": "2026-03-26",
   "supported_languages": [
     "ja",
     "en",
@@ -1205,6 +1205,390 @@
         "ja": "ホテルはチェックイン時間、朝食時間などかなり忙しい時間があるのでいつも通り働くのが大切。Hotels have peak times; working normally during them is key.",
         "en": "",
         "vi": "Khách sạn có giờ check-in, giờ ăn sáng rất bận nên làm việc bình thường là quan trọng."
+      }
+    },
+    {
+      "id": "common-01",
+      "industry": "common",
+      "question": {
+        "ja": "日本でどのくらい働きたいですか？",
+        "en": "How long do you want to work in Japan?",
+        "vi": "Bạn muốn làm việc ở Nhật bao lâu?"
+      },
+      "model_answer": {
+        "ja": "・日本でずっと働きたいです！\n・長く働いて、経験を積みたいです。\n・将来はリーダーになりたいです。",
+        "en": "",
+        "vi": "・Tôi muốn làm việc ở Nhật mãi mãi!\n・Tôi muốn làm việc lâu dài và tích lũy kinh nghiệm.\n・Tương lai tôi muốn trở thành leader!"
+      },
+      "ng_example": {
+        "ja": "・5年・10年働きたいです。\n・お金を貯めたら帰ります。",
+        "en": "",
+        "vi": "・Tôi muốn làm 5-10 năm.\n・Tích lũy đủ tiền rồi về nước."
+      },
+      "tip": {
+        "ja": "就職したら日本で長く働けることをアピール。具体的な目標を伝えるとすごく良い ◎\n※年数を言うと「すぐ辞める」と思われるので注意",
+        "en": "",
+        "vi": "Hãy thể hiện rằng bạn muốn làm việc lâu dài ở Nhật. Nói thêm mục tiêu cụ thể sẽ rất tốt ◎\n※Nói số năm cụ thể sẽ tạo ấn tượng sẽ sớm về nước → dễ bị trượt"
+      }
+    },
+    {
+      "id": "common-02",
+      "industry": "common",
+      "question": {
+        "ja": "仕事は大変ですけど大丈夫ですか？がんばれますか？",
+        "en": "The work is tough. Are you okay with that? Can you do your best?",
+        "vi": "Công việc vất vả lắm, bạn có ổn không? Có cố gắng được không?"
+      },
+      "model_answer": {
+        "ja": "・はい！大丈夫です！頑張ります！\n・体力には自信があります。一生懸命働きます。",
+        "en": "",
+        "vi": "・Vâng! Tôi ổn! Tôi sẽ cố gắng hết sức!\n・Tôi tự tin về thể lực. Tôi sẽ nỗ lực hết mình!"
+      },
+      "ng_example": {
+        "ja": "・たぶんできます、できると思います。\n・ちょっと心配です。",
+        "en": "",
+        "vi": "・Có lẽ tôi làm được, tôi nghĩ vậy.\n・Hơi lo lắng."
+      },
+      "tip": {
+        "ja": "企業様は前向きな方がいいので、やる気や誠意を伝えることが大切！",
+        "en": "",
+        "vi": "Công ty muốn người tích cực, nên việc thể hiện tinh thần và sự chân thành rất quan trọng!"
+      }
+    },
+    {
+      "id": "common-03",
+      "industry": "common",
+      "question": {
+        "ja": "なぜ弊社で働きたいですか？",
+        "en": "Why do you want to work at our company?",
+        "vi": "Tại sao bạn muốn làm việc ở công ty chúng tôi?"
+      },
+      "model_answer": {
+        "ja": "・御社のHPを拝見しました。\n・～という理念に共感しました。\n・御社で成長し、長く貢献したいと思いました。",
+        "en": "",
+        "vi": "・Tôi đã xem trang web của quý công ty.\n・Tôi đồng cảm với lý tưởng của công ty.\n・Tôi muốn phát triển và đóng góp lâu dài tại đây."
+      },
+      "ng_example": {
+        "ja": "・仕事が見つかったからです。\n・家から近いからです。",
+        "en": "",
+        "vi": "・Vì tôi tìm được việc.\n・Vì gần nhà."
+      },
+      "tip": {
+        "ja": "企業様は興味を持っている人や働きたい人を採用したいのでやる気を伝えましょう。HPを事前に調べておくと◎",
+        "en": "",
+        "vi": "Công ty muốn tuyển người có hứng thú, nên hãy thể hiện tinh thần. Tìm hiểu trang web trước sẽ rất tốt ◎"
+      }
+    },
+    {
+      "id": "common-04",
+      "industry": "common",
+      "question": {
+        "ja": "働く上で何を大切にして働こうと思いますか？",
+        "en": "What do you value most when working?",
+        "vi": "Bạn coi trọng điều gì nhất khi làm việc?"
+      },
+      "model_answer": {
+        "ja": "・チームワークを大切にして働きます。\n・報告・連絡・相談を意識して、周りと協力します。",
+        "en": "",
+        "vi": "・Tôi sẽ coi trọng tinh thần làm việc nhóm.\n・Tôi sẽ ý thức báo cáo - liên lạc - tham vấn (Ho-Ren-So) và hợp tác với mọi người."
+      },
+      "ng_example": {
+        "ja": "・お金です。\n・特にありません。",
+        "en": "",
+        "vi": "・Tiền.\n・Không có gì đặc biệt."
+      },
+      "tip": {
+        "ja": "チームワーク・コミュニケーション・報連相など、協調性をアピールすると好印象 ◎",
+        "en": "",
+        "vi": "Nhấn mạnh tinh thần hợp tác như teamwork, giao tiếp, Ho-Ren-So sẽ tạo ấn tượng tốt ◎"
+      }
+    },
+    {
+      "id": "common-05",
+      "industry": "common",
+      "question": {
+        "ja": "今まで日本に来てからや、アルバイトをしてる中で大変だったことはありますか？→それをどのように乗り越えましたか？",
+        "en": "What has been the most challenging thing since coming to Japan? How did you overcome it?",
+        "vi": "Từ khi đến Nhật hoặc khi đi làm thêm, có điều gì khó khăn không? Bạn đã vượt qua như thế nào?"
+      },
+      "model_answer": {
+        "ja": "・日本語が難しくて最初は大変でした。\n・でも毎日勉強して、今は日常会話ができるようになりました。\n・アルバイトでもルールが多くて大変でしたが、先輩に聞いて覚えました。",
+        "en": "",
+        "vi": "・Lúc đầu tiếng Nhật rất khó.\n・Nhưng tôi học mỗi ngày và bây giờ đã giao tiếp được.\n・Khi làm thêm cũng có nhiều quy tắc, nhưng tôi hỏi tiền bối và học dần."
+      },
+      "ng_example": {
+        "ja": "・大変だったことは特にないです。",
+        "en": "",
+        "vi": "・Không có gì đặc biệt khó khăn."
+      },
+      "tip": {
+        "ja": "自分の体験談の中でどう工夫して乗り越えたかまでを伝えると◎ シンプルに伝えましょう",
+        "en": "",
+        "vi": "Kể cả câu chuyện của mình, bạn đã sáng tạo và vượt qua như thế nào sẽ rất tốt ◎"
+      }
+    },
+    {
+      "id": "common-06",
+      "industry": "common",
+      "question": {
+        "ja": "忙しい時はどうしますか？",
+        "en": "What do you do when it gets busy?",
+        "vi": "Khi bận rộn bạn làm thế nào?"
+      },
+      "model_answer": {
+        "ja": "・落ち着いて仕事の優先順位を考えます。\n・チームで協力することが大切だと思います。",
+        "en": "",
+        "vi": "・Tôi bình tĩnh suy nghĩ thứ tự ưu tiên công việc.\n・Tôi nghĩ hợp tác nhóm là quan trọng."
+      },
+      "ng_example": {
+        "ja": "・忙しいとミスが増えます。\n・パニックになります。",
+        "en": "",
+        "vi": "・Khi bận thì hay mắc lỗi.\n・Khi bận tôi hay hoảng."
+      },
+      "tip": {
+        "ja": "どんな職場でも忙しい時間はあります。落ち着いて対応できることをアピール ◎",
+        "en": "",
+        "vi": "Bất kỳ nơi làm việc nào cũng có lúc bận. Hãy thể hiện rằng bạn có thể bình tĩnh xử lý ◎"
+      }
+    },
+    {
+      "id": "common-07",
+      "industry": "common",
+      "question": {
+        "ja": "チームで働くときに大切だと思うことは何ですか？",
+        "en": "What do you think is important when working in a team?",
+        "vi": "Bạn nghĩ điều gì quan trọng khi làm việc nhóm?"
+      },
+      "model_answer": {
+        "ja": "・報告・連絡・相談をしっかりすることだと思います。\n・小さなことでも共有して、トラブルを防ぐことが大切です。",
+        "en": "",
+        "vi": "・Tôi nghĩ là báo cáo - liên lạc - tham vấn (Ho-Ren-So).\n・Ngay cả vấn đề nhỏ cũng nên thông báo để phòng tránh sự cố."
+      },
+      "ng_example": {
+        "ja": "・自分の仕事だけやればいいと思います。",
+        "en": "",
+        "vi": "・Tôi nghĩ chỉ cần làm việc của mình là đủ."
+      },
+      "tip": {
+        "ja": "協調性、コミュニケーション、トラブル防止意識をアピール ◎",
+        "en": "",
+        "vi": "Tinh thần hợp tác, giao tiếp, ý thức phòng tránh sự cố ◎"
+      }
+    },
+    {
+      "id": "common-08",
+      "industry": "common",
+      "question": {
+        "ja": "あなたの長所と短所を教えてください？",
+        "en": "Please tell us your strengths and weaknesses.",
+        "vi": "Hãy cho biết ưu điểm và nhược điểm của bạn."
+      },
+      "model_answer": {
+        "ja": "・長所はコツコツ続けることができることです。\n・短所は慎重すぎるところですが、確認を丁寧にすることで活かしています。",
+        "en": "",
+        "vi": "・Ưu điểm của tôi là có thể kiên trì làm việc.\n・Nhược điểm là hay cẩn thận quá mức, nhưng tôi cố gắng kiểm tra kỹ để tránh sai sót."
+      },
+      "ng_example": {
+        "ja": "・長所は特にありません。\n・短所は怒りやすいことです。",
+        "en": "",
+        "vi": "・Không có ưu điểm gì đặc biệt.\n・Nhược điểm là hay nóng giận."
+      },
+      "tip": {
+        "ja": "短所は「改善しようとしている姿勢」をセットで伝えましょう",
+        "en": "",
+        "vi": "Với nhược điểm, hãy nói kèm \"thái độ đang cố gắng cải thiện\""
+      }
+    },
+    {
+      "id": "common-09",
+      "industry": "common",
+      "question": {
+        "ja": "分からないことがあったときはどうしますか？",
+        "en": "What do you do when you don't understand something?",
+        "vi": "Khi không hiểu điều gì, bạn làm thế nào?"
+      },
+      "model_answer": {
+        "ja": "・まず自分で確認しますが、分からない場合は早めに先輩や上司に質問します。",
+        "en": "",
+        "vi": "・Trước tiên tôi tự kiểm tra, nếu vẫn không hiểu thì hỏi tiền bối hoặc cấp trên sớm."
+      },
+      "ng_example": {
+        "ja": "・とりあえず自分の考えでやります。\n・分からないまま続けます。",
+        "en": "",
+        "vi": "・Tôi cứ làm theo cách mình nghĩ.\n・Tiếp tục làm dù không hiểu."
+      },
+      "tip": {
+        "ja": "安全意識、報連相の姿勢をアピール。分からないことを聞ける＝成長できる人 ◎",
+        "en": "",
+        "vi": "Thể hiện ý thức an toàn và Ho-Ren-So. Biết hỏi khi không hiểu = người có thể phát triển ◎"
+      }
+    },
+    {
+      "id": "common-10",
+      "industry": "common",
+      "question": {
+        "ja": "今までで一番頑張ったことはなんですか？",
+        "en": "What is the thing you've worked hardest at?",
+        "vi": "Điều bạn cố gắng nhất từ trước đến nay là gì?"
+      },
+      "model_answer": {
+        "ja": "・アルバイトで忙しい時でも責任を持って仕事を続けました。\n・毎日日本語の勉強を頑張りました。",
+        "en": "",
+        "vi": "・Dù bận khi làm thêm, tôi vẫn có trách nhiệm và tiếp tục làm việc.\n・Mỗi ngày tôi nỗ lực học tiếng Nhật."
+      },
+      "ng_example": {
+        "ja": "・特にありません。\n・覚えていません。",
+        "en": "",
+        "vi": "・Không có gì đặc biệt.\n・Tôi không nhớ."
+      },
+      "tip": {
+        "ja": "努力できる人か、継続力があるかを見ています。具体的なエピソードを入れましょう",
+        "en": "",
+        "vi": "Họ đang xem bạn có phải người nỗ lực và kiên trì không. Hãy kể câu chuyện cụ thể"
+      }
+    },
+    {
+      "id": "common-11",
+      "industry": "common",
+      "question": {
+        "ja": "今までで一番辛かったことはなんですか？",
+        "en": "What has been the most difficult experience in your life?",
+        "vi": "Điều đau khổ nhất trong cuộc đời bạn là gì?"
+      },
+      "model_answer": {
+        "ja": "・日本語を覚えるのが大変でした。でも毎日練習して上達しました。\n・アルバイトで忙しい時間に仕事をするのが大変でしたが、慣れて乗り越えました。",
+        "en": "",
+        "vi": "・Việc học tiếng Nhật rất vất vả. Nhưng tôi luyện tập mỗi ngày và tiến bộ.\n・Làm việc vào giờ cao điểm khi làm thêm rất khó, nhưng tôi đã quen và vượt qua."
+      },
+      "ng_example": {
+        "ja": "・辛いことがあったらすぐ辞めました。\n・嫌なことは全部避けてきました。",
+        "en": "",
+        "vi": "・Khi gặp chuyện khó khăn thì tôi nghỉ luôn.\n・Tôi tránh hết những chuyện không thích."
+      },
+      "tip": {
+        "ja": "ストレス耐性、問題解決力を見ています。辛かったこと＋どう乗り越えたかをセットで ◎",
+        "en": "",
+        "vi": "Họ đang xem khả năng chịu áp lực và giải quyết vấn đề. Kể khó khăn + cách vượt qua ◎"
+      }
+    },
+    {
+      "id": "common-12",
+      "industry": "common",
+      "question": {
+        "ja": "将来の夢はなんですか？",
+        "en": "What is your dream for the future?",
+        "vi": "Ước mơ tương lai của bạn là gì?"
+      },
+      "model_answer": {
+        "ja": "・技術や経験を積み、長く会社に貢献できる人になりたいです。\n・リーダーになって会社に役に立ちたいです。",
+        "en": "",
+        "vi": "・Tôi muốn tích lũy kỹ thuật và kinh nghiệm, trở thành người đóng góp lâu dài cho công ty.\n・Tôi muốn trở thành leader và có ích cho công ty."
+      },
+      "ng_example": {
+        "ja": "・お金を貯めたらすぐ辞めます。\n・自分の会社を作りたいです。",
+        "en": "",
+        "vi": "・Kiếm đủ tiền là tôi nghỉ ngay.\n・Tôi muốn mở công ty riêng."
+      },
+      "tip": {
+        "ja": "長期的に働く意思を伝えましょう。会社への貢献を絡めると◎",
+        "en": "",
+        "vi": "Hãy thể hiện ý muốn làm việc lâu dài. Gắn với đóng góp cho công ty sẽ rất tốt ◎"
+      }
+    },
+    {
+      "id": "common-13",
+      "industry": "common",
+      "question": {
+        "ja": "土日・祝日の勤務は可能ですか？",
+        "en": "Can you work on weekends and holidays?",
+        "vi": "Bạn có thể làm việc cuối tuần và ngày lễ không?"
+      },
+      "model_answer": {
+        "ja": "・はい、可能です。忙しい時間にもしっかり働きたいと考えています。",
+        "en": "",
+        "vi": "・Vâng, được ạ. Tôi muốn làm cả những lúc bận rộn."
+      },
+      "ng_example": {
+        "ja": "・できれば働きたくないです。\n・土日は休みたいです。",
+        "en": "",
+        "vi": "・Nếu được thì tôi không muốn.\n・Cuối tuần tôi muốn nghỉ."
+      },
+      "tip": {
+        "ja": "柔軟にシフトに対応できることをアピール ◎",
+        "en": "",
+        "vi": "Hãy thể hiện sự linh hoạt với ca làm việc ◎"
+      }
+    },
+    {
+      "id": "common-14",
+      "industry": "common",
+      "question": {
+        "ja": "朝早い仕事や夜勤は可能ですか？",
+        "en": "Can you work early morning shifts or night shifts?",
+        "vi": "Bạn có thể làm ca sáng sớm hoặc ca đêm không?"
+      },
+      "model_answer": {
+        "ja": "・はい、可能です。シフトに合わせてしっかり対応したいと思っています。",
+        "en": "",
+        "vi": "・Vâng, được ạ. Tôi sẵn sàng theo bất kỳ ca nào."
+      },
+      "ng_example": {
+        "ja": "・朝は苦手です。\n・夜勤は絶対無理です。",
+        "en": "",
+        "vi": "・Tôi không giỏi buổi sáng.\n・Ca đêm tuyệt đối không được."
+      },
+      "tip": {
+        "ja": "シフト制の仕事では柔軟性が大切。前向きに答えましょう ◎",
+        "en": "",
+        "vi": "Sự linh hoạt rất quan trọng với công việc theo ca. Hãy trả lời tích cực ◎"
+      }
+    },
+    {
+      "id": "common-15",
+      "industry": "common",
+      "question": {
+        "ja": "引っ越しは可能ですか？",
+        "en": "Are you able to relocate?",
+        "vi": "Bạn có thể chuyển nhà không?"
+      },
+      "model_answer": {
+        "ja": "・はい、可能です。職場の近くに引っ越しできます。",
+        "en": "",
+        "vi": "・Vâng, được ạ. Tôi có thể chuyển đến gần nơi làm việc."
+      },
+      "ng_example": {
+        "ja": "・難しいです。\n・今の場所から動きたくないです。",
+        "en": "",
+        "vi": "・Khó lắm.\n・Tôi không muốn rời chỗ ở hiện tại."
+      },
+      "tip": {
+        "ja": "引っ越し可能であれば前向きに。難しい場合も理由を丁寧に説明しましょう",
+        "en": "",
+        "vi": "Nếu có thể chuyển nhà thì hãy tích cực. Nếu khó thì giải thích lý do lịch sự"
+      }
+    },
+    {
+      "id": "common-16",
+      "industry": "common",
+      "question": {
+        "ja": "最後に何か質問はありますか？",
+        "en": "Do you have any questions for us?",
+        "vi": "Bạn có câu hỏi gì cho chúng tôi không?"
+      },
+      "model_answer": {
+        "ja": "・仕事を早く覚えるために、最初に意識した方がいいことがあれば教えていただきたいです。\n・新人はどのような仕事から始めますか？",
+        "en": "",
+        "vi": "・Để học việc nhanh hơn, có điều gì tôi nên chú ý trước không ạ?\n・Nhân viên mới thường bắt đầu từ công việc gì ạ?"
+      },
+      "ng_example": {
+        "ja": "・特にないです。",
+        "en": "",
+        "vi": "・Không có gì đặc biệt."
+      },
+      "tip": {
+        "ja": "絶対に「特にありません」と言わない！必ず2-3個の質問を用意しましょう。仕事内容やチームの雰囲気について聞くと◎",
+        "en": "",
+        "vi": "Tuyệt đối không nói \"Không có gì\"! Hãy chuẩn bị 2-3 câu hỏi. Hỏi về nội dung công việc hoặc bầu không khí nhóm sẽ tốt ◎"
       }
     }
   ]

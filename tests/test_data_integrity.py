@@ -36,8 +36,8 @@ def ui_vi():
 
 class TestQAData:
     def test_total_items(self, qa_data):
-        """48問全部あること"""
-        assert len(qa_data['items']) == 48
+        """64問全部あること（業種別48問 + 共通16問）"""
+        assert len(qa_data['items']) == 64
 
     def test_industry_counts(self, qa_data):
         """業種別の問題数が正しいこと"""
@@ -50,6 +50,7 @@ class TestQAData:
             'construction': 10,
             'retail': 10,
             'hotel': 8,
+            'common': 16,
         }
 
     def test_industries_metadata(self, qa_data):
@@ -122,8 +123,8 @@ class TestQAData:
         assert set(qa_data['supported_languages']) == {'ja', 'en', 'vi'}
 
     def test_valid_industry_values(self, qa_data):
-        """アイテムのindustryが定義済み業種のみであること"""
-        valid = {i['id'] for i in qa_data['industries']}
+        """アイテムのindustryが定義済み業種またはcommonであること"""
+        valid = {i['id'] for i in qa_data['industries']} | {'common'}
         for item in qa_data['items']:
             assert item['industry'] in valid, f"{item['id']} has invalid industry: {item['industry']}"
 

@@ -1290,7 +1290,7 @@ body {
           <div class="continue-card__icon">👔</div>
           <div class="continue-card__text">
             <div class="continue-card__label" id="home-continue-label">身だしなみ · Lesson 3</div>
-            <div class="continue-card__title">Women's Grooming — 女性の身だしなみ</div>
+            <div class="continue-card__title" id="home-continue-title">Women's Grooming — 女性の身だしなみ</div>
           </div>
         </div>
         <div class="continue-card__bar"><div class="continue-card__bar-fill" style="width:50%;"></div></div>
@@ -1302,27 +1302,27 @@ body {
       <div class="categories">
         <div class="cat-card" onclick="navigateTo('screen-lessons','forward')">
           <div class="cat-card__icon cat-card__icon--1">👔</div>
-          <div class="cat-card__name">身だしなみ</div><div class="cat-card__count">5 lessons</div>
+          <div class="cat-card__name" id="home-cat-grooming">身だしなみ</div><div class="cat-card__count" id="home-cat-grooming-count">5 lessons</div>
           <div class="cat-bar"><div class="cat-bar__track"><div class="cat-bar__fill cat-bar__fill--1" style="width:40%;"></div></div><span class="cat-bar__pct">40%</span></div>
         </div>
         <div class="cat-card" onclick="navigateTo('screen-lessons-resume','forward')">
           <div class="cat-card__icon cat-card__icon--3" style="background:var(--ai-pale);color:var(--ai);">📝</div>
-          <div class="cat-card__name">履歴書の書き方</div><div class="cat-card__count">5 lessons</div>
+          <div class="cat-card__name" id="home-cat-resume">履歴書の書き方</div><div class="cat-card__count" id="home-cat-resume-count">5 lessons</div>
           <div class="cat-bar"><div class="cat-bar__track"><div class="cat-bar__fill cat-bar__fill--3" style="width:20%;"></div></div><span class="cat-bar__pct">20%</span></div>
         </div>
         <div class="cat-card" onclick="navigateTo('screen-lessons-manners','forward')">
           <div class="cat-card__icon cat-card__icon--4" style="background:var(--take-pale);color:var(--take);">🤝</div>
-          <div class="cat-card__name">面接マナー</div><div class="cat-card__count">5 lessons</div>
+          <div class="cat-card__name" id="home-cat-manners">面接マナー</div><div class="cat-card__count" id="home-cat-manners-count">5 lessons</div>
           <div class="cat-bar"><div class="cat-bar__track"><div class="cat-bar__fill cat-bar__fill--4" style="width:40%;"></div></div><span class="cat-bar__pct">40%</span></div>
         </div>
         <div class="cat-card" onclick="navigateTo('screen-lessons-strategy','forward')">
           <div class="cat-card__icon cat-card__icon--2" style="background:var(--kitsune-pale);color:var(--kitsune);">🎯</div>
-          <div class="cat-card__name">面接対策</div><div class="cat-card__count">5 lessons</div>
+          <div class="cat-card__name" id="home-cat-strategy">面接対策</div><div class="cat-card__count" id="home-cat-strategy-count">5 lessons</div>
           <div class="cat-bar"><div class="cat-bar__track"><div class="cat-bar__fill cat-bar__fill--2" style="width:40%;"></div></div><span class="cat-bar__pct">40%</span></div>
         </div>
         <div class="cat-card" onclick="navigateTo('screen-qa','forward')">
           <div class="cat-card__icon cat-card__icon--5" style="background:var(--shu-pale);color:var(--shu);">💬</div>
-          <div class="cat-card__name">Industry Q&amp;A</div><div class="cat-card__count">5 industries</div>
+          <div class="cat-card__name" id="home-cat-qa">Industry Q&amp;A</div><div class="cat-card__count" id="home-cat-qa-count">5 industries</div>
           <div class="cat-bar"><div class="cat-bar__track"><div class="cat-bar__fill cat-bar__fill--5" style="width:0%;"></div></div><span class="cat-bar__pct">0%</span></div>
         </div>
       </div>
@@ -3474,6 +3474,21 @@ function applyUIStrings() {
     el.textContent = t('courses.lessons_count').replace('{count}', '5');
   });
 
+  // ── Home Screen Categories (mirror courses screen) ──
+  s('home-cat-grooming', 'courses.grooming');
+  s('home-cat-resume', 'courses.resume');
+  s('home-cat-manners', 'courses.manners');
+  s('home-cat-strategy', 'courses.strategy');
+  s('home-cat-qa', 'qa.title');
+  const homeCatCounts = document.querySelectorAll('[id^="home-cat-"][id$="-count"]');
+  homeCatCounts.forEach(el => {
+    if (el.id === 'home-cat-qa-count') {
+      el.textContent = t('home.industries_count').replace('{count}', '5');
+    } else {
+      el.textContent = t('home.lessons_count').replace('{count}', '5');
+    }
+  });
+
   // ── Lesson Lists ──
   s('lessons-title-1', 'lessons.title');
   s('lessons-title-2', 'lessons.title');
@@ -3675,7 +3690,7 @@ function filterQA(el, industry) {
   document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
   el.classList.add('active');
   document.querySelectorAll('.qa-item').forEach(item => {
-    if (industry === 'all' || item.dataset.industry === industry) {
+    if (industry === 'all' || item.dataset.industry === industry || item.dataset.industry === 'common') {
       item.style.display = '';
     } else {
       item.style.display = 'none';

@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerPath — ベトナム語チェックシート</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:#FAFAF7;color:#1A1A1A;padding:24px;font-size:13px}
+h1{font-size:22px;font-weight:600;color:#2D5A3D;margin-bottom:4px}
+.subtitle{font-size:13px;color:#8A8A8A;margin-bottom:24px}
+h2{font-size:16px;font-weight:600;color:#2D5A3D;margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid #E8F0EB}
+table{width:100%;border-collapse:collapse;margin-bottom:24px;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+th{background:#E8F0EB;text-align:left;padding:8px 12px;font-size:11px;font-weight:600;color:#4A4A4A;border-bottom:1px solid #E8E5DE}
+td{padding:8px 12px;border-bottom:1px solid #F0EDE6;vertical-align:top;font-size:12px;line-height:1.6}
+tr:last-child td{border-bottom:none}
+.col-key{width:180px;font-family:monospace;font-size:11px;color:#8A8A8A;word-break:break-all}
+.col-ja{width:30%}
+.col-vi{width:30%}
+.col-check{width:60px;text-align:center}
+.col-note{width:15%}
+td.check-cell{text-align:center;font-size:16px}
+.section-badge{display:inline-block;padding:2px 8px;border-radius:99px;font-size:10px;font-weight:600;background:#EEF2F7;color:#2B4162;margin-left:8px}
+.industry-badge{display:inline-block;padding:2px 8px;border-radius:99px;font-size:10px;font-weight:600}
+.industry-badge--food{background:#FBF0ED;color:#C23A22}
+.industry-badge--manufacturing{background:#EEF2F7;color:#2B4162}
+.industry-badge--construction{background:#FBF5E6;color:#B8860B}
+.industry-badge--retail{background:#E8F0EB;color:#2D5A3D}
+.industry-badge--hotel{background:#F3EDF8;color:#7B4FA2}
+.industry-badge--common{background:#F0EDE6;color:#4A4A4A}
+@media print{body{padding:8px}table{font-size:11px;page-break-inside:auto}tr{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+<h1>CareerPath ベトナム語翻訳チェックシート</h1>
+<div class="subtitle">ベトナム語ネイティブの方に確認いただく資料です。「OK」列にチェック、修正がある場合は「修正案」に記入してください。</div>
+<h2>1. UI文言（画面テキスト）<span class="section-badge">388件</span></h2>
+<table>
+<thead><tr><th class="col-key">キー</th><th class="col-ja">日本語</th><th class="col-vi">ベトナム語</th><th class="col-check">OK</th><th class="col-note">修正案</th></tr></thead>
+<tbody>
+<tr><td class="col-key">app.name</td><td>CareerPath</td><td>CareerPath</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">app.tagline</td><td>日本でのキャリアへの道</td><td>Con đường sự nghiệp tại Nhật Bản</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">common.cancel</td><td>キャンセル</td><td>Hủy</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">common.close</td><td>閉じる</td><td>Đóng</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">common.error</td><td>エラーが発生しました</td><td>Đã xảy ra lỗi</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">common.loading</td><td>読み込み中...</td><td>Đang tải...</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">common.retry</td><td>再試行</td><td>Thử lại</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">common.save</td><td>保存</td><td>Lưu</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">courses.grooming</td><td>身だしなみ</td><td>Trang phục & Ngoại hình</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">courses.lessons_count</td><td>{count} レッスン</td><td>{count} bài học</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">courses.manners</td><td>面接マナー</td><td>Phép tắc phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">courses.progress</td><td>{percent}%完了</td><td>Hoàn thành {percent}%</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">courses.resume</td><td>履歴書の書き方</td><td>Cách viết hồ sơ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">courses.strategy</td><td>面接対策</td><td>Chiến lược phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">courses.subtitle</td><td>面接スキルをステップごとにマスター</td><td>Từng bước nâng cao kỹ năng phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">courses.title</td><td>レッスンコース</td><td>Khóa học</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">detail.back</td><td>←</td><td>←</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">detail.complete_lesson</td><td>レッスン完了 ✓</td><td>Hoàn thành bài học ✓</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">detail.next_lesson</td><td>次へ: {title} →</td><td>Tiếp theo: {title} →</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">detail.practice_questions</td><td>練習問題</td><td>Câu hỏi luyện tập</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.ai_mock_interview</td><td>AI模擬面接</td><td>Phỏng vấn thử với AI</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.ai_mock_interview_desc</td><td>AIの面接官と練習 — 近日公開！</td><td>Luyện tập với người phỏng vấn AI — Sắp ra mắt!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.continue_learning</td><td>学習を続ける</td><td>Tiếp tục học</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.courses_completed</td><td>{done} / {total} コース完了</td><td>{done} / {total} khóa học hoàn thành</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.daily_goal</td><td>デイリー目標</td><td>Mục tiêu hàng ngày</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.daily_goal_desc</td><td>ストリークを維持するために{count}レッスン完了しましょう</td><td>Hoàn thành {count} bài học để duy trì chuỗi ngày</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.daily_goal_progress</td><td>{done} / {total} 完了</td><td>{done} / {total} hoàn thành</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.industries_count</td><td>{count} 業種</td><td>{count} ngành nghề</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.interview_phrase</td><td>面接フレーズ</td><td>Cụm từ phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.interview_preparation</td><td>面接準備</td><td>Chuẩn bị phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.interview_preparation_desc</td><td>面接の準備を進めています！</td><td>Bạn đang chuẩn bị cho các cuộc phỏng vấn!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.learn_more</td><td>詳しく見る →</td><td>Tìm hiểu thêm →</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.lesson_categories</td><td>レッスンカテゴリー</td><td>Danh mục bài học</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.lesson_label</td><td>{category} · レッスン {number}</td><td>{category} · Bài {number}</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.lessons_count</td><td>{count} レッスン</td><td>{count} bài học</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.partner_school_desc</td><td>ビザ・キャリアサポート付きで現地学習。</td><td>Học tại chỗ với hỗ trợ visa và nghề nghiệp đầy đủ.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.partner_school_title</td><td>提携校で日本留学</td><td>Du học Nhật Bản cùng trường đối tác</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.percent_complete</td><td>{percent}%完了 · {minutes}分</td><td>Hoàn thành {percent}% · {minutes} phút</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.quick_review</td><td>クイックレビュー</td><td>Ôn tập nhanh</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.resume</td><td>再開 →</td><td>Tiếp tục →</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.see_all</td><td>すべて見る</td><td>Xem tất cả</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.steps.apply</td><td>応募</td><td>Ứng tuyển</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.steps.interview</td><td>面接</td><td>Phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.steps.offer</td><td>内定</td><td>Nhận việc</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.steps.prepare</td><td>準備</td><td>Chuẩn bị</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.streak_days</td><td>{count}日連続</td><td>{count} ngày liên tục</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.tap_to_flip</td><td>タップで裏返す</td><td>Chạm để lật</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.todays_phrase</td><td>今日のフレーズ</td><td>Cụm từ hôm nay</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.try_it</td><td>試す →</td><td>Thử ngay →</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">home.welcome_back</td><td>おかえりなさい</td><td>Chào mừng trở lại</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.back</td><td>←</td><td>←</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.complete_previous</td><td>前のレッスンを完了してください</td><td>Hãy hoàn thành bài học trước</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.completed</td><td>完了</td><td>hoàn thành</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.aisatsu.scenario_a1</td><td>失礼いたします。（お辞儀して入室）</td><td>Xin phép. (Vào với một cái cúi đầu)</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.aisatsu.scenario_a2</td><td>ありがとうございます。失礼いたします。（着席）</td><td>Cảm ơn ạ. Xin phép. (Ngồi xuống)</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.aisatsu.scenario_a3</td><td>はい。わたしは○○と申します。</td><td>Vâng. Tôi tên là ___.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.aisatsu.scenario_q1</td><td>どうぞお入りください。</td><td>Mời bạn vào.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.aisatsu.scenario_q2</td><td>お掛けください。</td><td>Mời bạn ngồi.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.aisatsu.scenario_q3</td><td>自己紹介をお願いします。</td><td>Hãy tự giới thiệu bản thân.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.aisatsu.section1_title</td><td>挨拶の会話 — 挨拶の会話</td><td>Hội thoại chào hỏi — 挨拶の会話</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.aisatsu.section2_heading</td><td>含めるべき内容</td><td>Nội dung cần bao gồm</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.aisatsu.section2_title</td><td>自己紹介テンプレート — 自己紹介</td><td>Mẫu tự giới thiệu — 自己紹介</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.aisatsu.subtitle</td><td>面接での自己紹介をマスターしよう</td><td>Nắm vững cách tự giới thiệu trong phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.aisatsu.template_en</td><td>はじめまして、わたしは○○と申します。○○人です。日本に来て○○年です。○○学校で○○を勉強しています。コミュニケーションが好きで、チームワークを高めることもできます。よろしくお願いいたします。</td><td>Xin chào, tôi tên là ___. Tôi đến từ ___. Tôi đã ở Nhật ___ năm. Tôi học ___ tại trường ___. Tôi thích giao tiếp và có thể đóng góp cho teamwork. Xin cảm ơn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.aisatsu.tip_label</td><td>タイミングのコツ</td><td>Mẹo về thời gian</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.aisatsu.title</td><td>挨拶と自己紹介 — 挨拶と自己紹介</td><td>Chào hỏi & Tự giới thiệu — 挨拶と自己紹介</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.dansei.section1_title</td><td>髪型・顔 — 髪型・顔</td><td>Tóc & Mặt — 髪型・顔</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.dansei.section2_title</td><td>スーツ・シャツ — スーツ・シャツ</td><td>Vest & Áo sơ mi — スーツ・シャツ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.dansei.section3_title</td><td>足元・小物 — 足元・小物</td><td>Giày & Phụ kiện — 足元・小物</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.dansei.subtitle</td><td>面接の身だしなみをマスターしよう（男性編）</td><td>Nắm vững trang phục nam cho phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.dansei.tip_label</td><td>身だしなみのコツ</td><td>Mẹo trang phục</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.dansei.tip_text</td><td>清潔感が一番大切！スーツにアイロンをかけ、靴を磨き、出発前に全身鏡でチェックしましょう。</td><td>Sự sạch sẽ là yếu tố quan trọng nhất. Ủi vest, đánh giày, và kiểm tra bản thân trước gương toàn thân trước khi ra đi.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.dansei.title</td><td>男性の身だしなみ — 男性の身だしなみ</td><td>Trang phục nam — 男性の身だしなみ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.nod_desc</td><td>聞きながらうなずく。会話に参加していることを示す。</td><td>Gật đầu khi nghe. Cho thấy bạn đang tham gia vào cuộc trò chuyện.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.scenario_a1</td><td>はい！○○と申します。よろしくお願いいたします。</td><td>Vâng! Tôi tên là ___. Rất vui được gặp.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.scenario_a2</td><td>はい、大丈夫です！がんばります！</td><td>Vâng, không vấn đề! Tôi sẽ cố gắng hết mình!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.scenario_a3</td><td>はい、一つよろしいでしょうか。入社前に勉強しておくべきことはありますか？</td><td>Vâng, cho tôi hỏi một câu được không? Có điều gì tôi nên học trước khi nhận việc không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.scenario_a4</td><td>ありがとうございました！</td><td>Cảm ơn rất nhiều!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.scenario_q1</td><td>お名前を教えてください。</td><td>Hãy cho biết tên của bạn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.scenario_q2</td><td>残業は大丈夫ですか？</td><td>Làm thêm giờ có được không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.scenario_q3</td><td>何か質問はありますか？</td><td>Bạn có câu hỏi nào không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.scenario_q4</td><td>お疲れ様でした。以上です。</td><td>Cảm ơn bạn đã dành thời gian. Vậy thôi.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.section1_title</td><td>場面別返事 — 場面別返事</td><td>Tình huống — 場面別返事</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.section2_heading</td><td>声とマナーのルール</td><td>Quy tắc giọng nói & Cách cư xử</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.smile_desc</td><td>常に笑顔！日本の面接では笑顔がすべてを解決します。</td><td>Luôn mỉm cười! Nụ cười giải quyết mọi thứ trong phỏng vấn Nhật Bản.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.subtitle</td><td>面接での正しい返事を身につけよう</td><td>Học cách trả lời đúng trong phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.tip_label</td><td>忘れずに</td><td>Nhớ rằng</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.title</td><td>返事の仕方 — 返事の仕方</td><td>Cách trả lời — 返事の仕方</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.henji.voice_desc</td><td>大きく、はっきりとした声で話す。もごもご言わない。</td><td>Nói to, rõ ràng. Đừng lẩm bẩm.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.hyojo.eye_desc</td><td>面接官の目を見ましょう。下や横を向かないこと。</td><td>Nhìn vào mắt người phỏng vấn. Đừng nhìn xuống hay nhìn đi chỗ khác.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.hyojo.react_desc</td><td>表情豊かに反応しましょう！うなずいて、しっかり聞いていることを示しましょう。</td><td>Phản ứng biểu cảm! Gật đầu và cho thấy bạn đang lắng nghe cẩn thận.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.hyojo.section1_label</td><td>表情 — 表情</td><td>Biểu cảm — 表情</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.hyojo.section1_title</td><td>表情のルール</td><td>Quy tắc biểu cảm khuôn mặt</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.hyojo.section2_label</td><td>声 — 声</td><td>Giọng nói — 声</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.hyojo.section3_label</td><td>姿勢 — 姿勢</td><td>Tư thế — 姿勢</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.hyojo.smile_desc</td><td>自然な笑顔で — 少し歯を見せると明るい印象になります。</td><td>Cười tự nhiên — hé răng nhẹ tạo ấn tượng tươi sáng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.hyojo.subtitle</td><td>第一印象を決める表情と姿勢</td><td>Ấn tượng đầu tiên qua biểu cảm và tư thế</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.hyojo.tip_label</td><td>姿勢のルール</td><td>Quy tắc tư thế</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.hyojo.title</td><td>表情と姿勢 — 表情と姿勢</td><td>Biểu cảm & Tư thế — 表情と姿勢</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.hyojo.voice_tip1</td><td>元気に明るい印象を持ってもらえるように</td><td>Tạo ấn tượng tươi sáng, năng động</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.hyojo.voice_tip2</td><td>早口にならないように、落ち着いてゆっくり話す</td><td>Đừng nói quá nhanh — bình tĩnh và nói chậm rãi</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.hyojo.voice_tip3</td><td>挨拶は相手の顔を見て、はっきり言ってからお辞儀する</td><td>Chào khi nhìn vào họ, nói rõ ràng, RỒI mới cúi chào</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.josei.culture_note_text</td><td>ストッキングの替えを持っていきましょう！破れやすいので、予備を必ずかばんに入れておいてください。透明なマニキュアはOKですが、爪は短く清潔に。イヤリングを含むアクセサリーはすべて外しましょう。</td><td>Mang theo tất dự phòng! Chúng dễ bị rách, vì vậy luôn có một đôi dự phòng trong túi. Sơn móng tay trong suốt là OK, nhưng giữ móng tay ngắn và gọn gàng. Tháo tất cả trang sức kể cả bông tai.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.josei.quote_author</td><td>女性の身だしなみガイド</td><td>Hướng dẫn trang phục nữ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.josei.section1_title</td><td>髪型・メイク — 髪型・メイク</td><td>Tóc & Trang điểm — 髪型・メイク</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.josei.section2_title</td><td>服装 — 服装</td><td>Trang phục — 服装</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.josei.section3_title</td><td>靴・小物 — 靴・小物</td><td>Giày & Phụ kiện — 靴・小物</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.josei.subtitle</td><td>面接の身だしなみをマスターしよう（女性編）</td><td>Nắm vững trang phục nữ cho phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.josei.title</td><td>女性の身だしなみ — 女性の身だしなみ</td><td>Trang phục nữ — 女性の身だしなみ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.kokorogamae.example_en</td><td>「受かる人」と「落ちる人」は、ほんの少しの差で判断されます。</td><td>Sự khác biệt giữa đậu và rớt chỉ được quyết định bởi một khoảng cách rất nhỏ.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.kokorogamae.genki_desc</td><td>元気に挨拶！これだけで大きな差がつきます。</td><td>Chào hỏi năng lượng! Chỉ riêng điều này đã tạo nên sự khác biệt lớn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.kokorogamae.junbi_desc</td><td>心構えも準備の一つ。自信を持ちましょう！</td><td>Tâm thế cũng là một phần chuẩn bị. Hãy tự tin!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.kokorogamae.quote_author</td><td>— AnyC テキスト</td><td>— Sách giáo khoa AnyC</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.kokorogamae.section1_note_title</td><td>大丈夫、あなたならできます！</td><td>Bạn làm được!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.kokorogamae.section1_title</td><td>心の準備 — 心の準備</td><td>Tâm thế — 心の準備</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.kokorogamae.section2_heading</td><td>大切な資質</td><td>Phẩm chất quan trọng</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.kokorogamae.section2_title</td><td>企業が求めるもの</td><td>Công ty tìm kiếm điều gì</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.kokorogamae.subtitle</td><td>自信を持って面接に臨もう</td><td>Tự tin bước vào buổi phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.kokorogamae.tip_label</td><td>最後のコツ</td><td>Mẹo cuối cùng</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.kokorogamae.title</td><td>心構え — 心構え</td><td>Tâm thế chuẩn bị — 心構え</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.kokorogamae.yaruki_desc</td><td>やる気と闘志 — 企業は努力する人を求めています。</td><td>Động lực và tinh thần chiến đấu — công ty muốn người biết CỐ GẮNG.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.check_answers</td><td>答え合わせ</td><td>Kiểm tra đáp án</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.item_bag</td><td>ビジネスバッグ</td><td>Túi công sở</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.item_memo</td><td>メモ帳・ペン</td><td>Sổ tay & Bút</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.item_passport</td><td>パスポート＋在留カード</td><td>Hộ chiếu + 在留カード</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.item_phone</td><td>携帯電話</td><td>Điện thoại di động</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.item_resume</td><td>履歴書</td><td>Hồ sơ xin việc</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.item_shoes</td><td>革靴</td><td>Giày da</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.item_suit</td><td>スーツ</td><td>Bộ vest</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.item_tie</td><td>ネクタイ</td><td>Cà vạt</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.quiz_title</td><td>練習クイズ</td><td>Bài tập thực hành</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.quote_author</td><td>面接準備ガイド</td><td>Hướng dẫn chuẩn bị phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.section1_title</td><td>チェックリスト — 持ち物リスト</td><td>Danh sách kiểm tra — 持ち物リスト</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.subtitle</td><td>面接に必要なものを準備しよう</td><td>Chuẩn bị mọi thứ cần thiết cho buổi phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.tip_label</td><td>準備のコツ</td><td>Mẹo chuẩn bị</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.tip_text</td><td>第一印象は準備で決まります！前日の夜に全部揃えましょう。スキルもやる気も準備不足には勝てません！</td><td>Ấn tượng đầu tiên được quyết định bởi sự chuẩn bị. Chuẩn bị mọi thứ từ tối hôm trước. Kỹ năng và động lực không thể bù đắp cho sự thiếu chuẩn bị!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.mochimono.title</td><td>持ち物チェック — 持ち物チェックリスト</td><td>Vật dụng cần mang — 持ち物チェックリスト</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.naitei.culture_note_title</td><td>ビザ審査中の準備</td><td>Chuẩn bị trong khi chờ xét visa</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.naitei.section1_title</td><td>流れ — 内定後の流れ</td><td>Quy trình — 内定後の流れ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.naitei.section2_title</td><td>ビザ審査中 — ビザ審査中</td><td>Trong thời gian chờ — ビザ審査中</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.naitei.step1_desc</td><td>内定通知を受け取り確認する。給与、役職、入社日、条件を慎重にチェック。</td><td>Nhận và xác minh thư mời. Kiểm tra lương, vị trí, ngày bắt đầu và điều kiện cẩn thận.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.naitei.step2_desc</td><td>入社の意思を会社に伝える。期限内に迅速に。電話またはメールで正式に。</td><td>Thông báo cho công ty bạn chấp nhận. Làm nhanh chóng — trong hạn. Gọi điện hoặc email chính thức.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.naitei.step3_desc</td><td>学生/特定活動ビザから就労ビザに切り替える。会社が書類作成を手伝ってくれます。</td><td>Chuyển đổi từ visa du học/hoạt động đặc định sang visa lao động (就労ビザ). Công ty sẽ hỗ trợ giấy tờ.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.naitei.step4_desc</td><td>準備物：学歴証明書、卒業証明書、成績証明書、資格合格証、パスポート、在留カード</td><td>Chuẩn bị: 学歴証明書, 卒業証明書, 成績証明書, 資格合格証, パスポート, 在留カード</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.naitei.step5_desc</td><td>新しいキャリアスタート！待機期間中も日本語力向上と業界用語の学習を続けましょう。</td><td>Bắt đầu sự nghiệp mới! Tiếp tục cải thiện tiếng Nhật và học thuật ngữ chuyên ngành trong thời gian chờ.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.naitei.subtitle</td><td>内定をもらった後にやるべきこと</td><td>Những việc cần làm sau khi nhận được lời mời</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.naitei.tip_label</td><td>ビザのコツ</td><td>Mẹo về visa</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.naitei.tip_text</td><td>ビザ申請は早めに！処理に1～3ヶ月かかります。学校と会社が手伝ってくれますが、母国からの書類集めはあなたの責任です。</td><td>Bắt đầu thủ tục visa ngay! Xử lý mất 1-3 tháng. Trường và công ty sẽ giúp, nhưng BẠN chịu trách nhiệm thu thập giấy tờ từ quê nhà.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.naitei.title</td><td>内定後の手続き — 内定後の手続き</td><td>Sau khi nhận việc — 内定後の手続き</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.check_answers</td><td>答え合わせ</td><td>Kiểm tra đáp án</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.enter_step1_desc</td><td>ドアをゆっくり3回ノックする。「どうぞ」と言われるまで待つ。</td><td>Gõ cửa 3 lần chậm rãi. Đợi nghe 「どうぞ」 rồi mới vào.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.enter_step1_title</td><td>3回ノックする</td><td>Gõ cửa 3 lần</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.enter_step2_desc</td><td>ドアを開け、入室し、面接官に向かって挨拶とお辞儀をする。</td><td>Mở cửa, bước vào, quay mặt về phía người phỏng vấn, chào và cúi đầu.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.enter_step2_title</td><td>入室して挨拶</td><td>Vào & Chào hỏi</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.enter_step3_desc</td><td>椅子の左側まで歩き、まっすぐ立って自己紹介する。</td><td>Đi đến bên trái ghế. Đứng thẳng và tự giới thiệu.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.enter_step3_title</td><td>椅子まで歩く</td><td>Đi đến ghế</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.enter_step4_desc</td><td>「お掛けください」と言われるまで座らない。そして言う：</td><td>KHÔNG ngồi cho đến khi được nói 「お掛けください」. Sau đó nói:</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.enter_step4_title</td><td>許可を待つ</td><td>Đợi được mời</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.enter_step5_desc</td><td>椅子に浅く座る。背筋を伸ばし、手は膝の上。かばんは椅子の横の床に置く。</td><td>Ngồi nông trên ghế. Lưng thẳng, tay đặt trên đầu gối. Túi đặt trên sàn bên cạnh ghế.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.enter_step5_title</td><td>正しく座る</td><td>Ngồi đúng cách</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.leave_step1_desc</td><td>椅子から立ち上がり、横に移動する。</td><td>Đứng dậy từ ghế và di chuyển sang bên cạnh.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.leave_step1_title</td><td>立ち上がる</td><td>Đứng dậy</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.leave_step2_desc</td><td>椅子の横で45度のお辞儀をする（最敬礼）。</td><td>Cúi chào 45 độ bên cạnh ghế (最敬礼).</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.leave_step2_title</td><td>深くお辞儀</td><td>Cúi chào sâu</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.leave_step3_desc</td><td>ドアまで歩き、振り返ってもう一度お辞儀する。</td><td>Đi đến cửa, quay lại, và cúi chào lần nữa.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.leave_step3_title</td><td>ドアまで歩く</td><td>Đi đến cửa</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.leave_step4_desc</td><td>ドアを開け、出て、静かに閉める。建物を出るまで礼儀正しく。</td><td>Mở cửa, bước ra, đóng cửa nhẹ nhàng. Giữ lịch sự cho đến khi ra khỏi tòa nhà.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.leave_step4_title</td><td>静かに退室</td><td>Ra ngoài nhẹ nhàng</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.quiz_title</td><td>練習クイズ</td><td>Bài tập thực hành</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.section1_title</td><td>入室 — 入室の手順</td><td>Vào phòng — 入室の手順</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.section2_title</td><td>退室 — 退室の手順</td><td>Ra khỏi phòng — 退室の手順</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.subtitle</td><td>入室から退室までの流れを覚えよう</td><td>Học quy trình từ khi vào đến khi ra khỏi phòng</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.tip_label</td><td>重要</td><td>Quan trọng</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.nyutaishitsu.title</td><td>入退室のマナー — 入退室のマナー</td><td>Ra vào phòng — 入退室のマナー</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.online.item_bg</td><td>白い壁</td><td>Tường trắng trơn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.online.item_camera</td><td>カメラを顔の高さに</td><td>Camera ngang tầm mặt</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.online.item_light</td><td>明るい照明</td><td>Ánh sáng phòng đầy đủ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.online.item_mic</td><td>マイクテスト</td><td>Kiểm tra microphone</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.online.item_suit</td><td>上下スーツ着用</td><td>Vest đầy đủ (trên & dưới!)</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.online.item_wifi</td><td>安定した接続</td><td>Kết nối ổn định</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.online.quote_author</td><td>オンライン面接ガイド</td><td>Hướng dẫn phỏng vấn trực tuyến</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.online.section1_heading</td><td>オンライン面接のルール</td><td>Quy tắc phỏng vấn trực tuyến</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.online.section1_title</td><td>準備チェック — 準備チェック</td><td>Danh sách chuẩn bị — 準備チェック</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.online.subtitle</td><td>カメラとマイクの準備をしよう</td><td>Chuẩn bị camera và microphone</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.online.tip_label</td><td>オンラインのコツ</td><td>Mẹo trực tuyến</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.online.tip_text</td><td>5分前にはスタンバイ！カメラ、マイク、インターネットをテスト。不要なアプリは閉じる。オンライン面接でも面接用の服装で！</td><td>Sẵn sàng trước 5 phút. Kiểm tra camera, mic và internet. Đóng các ứng dụng không cần thiết. Mặc đầy đủ trang phục phỏng vấn — kể cả khi phỏng vấn trực tuyến!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.online.title</td><td>オンライン面接の準備 — オンライン面接の準備</td><td>Phỏng vấn trực tuyến — オンライン面接の準備</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.profile_qual.section1_title</td><td>記入の順番 — 記入の順番</td><td>Thứ tự điền — 記入の順番</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.profile_qual.section2_heading</td><td>資格の書き方</td><td>Cách viết bằng cấp</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.profile_qual.section2_title</td><td>資格 — 資格</td><td>Bằng cấp — 資格</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.profile_qual.step1_text</td><td>中学校卒業から始める。学校名、学部、卒業年を記入。</td><td>Bắt đầu từ 中学校卒業 (tốt nghiệp THCS). Ghi tên trường, khoa, và năm tốt nghiệp.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.profile_qual.step2_text</td><td>時系列で記入。関連するアルバイトも含める。入社/退社の形式で。</td><td>Liệt kê theo thứ tự thời gian. Bao gồm アルバイト (việc làm thêm) nếu liên quan. Dùng định dạng 入社/退社.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.profile_qual.step3_text</td><td>全ての資格を取得日付とともに記載。JLPT、運転免許、IT資格など。</td><td>Liệt kê TẤT CẢ bằng cấp với ngày nhận. JLPT, bằng lái, chứng chỉ IT, v.v.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.profile_qual.step4_text</td><td>各セクションの最後に「以上」と新しい行に書く。</td><td>Kết thúc mỗi phần bằng 以上 trên dòng mới để cho biết danh sách đã hoàn tất.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.profile_qual.subtitle</td><td>学歴・職歴・資格を正しく記入しよう</td><td>Điền học vấn, kinh nghiệm và bằng cấp chính xác</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.profile_qual.tip_label</td><td>資格のコツ</td><td>Mẹo về bằng cấp</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.profile_qual.tip_text</td><td>できるだけたくさん埋めると良いです！母国の資格も含めましょう！</td><td>Điền càng nhiều càng tốt. Bao gồm cả bằng cấp từ quê nhà!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.profile_qual.title</td><td>プロフィールと資格 — プロフィールと資格</td><td>Hồ sơ & Bằng cấp — プロフィールと資格</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.quiz_grooming.check_answers</td><td>全問チェック</td><td>Kiểm tra tất cả đáp án</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.quiz_grooming.quiz_title</td><td>総合チェック 20問</td><td>Kiểm tra tổng hợp 20 câu</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.quiz_grooming.subtitle</td><td>身だしなみコースの総まとめ（20問）</td><td>Bài kiểm tra tổng hợp khóa trang phục (20 câu)</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.quiz_grooming.title</td><td>身だしなみ — 総合テスト</td><td>Trang phục — 総合テスト</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.check_answers</td><td>答え合わせ</td><td>Kiểm tra đáp án</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.hero_caption</td><td>履歴書テンプレート — 履歴書</td><td>MẪU HỒ SƠ — 履歴書</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.quiz_title</td><td>練習クイズ</td><td>Bài tập thực hành</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.rule_correction</td><td>修正は不可。間違えたら最初から書き直しましょう。</td><td>Không được phép sửa. Viết lại từ đầu nếu mắc lỗi.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.rule_date</td><td>書いた日ではなく、提出する日の日付を書きましょう。</td><td>Ghi ngày nộp hồ sơ, không phải ngày viết.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.rule_era</td><td>和暦（令和）か西暦のどちらかに統一すること。</td><td>Dùng niên hiệu Nhật (令和) hoặc năm dương lịch thống nhất.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.rule_pen</td><td>黒インクのみ使用。鉛筆やカラーペンは絶対に使わないこと。</td><td>Chỉ dùng mực đen. Không bao giờ dùng bút chì hay bút màu.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.rule_photo</td><td>3×4cm、スーツ着用、3ヶ月以内に撮影。無地の背景。</td><td>3×4cm, ảnh mặc vest, trong vòng 3 tháng gần nhất. Nền trơn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.section1_heading</td><td>履歴書の書き方ルール</td><td>Quy tắc viết hồ sơ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.section1_title</td><td>基本ルール — 基本ルール</td><td>Quy tắc cơ bản — 基本ルール</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.subtitle</td><td>正しい履歴書の書き方を学ぼう</td><td>Học cách viết hồ sơ đúng chuẩn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.tip_label</td><td>履歴書のコツ</td><td>Mẹo viết hồ sơ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.tip_text</td><td>履歴書の間違いは非常に悪い印象を与えます。提出前に必ず誰かに確認してもらいましょう。敬語を正しく使いましょう。</td><td>Lỗi trong hồ sơ để lại ấn tượng rất xấu. Luôn nhờ người khác kiểm tra trước khi nộp. Sử dụng kính ngữ tiếng Nhật xuyên suốt.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.rirekisho.title</td><td>履歴書の基本 — 履歴書の基本</td><td>Cơ bản về hồ sơ — 履歴書の基本</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shibodoki.culture_note_text</td><td>日本では志望動機（応募の動機）が最も重要な部分の一つです。企業が知りたいのは「なぜこの会社なのか？」です。書く前に企業を調べましょう。「日本で働きたい」のような一般的な回答では不十分です。</td><td>Tại Nhật, 志望動機 (động lực ứng tuyển) là một trong những phần quan trọng nhất. Công ty muốn biết: Tại sao CÔNG TY NÀY? Nghiên cứu công ty trước khi viết. Câu trả lời chung chung như "Tôi muốn làm việc ở Nhật" là chưa đủ.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shibodoki.section1_title</td><td>志望動機の比較</td><td>So sánh 志望動機</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shibodoki.section2_title</td><td>自己PRの構成 — 自己PRの構成</td><td>Cấu trúc tự giới thiệu — 自己PRの構成</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shibodoki.step1_en</td><td>自己分析から一番の強みを選ぶ（例：チームワーク、忍耐力、語学力）</td><td>Chọn một điểm mạnh từ phân tích bản thân (VD: teamwork, kiên nhẫn, ngôn ngữ)</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shibodoki.step2_en</td><td>具体的なエピソードを話す：「アルバイトで○○を○○して解決しました」</td><td>Kể một câu chuyện thực: "Khi làm thêm, tôi đã giải quyết X bằng cách Y"</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shibodoki.step3_en</td><td>この会社でどう活かせるかを結びつける</td><td>Kết nối với cách bạn có thể đóng góp cho CÔNG TY CỤ THỂ này</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shibodoki.subtitle</td><td>自分の良さを上手にアピールしよう</td><td>Học cách quảng bá bản thân hiệu quả</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shibodoki.tip_label</td><td>書き方のコツ</td><td>Mẹo viết</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shibodoki.tip_text</td><td>「なぜこの会社なのか」を明確に！その会社の具体的な製品、サービス、価値観に言及しましょう。</td><td>Làm rõ "Tại sao công ty này?". Đề cập cụ thể sản phẩm, dịch vụ, hoặc giá trị của công ty thu hút bạn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shibodoki.title</td><td>志望動機・自己PR — 志望動機・自己PR</td><td>Động lực & Tự giới thiệu — 志望動機・自己PR</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.a1_tip</td><td>具体的に、日本での仕事と結びつけて話しましょう。長期的なビジョンを見せましょう。</td><td>Hãy cụ thể và liên kết với công việc tại Nhật. Cho thấy bạn có tầm nhìn dài hạn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.a2_tip</td><td>企業は長期雇用を望んでいます。コミットメントを示す：「ここでキャリアを築きたい」</td><td>Công ty muốn nhân viên lâu dài. Thể hiện cam kết: "Tôi muốn xây dựng sự nghiệp ở đây."</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.a3_tip</td><td>専攻を述べて仕事と結びつける。関連がない場合は、得たスキルを説明。</td><td>Đề cập chuyên ngành và liên kết với công việc. Nếu không liên quan, giải thích kỹ năng đã đạt được.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.a4_tip</td><td>短所については、改善のために何をしているかを必ず説明する。短所を長所に変える。</td><td>Về điểm yếu, luôn giải thích bạn đang làm gì để cải thiện. Biến tiêu cực thành tích cực.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.a5_tip</td><td>日本の文化、技術、産業の具体的な魅力を述べましょう。</td><td>Đề cập các khía cạnh cụ thể của văn hóa, công nghệ hoặc ngành công nghiệp Nhật Bản thu hút bạn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.a6_tip</td><td>企業を調べましょう！具体的なプロジェクト、製品、価値観に言及。一般的な回答はNG。</td><td>Nghiên cứu công ty! Đề cập dự án, sản phẩm hoặc giá trị cụ thể. Đừng đưa câu trả lời chung chung.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.check_answers</td><td>答え合わせ</td><td>Kiểm tra đáp án</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.q1_en</td><td>将来の夢は何ですか？</td><td>Ước mơ tương lai của bạn là gì?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.q2_en</td><td>日本にはどのくらいいたいですか？</td><td>Bạn muốn ở Nhật bao nhiêu năm?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.q3_en</td><td>学校では何を学びましたか？</td><td>Bạn đã học gì ở trường?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.q4_en</td><td>長所と短所はどんなところですか？</td><td>Điểm mạnh và điểm yếu của bạn là gì?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.q5_en</td><td>なぜ日本で就職を決意しましたか？</td><td>Tại sao bạn chọn làm việc tại Nhật?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.q6_en</td><td>弊社を志願した理由を教えてください。</td><td>Hãy cho biết lý do bạn ứng tuyển vào công ty chúng tôi.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.quiz_title</td><td>練習クイズ</td><td>Bài tập thực hành</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.section1_title</td><td>質問1-6 — 質問リスト</td><td>Câu hỏi 1-6 — 質問リスト</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.subtitle</td><td>面接でよく聞かれる質問に備えよう</td><td>Chuẩn bị cho các câu hỏi phỏng vấn thường gặp</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.tip_label</td><td>回答のコツ</td><td>Mẹo trả lời</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.tip_text</td><td>具体的なエピソードを入れましょう。「日本が好き」だけでは不十分 — ここで働きたいと思った具体的な瞬間を説明しましょう。</td><td>Luôn kèm theo câu chuyện cụ thể. "Tôi thích Nhật" là chưa đủ — giải thích khoảnh khắc cụ thể khiến bạn muốn làm việc ở đây.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon1.title</td><td>よくある質問① — よく聞かれる質問(前)</td><td>Câu hỏi thường gặp ① — よく聞かれる質問(前)</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.ng_en</td><td>「特にありません」</td><td>"Không có gì đặc biệt"</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.ng_label</td><td>質問12のNG</td><td>NG cho câu hỏi 12</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.ng_reason</td><td>絶対に言わない！必ず2-3個の質問を用意。興味の表れです。仕事内容、チームの雰囲気、研修制度について聞きましょう。</td><td>KHÔNG BAO GIỜ nói điều này! Luôn chuẩn bị 2-3 câu hỏi. Nó thể hiện sự quan tâm thực sự. Hỏi về nội dung công việc, văn hóa nhóm, hoặc chương trình đào tạo.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.q10_hint</td><td>日本に来て楽しかったことは？日本の文化や人々への感謝を示す。</td><td>Niềm vui ở Nhật? Thể hiện sự trân trọng văn hóa và con người Nhật Bản.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.q11_hint</td><td>仕事で大切にしていることは？チームワーク、品質、コミュニケーション、学習を述べる。</td><td>Bạn coi trọng gì trong công việc? Đề cập teamwork, chất lượng, giao tiếp, học hỏi.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.q12_hint</td><td>何か質問はありますか？必ず2-3個用意！研修、チームの雰囲気などを聞く。</td><td>Bạn có câu hỏi nào không? LUÔN chuẩn bị 2-3 câu hỏi! Hỏi về đào tạo, văn hóa nhóm, v.v.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.q7_hint</td><td>趣味はどんなことですか？趣味をスキルに結びつける：チームワーク、集中力、創造性。</td><td>Sở thích của bạn là gì? Kết nối sở thích với kỹ năng: teamwork, tập trung, sáng tạo.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.q8_hint</td><td>アルバイトはどんなことをしていますか？接客、責任感、チームワークを強調。</td><td>Bạn làm thêm gì? Nhấn mạnh phục vụ khách hàng, trách nhiệm, teamwork.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.q9_hint</td><td>日本に来て困ったことは？困難をどう乗り越えたかを示す。回復力が重要。</td><td>Khó khăn ở Nhật? Cho thấy bạn đã vượt qua thử thách như thế nào. Sức chịu đựng quan trọng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.section1_title</td><td>質問7-12 — 質問リスト</td><td>Câu hỏi 7-12 — 質問リスト</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.section2_heading</td><td>答えてみましょう！</td><td>Hãy thử trả lời!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.section2_title</td><td>練習 — 練習問題</td><td>Luyện tập — 練習問題</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.subtitle</td><td>残りの頻出質問に備えよう</td><td>Chuẩn bị cho các câu hỏi thường gặp còn lại</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.shitsumon2.title</td><td>よくある質問② — よく聞かれる質問(後)</td><td>Câu hỏi thường gặp ② — よく聞かれる質問(後)</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.sonota.commute_meaning</td><td>通勤時間 — ドアtoドアで分単位で計算</td><td>Thời gian đi làm — tính từ cửa đến cửa theo phút</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.sonota.culture_note_text</td><td>この欄は特別な希望を書く場所です。しかし注意 — 希望を書きすぎると悪い印象を与えます。</td><td>Phần này là nơi bạn viết yêu cầu đặc biệt. Nhưng hãy cẩn thận — viết quá nhiều yêu cầu tạo ấn tượng xấu.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.sonota.dependents_meaning</td><td>扶養家族 — 経済的に養っている家族</td><td>Người phụ thuộc — thành viên gia đình bạn chu cấp tài chính</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.sonota.ng_en</td><td>「特になし」と書くこと</td><td>Viết "Không có gì đặc biệt"</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.sonota.ng_label</td><td>NGパターン</td><td>Mẫu NG</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.sonota.ng_reason</td><td>「特になし」は絶対に書かない。「貴社の規定に従います」か「貴社の規定に準じます」を使いましょう。</td><td>Không bao giờ viết 特になし. Hãy dùng 「貴社の規定に従います」 hoặc 「貴社の規定に準じます」.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.sonota.section1_title</td><td>通勤・家族 — 通勤・家族</td><td>Đi lại & Gia đình — 通勤・家族</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.sonota.section2_heading</td><td>本人希望欄の書き方</td><td>Cách viết yêu cầu</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.sonota.section2_title</td><td>記入ルール — 記入ルール</td><td>Quy tắc điền — 記入ルール</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.sonota.spouse_meaning</td><td>配偶者 — 既婚/未婚の状態を記入</td><td>Vợ/Chồng — ghi tình trạng đã kết hôn/chưa kết hôn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.sonota.subtitle</td><td>残りの欄を正しく埋めよう</td><td>Điền đúng các mục còn lại</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.detail.sonota.title</td><td>その他の記入欄 — その他の記入欄</td><td>Các mục khác — その他の記入欄</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.in_progress</td><td>学習中</td><td>Đang học</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.grooming.course_subtitle</td><td>身だしなみをマスターしよう</td><td>Nắm vững kỹ năng trang phục</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.grooming.course_title</td><td>身だしなみ</td><td>Trang phục & Ngoại hình</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.grooming.lesson1_title</td><td>持ち物チェック</td><td>Vật dụng cần mang</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.grooming.lesson2_title</td><td>男性の身だしなみ</td><td>Trang phục nam</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.grooming.lesson3_title</td><td>女性の身だしなみ</td><td>Trang phục nữ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.grooming.lesson4_title</td><td>表情・声・姿勢</td><td>Biểu cảm & Tư thế</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.grooming.lesson5_title</td><td>総合チェックテスト</td><td>Bài kiểm tra tổng hợp</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.manners.course_subtitle</td><td>面接のマナーを身につけよう</td><td>Học phép tắc khi phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.manners.course_title</td><td>面接マナー</td><td>Phép tắc phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.manners.lesson1_title</td><td>入退室のマナー</td><td>Ra vào phòng</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.manners.lesson2_title</td><td>挨拶と自己紹介</td><td>Chào hỏi & Tự giới thiệu</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.manners.lesson3_title</td><td>返事の仕方</td><td>Cách trả lời</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.manners.lesson4_title</td><td>オンライン面接の準備</td><td>Phỏng vấn trực tuyến</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.manners.lesson5_title</td><td>模擬面接練習</td><td>Phỏng vấn thử</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.resume.course_subtitle</td><td>履歴書の書き方をマスターしよう</td><td>Nắm vững cách viết hồ sơ xin việc</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.resume.course_title</td><td>履歴書の書き方</td><td>Cách viết hồ sơ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.resume.lesson1_title</td><td>履歴書の基本</td><td>Cơ bản về hồ sơ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.resume.lesson2_title</td><td>プロフィールと資格</td><td>Hồ sơ & Bằng cấp</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.resume.lesson3_title</td><td>志望動機・自己PR</td><td>Động lực & Tự giới thiệu</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.resume.lesson4_title</td><td>その他の記入欄</td><td>Các mục khác</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.resume.lesson5_title</td><td>履歴書添削ワークショップ</td><td>Hội thảo chỉnh sửa hồ sơ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.strategy.course_subtitle</td><td>面接でよく聞かれる質問に備えよう</td><td>Chuẩn bị cho các câu hỏi thường gặp</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.strategy.course_title</td><td>面接対策</td><td>Chiến lược phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.strategy.lesson1_title</td><td>よくある質問①</td><td>Câu hỏi thường gặp ①</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.strategy.lesson2_title</td><td>よくある質問②</td><td>Câu hỏi thường gặp ②</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.strategy.lesson3_title</td><td>内定後の手続き</td><td>Sau khi nhận việc</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.strategy.lesson4_title</td><td>心構え</td><td>Tâm thế chuẩn bị</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.list.strategy.lesson5_title</td><td>実践トレーニング</td><td>Luyện tập thực hành</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.locked</td><td>ロック中</td><td>Đã khóa</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.minutes</td><td>{count}分</td><td>{count} phút</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.start</td><td>開始</td><td>Bắt đầu</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">lessons.title</td><td>レッスン</td><td>Bài học</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.career_path_id</td><td>CareerPath ID</td><td>CareerPath ID</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.career_path_id_hint</td><td>CareerPath会員の方は、サポートIDを入力するとすぐにアクセスできます。</td><td>Đã là thành viên CareerPath? Nhập Support ID để truy cập ngay.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.career_path_id_optional</td><td>（任意）</td><td>(không bắt buộc)</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.career_path_id_placeholder</td><td>例: CP-12345</td><td>VD: CP-12345</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.create_account</td><td>アカウント作成</td><td>Tạo tài khoản</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.create_password_placeholder</td><td>パスワードを作成</td><td>Tạo mật khẩu</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.email</td><td>メールアドレス</td><td>Email</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.email_placeholder</td><td>your@email.com</td><td>your@email.com</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.free_for_members</td><td>会員無料</td><td>Miễn phí cho thành viên</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.full_name</td><td>氏名</td><td>Họ và tên</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.full_name_placeholder</td><td>お名前</td><td>Tên của bạn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.industry_construction</td><td>建設</td><td>Xây dựng — 建設</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.industry_food</td><td>外食</td><td>Ẩm thực — 外食</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.industry_hospitality</td><td>宿泊</td><td>Khách sạn — 宿泊</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.industry_manufacturing</td><td>製造</td><td>Sản xuất — 製造</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.industry_retail</td><td>小売</td><td>Bán lẻ — 小売</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.or_continue_with</td><td>または以下でログイン</td><td>hoặc tiếp tục với</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.password</td><td>パスワード</td><td>Mật khẩu</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.password_placeholder</td><td>••••••••</td><td>••••••••</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.privacy_link</td><td>プライバシーポリシー</td><td>Chính sách bảo mật</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.sign_in</td><td>ログイン</td><td>Đăng nhập</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.target_industry</td><td>希望業種</td><td>Ngành nghề mong muốn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.target_industry_placeholder</td><td>業種を選択してください</td><td>Chọn ngành nghề</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.terms_link</td><td>利用規約</td><td>Điều khoản</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.terms_prefix</td><td>続行することで、以下に同意したものとみなされます：</td><td>Bằng việc tiếp tục, bạn đồng ý với</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">login.terms_separator</td><td>・</td><td>&</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">nav.home</td><td>ホーム</td><td>Trang chủ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">nav.learn</td><td>学習</td><td>Học tập</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">nav.practice</td><td>練習</td><td>Luyện tập</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">nav.profile</td><td>プロフィール</td><td>Hồ sơ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">practice.coming_soon</td><td>近日公開！ここで面接スキルを練習できます。</td><td>Sắp ra mắt! Luyện kỹ năng phỏng vấn tại đây.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">practice.correct_suffix</td><td>正解</td><td>đúng</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">practice.score_excellent</td><td>🎉 素晴らしい！ {score}/{total}問正解</td><td>🎉 Xuất sắc! Bạn đạt {score}/{total}</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">practice.score_good</td><td>👍 よくできました！ {score}/{total} — 間違えた問題を復習しましょう。</td><td>👍 Tốt lắm! {score}/{total} — Xem lại những câu sai nhé.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">practice.score_retry</td><td>📖 {score}/{total} — レッスンを復習してもう一度挑戦！</td><td>📖 {score}/{total} — Ôn lại bài học và thử lại!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">practice.submit</td><td>回答を送信</td><td>Gửi câu trả lời</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">practice.title</td><td>練習</td><td>Luyện tập</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.badge_first_lesson</td><td>初レッスン</td><td>Bài học đầu tiên</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.badge_first_lesson_desc</td><td>初めてのレッスン完了</td><td>Hoàn thành bài học đầu tiên</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.badge_grooming_master</td><td>身だしなみマスター</td><td>Bậc thầy trang phục</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.badge_grooming_master_desc</td><td>身だしなみレッスン全完了</td><td>Hoàn thành tất cả bài trang phục</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.badge_week_streak</td><td>7日連続</td><td>7 ngày liên tục</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.badge_week_streak_desc</td><td>7日間連続学習</td><td>Học 7 ngày liên tục</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.badges</td><td>バッジ</td><td>Huy hiệu</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.dark_mode</td><td>ダークモード</td><td>Chế độ tối</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.dark_mode_desc</td><td>近日公開</td><td>Sắp ra mắt</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.help</td><td>ヘルプ・FAQ</td><td>Trợ giúp & FAQ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.help_desc</td><td>サポートを受ける</td><td>Nhận hỗ trợ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.job_hunting_progress</td><td>就職活動の進捗</td><td>Tiến trình tìm việc</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.joined</td><td>{date}参加 · {location}</td><td>Tham gia {date} · {location}</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.language</td><td>言語</td><td>Ngôn ngữ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.language_desc</td><td>アプリの言語: {lang}</td><td>Ngôn ngữ ứng dụng: {lang}</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.member_badge</td><td>CareerPathメンバー</td><td>Thành viên CareerPath</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.notifications</td><td>通知</td><td>Thông báo</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.notifications_desc</td><td>デイリーリマインダー</td><td>Nhắc nhở hàng ngày</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.phase_apply</td><td>応募</td><td>Ứng tuyển</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.phase_interview</td><td>面接</td><td>Phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.phase_offer</td><td>内定！</td><td>Nhận việc!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.phase_prepare</td><td>準備</td><td>Chuẩn bị</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.settings</td><td>設定</td><td>Cài đặt</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.sign_out</td><td>ログアウト</td><td>Đăng xuất</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.stat_courses</td><td>コース</td><td>Khóa học</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.stat_interviews</td><td>面接練習</td><td>Phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.stat_phrases</td><td>フレーズ</td><td>Cụm từ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.stat_streak</td><td>連続日数</td><td>Ngày liên tục</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">profile.target_label</td><td>目標: {date}までに内定</td><td>Mục tiêu: Nhận việc trước {date}</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.filter_all</td><td>すべて</td><td>Tất cả</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.filter_construction</td><td>🏗 建築</td><td>🏗 Xây dựng</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.filter_food</td><td>🍽 飲食</td><td>🍽 Ẩm thực</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.filter_hotel</td><td>🏨 宿泊</td><td>🏨 Khách sạn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.filter_manufacturing</td><td>🏭 製造</td><td>🏭 Sản xuất</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.filter_retail</td><td>🛒 小売</td><td>🛒 Bán lẻ</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.lang_en</td><td>🇺🇸 English</td><td>🇺🇸 English</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.lang_ja</td><td>🇯🇵 日本語</td><td>🇯🇵 日本語</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.lang_vi</td><td>🇻🇳 Tiếng Việt</td><td>🇻🇳 Tiếng Việt</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.model_answer</td><td>✅ 模範回答</td><td>✅ Câu trả lời mẫu</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.model_answer_en</td><td>✅ 模範回答（日本語で言いましょう）</td><td>✅ Câu trả lời mẫu (nói bằng tiếng Nhật)</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.ng_example</td><td>✗ NG例</td><td>✗ Ví dụ không nên</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.ng_example_en</td><td>✗ NG例（言ってはいけない）</td><td>✗ Ví dụ không nên (đừng nói điều này)</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.reviewed_counter</td><td>{done} / {total} 確認済み</td><td>{done} / {total} đã xem</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.subtitle</td><td>業種別よくある質問と回答</td><td>Câu hỏi phỏng vấn theo ngành nghề</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.tip</td><td>💡 ポイント</td><td>💡 Mẹo</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.tip_en</td><td>💡 面接のコツ</td><td>💡 Mẹo phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td class="col-key">qa.title</td><td>面接Q&A</td><td>Hỏi đáp phỏng vấn</td><td class="check-cell">☐</td><td></td></tr>
+</tbody>
+</table>
+<h2>2. 面接Q&A<span class="section-badge">64問</span></h2>
+<h3 style="font-size:14px;margin:20px 0 8px;color:#4A4A4A">🍽 飲食 (10問)</h3>
+<table>
+<thead><tr><th>#</th><th class="col-ja">日本語</th><th class="col-vi">ベトナム語</th><th class="col-check">OK</th><th class="col-note">修正案</th></tr></thead>
+<tbody>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】日本でどのくらい働きたいですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>日本でどのくらい働きたいですか？</td><td>Bạn muốn làm việc ở Nhật bao lâu?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・日本でずっと働きたいです！I want to work in Japan forever!</td><td>・Tôi muốn làm việc ở Nhật mãi mãi!<br>・Tôi muốn làm việc lâu dài ở Nhật và lấy quyền thường trú!<br>・Tôi sẽ cố gắng hết sức, tương lai muốn trở thành leader!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・5年・10年働きたいですI want to work 5-10 years.</td><td>・Tôi muốn làm 5-10 năm.<br>・Tích lũy kinh nghiệm rồi vài năm sau muốn về nước.<br>・Tôi không biết. Hiện tại chưa nghĩ đến.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>就職したら日本で長く働く働けることをアピール。併せて、具体的な目標を伝えるとすごく良い ◎Appeal long-term work in Japan + specific goals = very good!</td><td>Hãy thể hiện rằng bạn muốn làm việc lâu dài ở Nhật. Nói thêm mục tiêu cụ thể sẽ rất tốt ◎<br>※Nói số năm cụ thể sẽ tạo ấn tượng sẽ sớm về nước → dễ bị trượt</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】仕事は大変ですけど大丈夫ですか？頑張れますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>仕事は大変ですけど大丈夫ですか？頑張れますか？</td><td>Công việc vất vả lắm, bạn có ổn không? Có cố gắng được không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい！大丈夫です！頑張ります！Yes! I'll do my best!</td><td>・Vâng! Tôi ổn! Tôi sẽ cố gắng hết sức!<br>・Tôi sẽ nỗ lực hết mình!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・たぶんできます、できると思いますI can probably do it, I think.</td><td>・Có lẽ tôi làm được, tôi nghĩ vậy.<br>・Hơi khó.<br>・..... im lặng không phản ứng</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>企業様は前向きな方がいいので、やる気や誠意を伝えることが大切！Companies prefer positive people — show motivation and sincerity!</td><td>Công ty muốn người tích cực, nên việc thể hiện tinh thần và sự chân thành rất quan trọng!</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】接客の経験はありますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>接客の経験はありますか？</td><td>Bạn có kinh nghiệm phục vụ khách hàng không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい！あります！母国でレストランのアルバイトをしていました。注文を聞いたり料理を運んでいました。Yes! Worked at a restaurant in my country — took orders and served food.</td><td>・Vâng! Có ạ! Ở nước tôi, tôi từng làm thêm ở nhà hàng. Tôi nhận order và bưng đồ ăn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・ありませんI don't have any.</td><td>・Không có.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>経験がなくても、「まだ経験はありませんが、一生懸命覚えます！」と言えると好印象！</td><td>Dù chưa có kinh nghiệm, nói "Tuy chưa có kinh nghiệm nhưng tôi sẽ cố gắng học!" sẽ tạo ấn tượng tốt!</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】なぜ弊社で働きたいですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>なぜ弊社で働きたいですか？</td><td>Tại sao bạn muốn làm việc ở công ty chúng tôi?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・御社のHPを拝見しました。<br>・～の料理(人気メニュー)が美味しそうで、御社で働きたいと思いました。<br>・～という理念に共感した為、御社で働きたいと思いました。</td><td>・Tôi đã xem trang web của quý công ty.<br>・Món ăn (menu phổ biến) trông rất ngon, nên tôi muốn làm việc ở đây.<br>・Tôi đồng cảm với lý tưởng của công ty nên muốn làm việc tại đây.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・仕事が見つかったからです。</td><td>・Vì tôi tìm được việc.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>企業様は興味を持っている人や働きたい人を採用したいのでやる気を伝えましょう</td><td>Công ty muốn tuyển người có hứng thú và muốn làm việc, nên hãy thể hiện tinh thần của bạn</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】立ち仕事は大丈夫ですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>立ち仕事は大丈夫ですか？</td><td>Bạn có ổn với công việc đứng không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい！大丈夫です！体力には自信があります。</td><td>・Vâng! Tôi ổn! Tôi tự tin về thể lực.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・長時間は少し大変です</td><td>・Đứng lâu hơi vất vả.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>飲食は基本的にずっと立ち仕事になる</td><td>Ngành ẩm thực cơ bản là công việc đứng suốt</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】働く上で何を大切にして働こうと思いますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>働く上で何を大切にして働こうと思いますか？</td><td>Bạn coi trọng điều gì nhất khi làm việc?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・チームワークを大切にして働きますI value teamwork.</td><td>・Tôi sẽ coi trọng tinh thần làm việc nhóm.<br>・Tôi sẽ chủ động giao tiếp với mọi người.<br>・Tôi sẽ ý thức báo cáo - liên lạc - tham vấn (Ho-Ren-So).</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・、、、、、と無言で反応しない(No response / silence)</td><td>・..... im lặng không phản ứng<br>・Tôi không biết.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>飲食店では皆さんで協力しないと仕事が回らないチームプレーとなるので、自分の意見もまとめて伝えると◎</td><td>Ở nhà hàng, mọi người phải hợp tác nên đây là teamwork, hãy nói ý kiến của mình ◎</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】今まで日本に来てからや、アルバイトをしてる中で大変だったことはありますか？→それをどのように乗り越えましたか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>今まで日本に来てからや、アルバイトをしてる中で大変だったことはありますか？→それをどのように乗り越えましたか？</td><td>Từ khi đến Nhật hoặc khi đi làm thêm, có điều gì khó khăn không? Bạn đã vượt qua như thế nào?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・日本のアルバイトでは、ルールが多くて最初は大変でした。<br>・例えば、時間を守ることや、言葉づかいです。<br>・今は日本の働き方が分かってきて、安心して仕事ができています。Now I understand Japanese work style and feel comfortable.</td><td>・Khi làm thêm ở Nhật, lúc đầu rất vất vả vì có nhiều quy tắc.<br>・Ví dụ như giữ đúng giờ và cách nói chuyện.<br>・Bây giờ tôi đã hiểu cách làm việc ở Nhật và làm việc thoải mái.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・大変だったことは特にないです</td><td>・Không có gì đặc biệt khó khăn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>自分の体験談の中でどう工夫して乗り越えたかまでを企業様は知りたいからシンプルに伝えると◎</td><td>Công ty muốn biết bạn đã sáng tạo và vượt qua khó khăn như thế nào, nên hãy nói đơn giản ◎</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】日本にきて苦労したことはありますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>日本にきて苦労したことはありますか？</td><td>Từ khi đến Nhật có gì khó khăn không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・日本語を覚えることが大変でした。<br>・最初は何も分からなかったですが、毎日勉強をして少しずつ覚えていきました。<br>・これからも続けて勉強していきます！I'll keep studying!</td><td>・Việc học tiếng Nhật rất vất vả.<br>・Lúc đầu không biết gì nhưng mỗi ngày học dần dần.<br>・Từ nay tôi sẽ tiếp tục học!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・特にないですNothing in particular.</td><td>・Không có gì đặc biệt.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>どういうことに苦労したか、困ったかを知りたいので実際に経験したことを伝えると◎Share actual experiences of difficulties.</td><td>Họ muốn biết bạn gặp khó khăn gì, nên hãy kể kinh nghiệm thực tế ◎</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】ミスをしたときはどう対応しますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>ミスをしたときはどう対応しますか？</td><td>Khi mắc lỗi bạn xử lý thế nào?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・すぐ店長や先輩に報告して、早く対応します。Report to manager/seniors and respond quickly.</td><td>・Tôi sẽ báo ngay cho quản lý hoặc tiền bối và xử lý nhanh.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・怒られるので言わないことがあります。</td><td>・Vì sợ bị mắng nên đôi khi tôi không nói.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>日本では報告がとても大事です！</td><td>Ở Nhật, việc báo cáo rất quan trọng!</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】忙しい時はどうしますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>忙しい時はどうしますか？</td><td>Khi bận rộn bạn làm thế nào?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・落ち着いて仕事の順番を考えます。チームで協力することが大切だと思います。</td><td>・Tôi bình tĩnh suy nghĩ thứ tự công việc. Tôi nghĩ hợp tác nhóm là quan trọng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・忙しいとミスが増えます</td><td>・Khi bận thì hay mắc lỗi.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>飲食店はランチ、ディナーでとても忙しい時間があります</td><td>Nhà hàng có giờ cao điểm trưa và tối rất bận</td><td class="check-cell">☐</td><td></td></tr>
+</tbody>
+</table>
+<h3 style="font-size:14px;margin:20px 0 8px;color:#4A4A4A">🏭 製造 (10問)</h3>
+<table>
+<thead><tr><th>#</th><th class="col-ja">日本語</th><th class="col-vi">ベトナム語</th><th class="col-check">OK</th><th class="col-note">修正案</th></tr></thead>
+<tbody>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】どうしてこの製造業（何を？）を選びましたか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>どうしてこの製造業（何を？）を選びましたか？</td><td>Tại sao bạn chọn công việc sản xuất này?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・物を作る仕事に興味があり、自分が関わった製品が形になることに魅力を感じたためです。Interested in making things; attracted to seeing products take shape.</td><td>・Tôi hứng thú với việc làm ra sản phẩm, và cảm thấy hấp dẫn khi thấy sản phẩm mình tham gia tạo ra thành hình.<br>・Tôi cũng nghĩ công việc hợp tác nhóm để giữ chất lượng rất đáng làm.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・仕事が見つからなかったからです。Couldn't find other work.</td><td>・Vì không tìm được việc khác.<br>・Miễn là được làm việc ở Nhật thì gì cũng được.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>就職したら日本で長く働く働けることをアピール。併せて、具体的な目標を伝えるとすごく良い<br>何年って言ってしまうと、すぐに母国に帰ってしまうという印象になるため不合格に繋がりやすいStating years → implies leaving → rejection.</td><td>Hãy thể hiện bạn muốn làm lâu dài ở Nhật. Nói mục tiêu cụ thể sẽ rất tốt.<br>Nói số năm → tạo ấn tượng sẽ về nước → dễ trượt.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】チームで働くときに大切だと思うことは何ですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>チームで働くときに大切だと思うことは何ですか？</td><td>Bạn nghĩ điều gì quan trọng khi làm việc nhóm?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・報告・連絡・相談をしっかりすることだと思います。Ho-Ren-So (report/contact/consult) is important.</td><td>・Tôi nghĩ là báo cáo - liên lạc - tham vấn (Ho-Ren-So).<br>・Ngay cả vấn đề nhỏ cũng nên thông báo để phòng tránh sự cố.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・自分の仕事だけやればいいと思います。Just do my own work.</td><td>・Tôi nghĩ chỉ cần làm việc của mình là đủ.<br>・Tôi không muốn giao tiếp nhiều với người khác.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>協調性、コミュニケーション、現場でのトラブル防止意識Teamwork, communication, trouble prevention.</td><td>Tinh thần hợp tác, giao tiếp, ý thức phòng tránh sự cố tại hiện trường.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】あなたの長所と短所を教えてください？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>あなたの長所と短所を教えてください？</td><td>Hãy cho biết ưu điểm và nhược điểm của bạn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・長所はコツコツ続けることができることです。My strength is persistence.</td><td>・Ưu điểm của tôi là có thể kiên trì làm việc.<br>・Nhược điểm là hay cẩn thận quá mức, nhưng tôi cố gắng kiểm tra kỹ để tránh sai sót.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・長所は特にありません。<br>・短所は怒りやすいことです。</td><td>・Không có ưu điểm gì đặc biệt.<br>・Nhược điểm là hay nóng giận.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>自己理解、短所を改善しようとしているか</td><td>Tự hiểu bản thân, có đang cố gắng cải thiện nhược điểm không</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】分からないことがあったときはどうしますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>分からないことがあったときはどうしますか？</td><td>Khi không hiểu điều gì, bạn làm thế nào?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・まず自分で確認しますが、分からない場合は早めに先輩や上司に質問します。Check first, then ask seniors/supervisors early.</td><td>・Trước tiên tôi tự kiểm tra, nếu vẫn không hiểu thì hỏi tiền bối hoặc cấp trên sớm.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・とりあえず自分の考えでやります。I'll do it my own way.</td><td>・Tôi cứ làm theo cách mình nghĩ.<br>・Tiếp tục làm dù không hiểu.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>安全意識、報連相</td><td>Ý thức an toàn, Ho-Ren-So</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】体力を使う仕事についてどう思いますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>体力を使う仕事についてどう思いますか？</td><td>Bạn nghĩ sao về công việc dùng thể lực?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・体を動かす仕事は問題ありません。<br>・健康管理をして体力を維持しながら働きたいと思います。</td><td>・Công việc vận động không thành vấn đề.<br>・Tôi muốn giữ sức khỏe và thể lực để làm việc.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・できれば体力を使いたくありません。Don't want physical work.</td><td>・Nếu được thì tôi không muốn dùng thể lực.<br>・Tôi thích công việc nhẹ nhàng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>現場適性、継続性</td><td>Phù hợp hiện trường, tính liên tục</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】今までで一番頑張ったことはなんですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>今までで一番頑張ったことはなんですか？</td><td>Điều bạn cố gắng nhất từ trước đến nay là gì?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・アルバイトで忙しい時でも責任を持って仕事を続けましたKept working responsibly even during busy times.</td><td>・Dù bận khi làm thêm, tôi vẫn có trách nhiệm và tiếp tục làm việc.<br>・Mỗi ngày tôi nỗ lực học tiếng Nhật.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・特にありません。<br>・覚えていません。</td><td>・Không có gì đặc biệt.<br>・Tôi không nhớ.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>努力できる人か、継続力</td><td>Có phải người có thể nỗ lực không, sức bền</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】今までで一番辛かったことはなんですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>今までで一番辛かったことはなんですか？</td><td>Điều đau khổ nhất trong cuộc đời bạn là gì?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・日本語を覚えるのが大変でした。<br>・アルバイトで忙しい時間に仕事をするのが一番大変でした。Working during busy hours at part-time was hardest.</td><td>・Việc học tiếng Nhật rất vất vả.<br>・Làm việc vào giờ cao điểm khi làm thêm là khó khăn nhất.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・辛いことがあったらすぐ辞めました。<br>・嫌なことは全部避けてきました。</td><td>・Khi gặp chuyện khó khăn thì tôi nghỉ luôn.<br>・Tôi tránh hết những chuyện không thích.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>ストレス耐性、問題解決力Stress tolerance, problem-solving ability.</td><td>Khả năng chịu áp lực, năng lực giải quyết vấn đề.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】将来の夢はなんですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>将来の夢はなんですか？</td><td>Ước mơ tương lai của bạn là gì?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・技術や経験を積み、長く会社に貢献できる人になりたいです。<br>・リーダーになって会社に役に立ちたいです。Want to become a leader and contribute.</td><td>・Tôi muốn tích lũy kỹ thuật và kinh nghiệm, trở thành người đóng góp lâu dài cho công ty.<br>・Tôi muốn trở thành leader và có ích cho công ty.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・お金を貯めたらすぐ辞めます。I'll quit once I save money.</td><td>・Kiếm đủ tiền là tôi nghỉ ngay.<br>・Tôi muốn mở công ty riêng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>特に期限なく、長期的に働く意思</td><td>Sự gắn bó lâu dài, đóng góp cho công ty</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】日本でこの仕事をいつまで続けたいですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>日本でこの仕事をいつまで続けたいですか？</td><td>Bạn có kinh nghiệm làm việc ca đêm hoặc theo ca không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・長く働き、技術を身につけたいと思っています。<br>・長く働き、永住権を獲得したいです。</td><td>・Vâng, tôi có kinh nghiệm làm ca đêm khi làm thêm. Tôi quản lý sức khỏe tốt nên không thành vấn đề.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・ビザがある間だけです。Only while I have a visa.</td><td>・Ca đêm thì tôi không thích.<br>・Tôi chỉ muốn làm ban ngày.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>離職リスク</td><td>Ngành sản xuất thường có hệ thống ca. Thể hiện sự linh hoạt là quan trọng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】汚れる仕事は嫌じゃないですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>汚れる仕事は嫌じゃないですか？</td><td>Bạn có thể làm những công việc lặp đi lặp lại không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・製造業では必要なことだと思うので問題ありません。<br>・安全に気をつけて仕事をしたいです。</td><td>・Vâng, tôi là người có thể kiên trì làm mọi việc. Tôi tự tin có thể tập trung làm việc cẩn thận.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・汚れる仕事はできればしたくないです。</td><td>・Tôi dễ chán việc lặp lại.<br>・Tôi thích công việc đa dạng hơn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>現場への理解、仕事への覚悟</td><td>Kiên nhẫn và tập trung là phẩm chất quan trọng trong ngành sản xuất.</td><td class="check-cell">☐</td><td></td></tr>
+</tbody>
+</table>
+<h3 style="font-size:14px;margin:20px 0 8px;color:#4A4A4A">🏗 建築 (10問)</h3>
+<table>
+<thead><tr><th>#</th><th class="col-ja">日本語</th><th class="col-vi">ベトナム語</th><th class="col-check">OK</th><th class="col-note">修正案</th></tr></thead>
+<tbody>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】日本でどのくらい働きたいですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>日本でどのくらい働きたいですか？</td><td>Bạn muốn làm việc ở Nhật bao lâu?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・日本でずっと働きたいです。I want to work in Japan forever.</td><td>・Tôi muốn làm việc ở Nhật mãi mãi!<br>・Tương lai tôi muốn trở thành leader.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・3年働きたいです。わかりません。3 years. I don't know.</td><td>・Tôi muốn làm 5 năm.<br>・Tích lũy kinh nghiệm rồi về nước.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>日本でずっと働きたいというアピールをすることAppeal wanting to work in Japan forever.</td><td>Nói rõ bạn có thể làm lâu dài, thể hiện cam kết dài hạn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】お仕事大変だけど大丈夫？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>お仕事大変だけど大丈夫？</td><td>Công việc vất vả lắm, bạn có ổn không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・大丈夫です、頑張ります。I'm fine, I'll do my best.</td><td>・Vâng! Tôi ổn! Tôi sẽ cố gắng hết sức! Việc gì tôi cũng cố gắng!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・わかりません。I don't know.</td><td>・Không trả lời. Tôi không biết!</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】たまに県外へ出張もあるけど大丈夫？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>たまに県外へ出張もあるけど大丈夫？</td><td>Đôi khi có công tác đến tỉnh khác, bạn có ổn không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・大丈夫です、出来ます。I'm fine, I can do it.</td><td>・Vâng, ổn ạ! Tôi sẵn sàng đi đâu cũng được để làm việc.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・嫌です。出来ないです。I don't want to. I can't.</td><td>・Tôi chỉ muốn làm ở gần nhà.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>出張もできることをアピールするShow you can handle business trips.</td><td>Ngành xây dựng thường phải di chuyển đến các công trường khác nhau.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】現場の仕事だから夏は暑いし、冬は寒いけどそれは大丈夫？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>現場の仕事だから夏は暑いし、冬は寒いけどそれは大丈夫？</td><td>Làm ngoài trời nên mùa hè nóng, mùa đông lạnh. Bạn có ổn không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・大丈夫です。暑くても寒くても頑張ります。I'll do my best in any weather.</td><td>・Vâng, ổn ạ! Tôi quản lý sức khỏe tốt.<br>・Nước tôi cũng nóng nên tôi quen rồi.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・熱いのは苦手です。寒いのは苦手です。Not good with heat or cold.</td><td>・Tôi sợ nóng/lạnh.<br>・Nếu được tôi muốn làm trong nhà.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>暑い寒い関係なく仕事ができることを話す。Show you can work in any weather.</td><td>Công trường xây dựng là ngoài trời. Thể hiện sức chịu đựng thời tiết.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】重いもの持ったりするけど出来る？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>重いもの持ったりするけど出来る？</td><td>Phải khiêng đồ nặng, bạn làm được không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・重いもの持つことも出来ます。I can carry heavy things.</td><td>・Vâng, được ạ! Tôi tự tin về thể lực.<br>・Tôi thường xuyên tập thể dục.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・出来ません。I can't do it.</td><td>・Đồ nặng quá thì hơi khó.<br>・Tôi muốn tránh công việc nặng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>今まで重いものを持って運ぶことをやってきたことがあればそれをアピールするAppeal any heavy-lifting experience.</td><td>Ngành xây dựng đòi hỏi thể lực. Thể hiện sự tự tin.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】どうして建築業で働きたいの？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>どうして建築業で働きたいの？</td><td>Tại sao bạn muốn làm trong ngành xây dựng?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・建築業の経験があります。　建築業に興味があります。体力に自信があります。I have construction experience and physical confidence.</td><td>・Tôi hứng thú với việc xây dựng công trình.<br>・Tôi muốn học kỹ thuật xây dựng của Nhật và phát triển bản thân.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・わかりません。I don't know.</td><td>・Vì lương cao.<br>・Không tìm được việc khác.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>建築業で働きたい、体力に自信があることを話すShow desire for construction + physical confidence.</td><td>Thể hiện đam mê với ngành, không chỉ vì tiền.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】朝の集合が早いけどそれは平気なの？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>朝の集合が早いけどそれは平気なの？</td><td>Tập trung buổi sáng rất sớm, bạn có ổn không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・朝早くても大丈夫です。朝は得意です。Early mornings are fine. I'm a morning person.</td><td>・Vâng, ổn ạ! Tôi quen dậy sớm.<br>・Tôi sẽ quản lý thời gian tốt để không bao giờ đến trễ.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・朝早くは苦手です。出来ないです。Not good at early mornings. Can't do it.</td><td>・Tôi không giỏi dậy sớm.<br>・Sáng sớm hơi khó.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>朝早くに起きて生活していることを話すTalk about waking up early habitually.</td><td>Công trường xây dựng thường bắt đầu rất sớm. Thể hiện bạn chấp nhận được.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】車の免許は持っているの？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>車の免許は持っているの？</td><td>Bạn có bằng lái xe không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・今はありませんが、これから取りたいと思っています。Don't have one yet, but plan to get one.</td><td>・Vâng, tôi có bằng lái.<br>・Chưa có nhưng tôi đang dự định lấy bằng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・免許は取りません。Won't get a license.</td><td>・Không có và không định lấy.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>今は持っていなくてもこれから取ることを伝えるShow plans to get license even if you don't have one.</td><td>Công trường xây dựng thường ở xa nên bằng lái xe rất hữu ích.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】これからどうなりたいとか夢はありますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>これからどうなりたいとか夢はありますか？</td><td>Bạn có ước mơ hay mục tiêu gì cho tương lai không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・将来はリーダーになりたい、仕事を覚えてきたら資格を取りたいです。長く働いて将来は家族も日本に呼びたいです。Want to be a leader, get qualifications, bring family to Japan.</td><td>・Tôi muốn học kỹ thuật và trở thành thợ lành nghề.<br>・Tương lai tôi muốn lấy các chứng chỉ nghề ở Nhật.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・ありません。I don't have any.</td><td>・Không có gì đặc biệt.<br>・Kiếm đủ tiền là về nước.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>仕事のことでどうなりたいかが話せると一番良いBest to talk about career goals.</td><td>Thể hiện tầm nhìn dài hạn và mong muốn phát triển.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】わからないことがあったらどうする？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>わからないことがあったらどうする？</td><td>Khi không hiểu điều gì, bạn làm thế nào?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・自分で勝手にやらずに先輩や上司に聞きます。Ask seniors/supervisors instead of acting alone.</td><td>・Tôi sẽ hỏi ngay người xung quanh.<br>・An toàn là trên hết nên tôi không bao giờ tự ý hành động.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・わかりませんI don't know.</td><td>・Tôi không biết.<br>・Cứ làm theo cách mình hiểu.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>周りの人に聞くということを伝えるShow you ask others for help.</td><td>Thể hiện bạn biết hỏi người khác.</td><td class="check-cell">☐</td><td></td></tr>
+</tbody>
+</table>
+<h3 style="font-size:14px;margin:20px 0 8px;color:#4A4A4A">🛒 小売 (10問)</h3>
+<table>
+<thead><tr><th>#</th><th class="col-ja">日本語</th><th class="col-vi">ベトナム語</th><th class="col-check">OK</th><th class="col-note">修正案</th></tr></thead>
+<tbody>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】なぜ当社（このお店）を志望しましたか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>なぜ当社（このお店）を志望しましたか？</td><td>Tại sao bạn ứng tuyển vào công ty chúng tôi (cửa hàng này)?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・普段からよく利用しており、店員の方の接客が丁寧で雰囲気が良いと感じていました。私もお客様に気持ちよく買い物をしていただけるような接客をしたいと思い志望しました。I shop here often; impressed by polite staff. Want to provide same experience.</td><td>・Tôi thường xuyên mua sắm ở đây, ấn tượng với cách phục vụ lịch sự và không khí tốt. Tôi muốn phục vụ khách hàng có trải nghiệm mua sắm thoải mái.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・家から近いからです。Because it's close to my home.</td><td>・Vì gần nhà.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】接客で大切だと思うことは何ですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>接客で大切だと思うことは何ですか？</td><td>Bạn nghĩ điều gì quan trọng trong phục vụ khách hàng?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・お客様への挨拶と笑顔、そして丁寧な対応だと思います。お客様が安心して買い物できるよう、分かりやすく親切に対応することが大切だと考えています。Greetings, smiles, polite service for comfortable shopping.</td><td>・Chào hỏi, nụ cười và thái độ lịch sự. Tôi nghĩ quan trọng là phục vụ dễ hiểu và thân thiện để khách hàng mua sắm thoải mái.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・特に考えたことないです。Never thought about it.</td><td>・Chưa bao giờ nghĩ về điều đó.<br>・Làm cho nhanh là được.<br>・Không mắc lỗi là được.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】チームで働くときに大切にしていることは何ですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>チームで働くときに大切にしていることは何ですか？</td><td>Bạn coi trọng điều gì khi làm việc nhóm?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・報告・連絡・相談を大切にすることだと思います。スタッフ同士で協力しながら仕事を進めることで、お店全体のサービスが良くなると思っています。Ho-Ren-So + teamwork improves overall store service.</td><td>・Tôi nghĩ là Ho-Ren-So (báo cáo-liên lạc-tham vấn). Hợp tác giữa nhân viên sẽ nâng cao dịch vụ của cả cửa hàng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・一人で仕事する方が好きです。Prefer working alone.</td><td>・Tôi thích làm việc một mình hơn.<br>・Tôi không muốn giao tiếp nhiều.<br>・Chỉ cần làm việc của mình là đủ.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】土日・祝日の勤務は可能ですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>土日・祝日の勤務は可能ですか？</td><td>Bạn có thể làm việc cuối tuần và ngày lễ không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい、可能です。お店が忙しい時間にもしっかり働きたいと考えています。Yes, I want to work during busy times too.</td><td>・Vâng, được ạ. Tôi muốn làm cả những lúc cửa hàng bận rộn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・できれば働きたくないです。Prefer not to work.</td><td>・Nếu được thì tôi không muốn.<br>・Tôi chỉ muốn làm ngày thường.<br>・Muốn tránh ngày bận.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】朝早い仕事や夜勤は可能か</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>朝早い仕事や夜勤は可能か</td><td>Bạn có thể làm ca sáng sớm hoặc ca đêm không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい、可能です。シフトに合わせてしっかり対応したいと思っています。Yes, I can adapt to any shift.</td><td>・Vâng, được ạ. Tôi sẵn sàng theo bất kỳ ca nào.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・朝は苦手です。Not good at mornings.</td><td>・Tôi không giỏi buổi sáng.<br>・Ca đêm tuyệt đối không được.<br>・Tôi chỉ muốn làm ban ngày.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】引っ越しは可能ですか</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>引っ越しは可能ですか</td><td>Bạn có thể chuyển nhà không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい、可能です。お店の近くに引っ越しがかのうですYes, I can relocate near the store.</td><td>・Vâng, được ạ. Tôi có thể chuyển đến gần cửa hàng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・難しいですIt's difficult.</td><td>・Khó lắm.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】長く働いてくれますか</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>長く働いてくれますか</td><td>Bạn sẽ làm lâu dài chứ?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい、できるだけ長く働きたいと考えています。仕事を覚えてお店に貢献できるよう頑張りたいです。Want to work long-term and contribute.</td><td>・Vâng, tôi muốn làm lâu nhất có thể. Tôi sẽ cố gắng học việc và đóng góp cho cửa hàng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・5年・10年働きたいですI want to work 5-10 years.</td><td>・Tôi muốn làm 5-10 năm.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】文字を書いて報告できるか</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>文字を書いて報告できるか</td><td>Bạn có thể viết báo cáo bằng tiếng Nhật không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい、できます。最初は難しくても慣れれば大丈夫です。Yes. Hard at first but I'll adapt.</td><td>・Vâng, được ạ. Lúc đầu khó nhưng tôi sẽ quen dần.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・あまり得意じゃないです。Not very good at it.</td><td>・Không giỏi lắm.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】接客やコンビニのことが好きですか</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>接客やコンビニのことが好きですか</td><td>Bạn có thích phục vụ khách hàng và công việc cửa hàng tiện lợi không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい、好きです。いろいろなお客様と関わることができる仕事だと思うので、接客を通してお店に貢献したいと思っています。Yes, I enjoy interacting with various customers.</td><td>・Vâng, tôi thích! Tôi nghĩ đây là công việc có thể giao tiếp với nhiều khách hàng, nên tôi muốn đóng góp cho cửa hàng qua phục vụ.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・人と話すのは苦手です。Not good at talking to people.</td><td>・Tôi không giỏi nói chuyện với người khác.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】最後に何か質問はありますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>最後に何か質問はありますか？</td><td>Bạn có câu hỏi gì cho chúng tôi không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・仕事を早く覚えるために、最初に意識した方がいいことがあれば教えていただきたいです。What should I focus on to learn the job quickly?</td><td>・Để học việc nhanh hơn, có điều gì tôi nên chú ý trước không ạ?<br>・Nhân viên mới thường bắt đầu từ công việc gì ạ?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・特にないです。Nothing in particular.</td><td>・Không có gì đặc biệt.</td><td class="check-cell">☐</td><td></td></tr>
+</tbody>
+</table>
+<h3 style="font-size:14px;margin:20px 0 8px;color:#4A4A4A">🏨 宿泊 (8問)</h3>
+<table>
+<thead><tr><th>#</th><th class="col-ja">日本語</th><th class="col-vi">ベトナム語</th><th class="col-check">OK</th><th class="col-note">修正案</th></tr></thead>
+<tbody>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】日本でどのくらい働きたいですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>日本でどのくらい働きたいですか？</td><td>Bạn muốn làm việc ở Nhật bao lâu?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・日本でずっと働きたいです！I want to work in Japan forever!</td><td>・Tôi muốn làm việc ở Nhật mãi mãi!<br>・Tương lai tôi muốn trở thành leader.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・5年働きたいです。5 years. (Avoid stating years!)</td><td>・Tôi muốn làm 5 năm. (Tránh nói số năm!)</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>就職したらずっと働けるアピールをして長い時間働けることをアピールする。Appeal long-term commitment after hiring.</td><td>Hãy thể hiện bạn có thể làm lâu dài sau khi được tuyển.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】仕事は大変ですけど大丈夫ですか？ 頑張れますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>仕事は大変ですけど大丈夫ですか？ 頑張れますか？</td><td>Công việc vất vả lắm, bạn có ổn không? Có cố gắng được không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい！大丈夫です！頑張ります！どんな仕事でも頑張りますYes! I'll do my best at any job!</td><td>・Vâng! Tôi ổn! Tôi sẽ cố gắng! Việc gì tôi cũng cố gắng!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・返事をしない。わかりません。！No response. I don't know.</td><td>・Không trả lời. Tôi không biết!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>企業の方はどんな仕事でも頑張れる方を採用したいです。Companies want people who try hard at any job.</td><td>Công ty muốn tuyển người cố gắng được mọi việc.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】なぜ日本で働きたいですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>なぜ日本で働きたいですか？</td><td>Tại sao bạn muốn làm việc ở Nhật?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・日本の接客は技術は世界一なので有名なので、日本で働き接客の技術を学びたいと思います！Japan's service is world-famous; I want to learn it!</td><td>・Dịch vụ khách hàng của Nhật nổi tiếng thế giới, nên tôi muốn làm việc ở Nhật và học kỹ thuật phục vụ!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・給料が高いからです。Because the salary is high.</td><td>・Vì lương cao.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>お金の話をせずにどうして宿泊の仕事がしたいのかをはなすTalk about passion for hospitality, not money.</td><td>Đừng nói về tiền, hãy nói về đam mê với ngành khách sạn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】失敗したときどうしますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>失敗したときどうしますか？</td><td>Khi mắc lỗi bạn xử lý thế nào?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・すぐに上司に報告します。そして同じミスをしないように改善します。Report to supervisor and improve to prevent repeat.</td><td>・Tôi sẽ báo ngay cho quản lý hoặc tiền bối.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・怒られるので言いません。</td><td>・Tôi sẽ tự sửa một mình.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>日本企業は<br>報告・連絡・相談（ホウレンソウ）</td><td>Trong khách sạn, một lỗi nhỏ cũng ảnh hưởng đến trải nghiệm khách hàng. Báo cáo nhanh là quan trọng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】日本でアルバイトをして接客をするときに苦労したことはありますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>日本でアルバイトをして接客をするときに苦労したことはありますか？</td><td>Bạn có kinh nghiệm phục vụ khách hàng không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・最初は日本語は上手く伝わらなくて苦労しましたが、日本語を勉強して伝わるように努力をしました。</td><td>・Vâng! Tôi từng phục vụ trong nhà hàng.<br>・Dù chưa có kinh nghiệm khách sạn nhưng tôi sẽ cố gắng học!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・特にないです。Nothing in particular.</td><td>・Không có kinh nghiệm gì.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>企業の人は、具体的な経験からどのように成長をしたのかを聞きたいので特にないですはダメ</td><td>Dù chưa có kinh nghiệm, thể hiện tinh thần học hỏi.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】シフト勤務（夜勤・土日）は大丈夫ですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>シフト勤務（夜勤・土日）は大丈夫ですか？</td><td>Bạn có ổn với làm việc theo ca (ca đêm, cuối tuần) không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい、大丈夫です。宿泊業はお客様のために時間が必要な仕事だと理解しています。</td><td>・Vâng, ổn ạ! Tôi sẵn sàng làm bất kỳ ca nào.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・できれば土日は休みたいです。Want weekends off.</td><td>・Ca đêm thì khó.<br>・Cuối tuần tôi muốn nghỉ.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>宿泊業は365日営業なので、夜勤OK、土日OKと言うのが大事。</td><td>Khách sạn hoạt động 24/7 nên làm việc theo ca là bình thường.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】日本のお客様と外国人のお客様、どちらも対応できますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>日本のお客様と外国人のお客様、どちらも対応できますか？</td><td>Bạn có thể phục vụ cả khách Nhật và khách nước ngoài không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい。日本語と英語を使って対応できます。お客様が安心できるようにゆっくり丁寧に話します。Yes, I can use Japanese and English. I speak slowly and politely.</td><td>・Vâng, tôi có thể nói tiếng Nhật và tiếng mẹ đẻ, nên tôi có thể phục vụ cả hai.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・外国人のお客様の方がいいです。</td><td>・Khách nước ngoài thì tôi không tự tin.<br>・Tiếng Nhật chưa giỏi nên khó.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>外国人＋日本人どちらも対応できる人が評価される。</td><td>Người có thể phục vụ cả khách Nhật và khách nước ngoài được đánh giá cao.</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】忙しいときにどう対応しますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>忙しいときにどう対応しますか？</td><td>Khi bận rộn bạn xử lý thế nào?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・まず優先順位を考えます。お客様をお待たせしないように、チームで協力します。Prioritize; cooperate with team so customers wait less.</td><td>・Trước tiên tôi xem xét ưu tiên. Hợp tác nhóm để khách không phải chờ lâu.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・忙しいとパニックになります。</td><td>・Khi bận tôi hay hoảng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>ホテルはチェックイン時間、朝食時間などかなり忙しい時間があるのでいつも通り働くのが大切。Hotels have peak times; working normally during them is key.</td><td>Khách sạn có giờ check-in, giờ ăn sáng rất bận nên làm việc bình thường là quan trọng.</td><td class="check-cell">☐</td><td></td></tr>
+</tbody>
+</table>
+<h3 style="font-size:14px;margin:20px 0 8px;color:#4A4A4A">📋 共通 (16問)</h3>
+<table>
+<thead><tr><th>#</th><th class="col-ja">日本語</th><th class="col-vi">ベトナム語</th><th class="col-check">OK</th><th class="col-note">修正案</th></tr></thead>
+<tbody>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】日本でどのくらい働きたいですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>日本でどのくらい働きたいですか？</td><td>Bạn muốn làm việc ở Nhật bao lâu?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・日本でずっと働きたいです！<br>・長く働いて、経験を積みたいです。<br>・将来はリーダーになりたいです。</td><td>・Tôi muốn làm việc ở Nhật mãi mãi!<br>・Tôi muốn làm việc lâu dài và tích lũy kinh nghiệm.<br>・Tương lai tôi muốn trở thành leader!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・5年・10年働きたいです。<br>・お金を貯めたら帰ります。</td><td>・Tôi muốn làm 5-10 năm.<br>・Tích lũy đủ tiền rồi về nước.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>就職したら日本で長く働けることをアピール。具体的な目標を伝えるとすごく良い ◎<br>※年数を言うと「すぐ辞める」と思われるので注意</td><td>Hãy thể hiện rằng bạn muốn làm việc lâu dài ở Nhật. Nói thêm mục tiêu cụ thể sẽ rất tốt ◎<br>※Nói số năm cụ thể sẽ tạo ấn tượng sẽ sớm về nước → dễ bị trượt</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】仕事は大変ですけど大丈夫ですか？がんばれますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>仕事は大変ですけど大丈夫ですか？がんばれますか？</td><td>Công việc vất vả lắm, bạn có ổn không? Có cố gắng được không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい！大丈夫です！頑張ります！<br>・体力には自信があります。一生懸命働きます。</td><td>・Vâng! Tôi ổn! Tôi sẽ cố gắng hết sức!<br>・Tôi tự tin về thể lực. Tôi sẽ nỗ lực hết mình!</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・たぶんできます、できると思います。<br>・ちょっと心配です。</td><td>・Có lẽ tôi làm được, tôi nghĩ vậy.<br>・Hơi lo lắng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>企業様は前向きな方がいいので、やる気や誠意を伝えることが大切！</td><td>Công ty muốn người tích cực, nên việc thể hiện tinh thần và sự chân thành rất quan trọng!</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】なぜ弊社で働きたいですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>なぜ弊社で働きたいですか？</td><td>Tại sao bạn muốn làm việc ở công ty chúng tôi?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・御社のHPを拝見しました。<br>・～という理念に共感しました。<br>・御社で成長し、長く貢献したいと思いました。</td><td>・Tôi đã xem trang web của quý công ty.<br>・Tôi đồng cảm với lý tưởng của công ty.<br>・Tôi muốn phát triển và đóng góp lâu dài tại đây.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・仕事が見つかったからです。<br>・家から近いからです。</td><td>・Vì tôi tìm được việc.<br>・Vì gần nhà.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>企業様は興味を持っている人や働きたい人を採用したいのでやる気を伝えましょう。HPを事前に調べておくと◎</td><td>Công ty muốn tuyển người có hứng thú, nên hãy thể hiện tinh thần. Tìm hiểu trang web trước sẽ rất tốt ◎</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】働く上で何を大切にして働こうと思いますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>働く上で何を大切にして働こうと思いますか？</td><td>Bạn coi trọng điều gì nhất khi làm việc?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・チームワークを大切にして働きます。<br>・報告・連絡・相談を意識して、周りと協力します。</td><td>・Tôi sẽ coi trọng tinh thần làm việc nhóm.<br>・Tôi sẽ ý thức báo cáo - liên lạc - tham vấn (Ho-Ren-So) và hợp tác với mọi người.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・お金です。<br>・特にありません。</td><td>・Tiền.<br>・Không có gì đặc biệt.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>チームワーク・コミュニケーション・報連相など、協調性をアピールすると好印象 ◎</td><td>Nhấn mạnh tinh thần hợp tác như teamwork, giao tiếp, Ho-Ren-So sẽ tạo ấn tượng tốt ◎</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】今まで日本に来てからや、アルバイトをしてる中で大変だったことはありますか？→それをどのように乗り越えましたか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>今まで日本に来てからや、アルバイトをしてる中で大変だったことはありますか？→それをどのように乗り越えましたか？</td><td>Từ khi đến Nhật hoặc khi đi làm thêm, có điều gì khó khăn không? Bạn đã vượt qua như thế nào?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・日本語が難しくて最初は大変でした。<br>・でも毎日勉強して、今は日常会話ができるようになりました。<br>・アルバイトでもルールが多くて大変でしたが、先輩に聞いて覚えました。</td><td>・Lúc đầu tiếng Nhật rất khó.<br>・Nhưng tôi học mỗi ngày và bây giờ đã giao tiếp được.<br>・Khi làm thêm cũng có nhiều quy tắc, nhưng tôi hỏi tiền bối và học dần.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・大変だったことは特にないです。</td><td>・Không có gì đặc biệt khó khăn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>自分の体験談の中でどう工夫して乗り越えたかまでを伝えると◎ シンプルに伝えましょう</td><td>Kể cả câu chuyện của mình, bạn đã sáng tạo và vượt qua như thế nào sẽ rất tốt ◎</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】忙しい時はどうしますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>忙しい時はどうしますか？</td><td>Khi bận rộn bạn làm thế nào?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・落ち着いて仕事の優先順位を考えます。<br>・チームで協力することが大切だと思います。</td><td>・Tôi bình tĩnh suy nghĩ thứ tự ưu tiên công việc.<br>・Tôi nghĩ hợp tác nhóm là quan trọng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・忙しいとミスが増えます。<br>・パニックになります。</td><td>・Khi bận thì hay mắc lỗi.<br>・Khi bận tôi hay hoảng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>どんな職場でも忙しい時間はあります。落ち着いて対応できることをアピール ◎</td><td>Bất kỳ nơi làm việc nào cũng có lúc bận. Hãy thể hiện rằng bạn có thể bình tĩnh xử lý ◎</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】チームで働くときに大切だと思うことは何ですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>チームで働くときに大切だと思うことは何ですか？</td><td>Bạn nghĩ điều gì quan trọng khi làm việc nhóm?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・報告・連絡・相談をしっかりすることだと思います。<br>・小さなことでも共有して、トラブルを防ぐことが大切です。</td><td>・Tôi nghĩ là báo cáo - liên lạc - tham vấn (Ho-Ren-So).<br>・Ngay cả vấn đề nhỏ cũng nên thông báo để phòng tránh sự cố.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・自分の仕事だけやればいいと思います。</td><td>・Tôi nghĩ chỉ cần làm việc của mình là đủ.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>協調性、コミュニケーション、トラブル防止意識をアピール ◎</td><td>Tinh thần hợp tác, giao tiếp, ý thức phòng tránh sự cố ◎</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】あなたの長所と短所を教えてください？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>あなたの長所と短所を教えてください？</td><td>Hãy cho biết ưu điểm và nhược điểm của bạn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・長所はコツコツ続けることができることです。<br>・短所は慎重すぎるところですが、確認を丁寧にすることで活かしています。</td><td>・Ưu điểm của tôi là có thể kiên trì làm việc.<br>・Nhược điểm là hay cẩn thận quá mức, nhưng tôi cố gắng kiểm tra kỹ để tránh sai sót.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・長所は特にありません。<br>・短所は怒りやすいことです。</td><td>・Không có ưu điểm gì đặc biệt.<br>・Nhược điểm là hay nóng giận.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>短所は「改善しようとしている姿勢」をセットで伝えましょう</td><td>Với nhược điểm, hãy nói kèm "thái độ đang cố gắng cải thiện"</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】分からないことがあったときはどうしますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>分からないことがあったときはどうしますか？</td><td>Khi không hiểu điều gì, bạn làm thế nào?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・まず自分で確認しますが、分からない場合は早めに先輩や上司に質問します。</td><td>・Trước tiên tôi tự kiểm tra, nếu vẫn không hiểu thì hỏi tiền bối hoặc cấp trên sớm.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・とりあえず自分の考えでやります。<br>・分からないまま続けます。</td><td>・Tôi cứ làm theo cách mình nghĩ.<br>・Tiếp tục làm dù không hiểu.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>安全意識、報連相の姿勢をアピール。分からないことを聞ける＝成長できる人 ◎</td><td>Thể hiện ý thức an toàn và Ho-Ren-So. Biết hỏi khi không hiểu = người có thể phát triển ◎</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】今までで一番頑張ったことはなんですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>今までで一番頑張ったことはなんですか？</td><td>Điều bạn cố gắng nhất từ trước đến nay là gì?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・アルバイトで忙しい時でも責任を持って仕事を続けました。<br>・毎日日本語の勉強を頑張りました。</td><td>・Dù bận khi làm thêm, tôi vẫn có trách nhiệm và tiếp tục làm việc.<br>・Mỗi ngày tôi nỗ lực học tiếng Nhật.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・特にありません。<br>・覚えていません。</td><td>・Không có gì đặc biệt.<br>・Tôi không nhớ.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>努力できる人か、継続力があるかを見ています。具体的なエピソードを入れましょう</td><td>Họ đang xem bạn có phải người nỗ lực và kiên trì không. Hãy kể câu chuyện cụ thể</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】今までで一番辛かったことはなんですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>今までで一番辛かったことはなんですか？</td><td>Điều đau khổ nhất trong cuộc đời bạn là gì?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・日本語を覚えるのが大変でした。でも毎日練習して上達しました。<br>・アルバイトで忙しい時間に仕事をするのが大変でしたが、慣れて乗り越えました。</td><td>・Việc học tiếng Nhật rất vất vả. Nhưng tôi luyện tập mỗi ngày và tiến bộ.<br>・Làm việc vào giờ cao điểm khi làm thêm rất khó, nhưng tôi đã quen và vượt qua.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・辛いことがあったらすぐ辞めました。<br>・嫌なことは全部避けてきました。</td><td>・Khi gặp chuyện khó khăn thì tôi nghỉ luôn.<br>・Tôi tránh hết những chuyện không thích.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>ストレス耐性、問題解決力を見ています。辛かったこと＋どう乗り越えたかをセットで ◎</td><td>Họ đang xem khả năng chịu áp lực và giải quyết vấn đề. Kể khó khăn + cách vượt qua ◎</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】将来の夢はなんですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>将来の夢はなんですか？</td><td>Ước mơ tương lai của bạn là gì?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・技術や経験を積み、長く会社に貢献できる人になりたいです。<br>・リーダーになって会社に役に立ちたいです。</td><td>・Tôi muốn tích lũy kỹ thuật và kinh nghiệm, trở thành người đóng góp lâu dài cho công ty.<br>・Tôi muốn trở thành leader và có ích cho công ty.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・お金を貯めたらすぐ辞めます。<br>・自分の会社を作りたいです。</td><td>・Kiếm đủ tiền là tôi nghỉ ngay.<br>・Tôi muốn mở công ty riêng.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>長期的に働く意思を伝えましょう。会社への貢献を絡めると◎</td><td>Hãy thể hiện ý muốn làm việc lâu dài. Gắn với đóng góp cho công ty sẽ rất tốt ◎</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】土日・祝日の勤務は可能ですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>土日・祝日の勤務は可能ですか？</td><td>Bạn có thể làm việc cuối tuần và ngày lễ không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい、可能です。忙しい時間にもしっかり働きたいと考えています。</td><td>・Vâng, được ạ. Tôi muốn làm cả những lúc bận rộn.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・できれば働きたくないです。<br>・土日は休みたいです。</td><td>・Nếu được thì tôi không muốn.<br>・Cuối tuần tôi muốn nghỉ.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>柔軟にシフトに対応できることをアピール ◎</td><td>Hãy thể hiện sự linh hoạt với ca làm việc ◎</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】朝早い仕事や夜勤は可能ですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>朝早い仕事や夜勤は可能ですか？</td><td>Bạn có thể làm ca sáng sớm hoặc ca đêm không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい、可能です。シフトに合わせてしっかり対応したいと思っています。</td><td>・Vâng, được ạ. Tôi sẵn sàng theo bất kỳ ca nào.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・朝は苦手です。<br>・夜勤は絶対無理です。</td><td>・Tôi không giỏi buổi sáng.<br>・Ca đêm tuyệt đối không được.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>シフト制の仕事では柔軟性が大切。前向きに答えましょう ◎</td><td>Sự linh hoạt rất quan trọng với công việc theo ca. Hãy trả lời tích cực ◎</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】引っ越しは可能ですか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>引っ越しは可能ですか？</td><td>Bạn có thể chuyển nhà không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・はい、可能です。職場の近くに引っ越しできます。</td><td>・Vâng, được ạ. Tôi có thể chuyển đến gần nơi làm việc.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・難しいです。<br>・今の場所から動きたくないです。</td><td>・Khó lắm.<br>・Tôi không muốn rời chỗ ở hiện tại.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>引っ越し可能であれば前向きに。難しい場合も理由を丁寧に説明しましょう</td><td>Nếu có thể chuyển nhà thì hãy tích cực. Nếu khó thì giải thích lý do lịch sự</td><td class="check-cell">☐</td><td></td></tr>
+<tr style="background:#F4F8F5"><td colspan="5" style="font-weight:600;font-size:12px">【質問】最後に何か質問はありますか？</td></tr>
+<tr><td style="font-size:10px;color:#8A8A8A">質問</td><td>最後に何か質問はありますか？</td><td>Bạn có câu hỏi gì cho chúng tôi không?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#2D5A3D">模範</td><td>・仕事を早く覚えるために、最初に意識した方がいいことがあれば教えていただきたいです。<br>・新人はどのような仕事から始めますか？</td><td>・Để học việc nhanh hơn, có điều gì tôi nên chú ý trước không ạ?<br>・Nhân viên mới thường bắt đầu từ công việc gì ạ?</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#C23A22">NG</td><td>・特にないです。</td><td>・Không có gì đặc biệt.</td><td class="check-cell">☐</td><td></td></tr>
+<tr><td style="font-size:10px;color:#B8860B">コツ</td><td>絶対に「特にありません」と言わない！必ず2-3個の質問を用意しましょう。仕事内容やチームの雰囲気について聞くと◎</td><td>Tuyệt đối không nói "Không có gì"! Hãy chuẩn bị 2-3 câu hỏi. Hỏi về nội dung công việc hoặc bầu không khí nhóm sẽ tốt ◎</td><td class="check-cell">☐</td><td></td></tr>
+</tbody>
+</table>
+
+<div style="margin-top:32px;padding:16px;background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.06)">
+  <div style="font-weight:600;margin-bottom:8px">確認のお願い</div>
+  <ul style="font-size:12px;color:#4A4A4A;line-height:1.8;padding-left:20px">
+    <li>翻訳が自然なベトナム語になっているか確認してください</li>
+    <li>敬語のレベルが適切か（面接の文脈で使うため、丁寧な表現が望ましい）</li>
+    <li>専門用語や固有名詞の翻訳が正しいか</li>
+    <li>文化的に不適切な表現がないか</li>
+  </ul>
+</div>
+</body></html>

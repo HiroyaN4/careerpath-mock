@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerPath — MVP Architecture Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Source+Serif+4:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FAFAF7;--card:#FFFFFF;--border:#E8E5DE;
+  --text:#1A1A1A;--text2:#4A4A4A;--text3:#8A8A8A;
+  --green:#2D5A3D;--green-light:#E8F0EB;--green-pale:#F4F8F5;
+  --red:#C23A22;--red-light:#FBF0ED;
+  --blue:#2B4162;--blue-light:#EEF2F7;
+  --amber:#B8860B;--amber-light:#FBF5E6;
+  --shadow:0 1px 3px rgba(0,0,0,0.06),0 0 0 1px rgba(0,0,0,0.04);
+}
+html{font-size:15px;-webkit-font-smoothing:antialiased}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;padding:0}
+.header{background:var(--green);color:#fff;padding:32px 0}
+.header__inner{max-width:900px;margin:0 auto;padding:0 24px}
+.header__title{font-family:'Source Serif 4',serif;font-size:28px;font-weight:700;margin-bottom:4px}
+.header__sub{font-size:14px;opacity:0.7}
+.header__meta{font-size:12px;opacity:0.5;margin-top:8px}
+.container{max-width:900px;margin:0 auto;padding:32px 24px 80px}
+h2{font-family:'Source Serif 4',serif;font-size:22px;font-weight:600;color:var(--green);margin:40px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--green-light)}
+h3{font-size:16px;font-weight:600;color:var(--text);margin:24px 0 12px}
+h4{font-size:14px;font-weight:600;color:var(--text2);margin:16px 0 8px}
+p{margin-bottom:12px;color:var(--text2)}
+ul,ol{margin:0 0 16px 20px;color:var(--text2)}
+li{margin-bottom:6px}
+strong{color:var(--text)}
+.card{background:var(--card);border-radius:12px;padding:20px;box-shadow:var(--shadow);margin-bottom:16px}
+.card--blue{border-left:4px solid var(--blue)}
+.card--green{border-left:4px solid var(--green)}
+.card--amber{border-left:4px solid var(--amber)}
+.card__title{font-weight:600;font-size:14px;margin-bottom:8px}
+code{font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--green-pale);padding:2px 6px;border-radius:4px}
+pre{font-family:'JetBrains Mono',monospace;font-size:12.5px;background:#1E1E1E;color:#D4D4D4;padding:20px;border-radius:10px;overflow-x:auto;margin:12px 0 20px;line-height:1.6}
+pre .kw{color:#569CD6}
+pre .fn{color:#DCDCAA}
+pre .str{color:#CE9178}
+pre .cm{color:#6A9955}
+pre .ty{color:#4EC9B0}
+pre .num{color:#B5CEA8}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+table{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
+th{background:var(--green-pale);text-align:left;padding:10px 14px;font-weight:600;font-size:12px;color:var(--text3);border-bottom:1px solid var(--border)}
+td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+tr:last-child td{border-bottom:none}
+.pill{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:600}
+.pill--green{background:var(--green-light);color:var(--green)}
+.pill--blue{background:var(--blue-light);color:var(--blue)}
+.pill--amber{background:var(--amber-light);color:var(--amber)}
+.toc{background:var(--card);border-radius:12px;padding:20px 24px;box-shadow:var(--shadow);margin-bottom:32px}
+.toc__title{font-weight:600;font-size:14px;margin-bottom:10px;color:var(--green)}
+.toc ol{margin:0;padding-left:20px}
+.toc li{margin-bottom:4px;font-size:13px}
+.toc a{color:var(--blue);text-decoration:none}
+.toc a:hover{text-decoration:underline}
+.diagram{background:var(--card);border-radius:12px;padding:24px;box-shadow:var(--shadow);margin:16px 0 24px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:2}
+.diagram__box{display:inline-block;padding:8px 16px;border:2px solid;border-radius:8px;margin:4px}
+.diagram__box--green{border-color:var(--green);color:var(--green);background:var(--green-pale)}
+.diagram__box--blue{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+.diagram__box--amber{border-color:var(--amber);color:var(--amber);background:var(--amber-light)}
+.diagram__arrow{color:var(--text3);margin:0 8px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header__inner">
+    <div class="header__title">CareerPath MVP Architecture</div>
+    <div class="header__sub">ユーザー管理・学習進捗・管理者ダッシュボードの設計書</div>
+    <div class="header__meta">Version 1.1 — 2026-03-26 / 技術スタック: Next.js + Supabase + PWA</div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <div class="toc__title">目次</div>
+  <ol>
+    <li><a href="#overview">システム概要</a></li>
+    <li><a href="#stack">技術スタック</a></li>
+    <li><a href="#auth">認証・ユーザー管理</a></li>
+    <li><a href="#db">データベース設計（Supabase）</a></li>
+    <li><a href="#api">API設計</a></li>
+    <li><a href="#progress">学習進捗トラッキング（ロック機能含む）</a></li>
+    <li><a href="#admin">管理者ダッシュボード</a></li>
+    <li><a href="#i18n">多言語対応</a></li>
+    <li><a href="#pwa">PWA・オフライン対応</a></li>
+    <li><a href="#phase">フェーズ計画</a></li>
+  </ol>
+</div>
+
+<h2 id="overview">1. システム概要</h2>
+
+<div class="card" style="padding:32px;margin:16px 0 24px">
+  <svg viewBox="0 0 800 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:0 auto;display:block">
+    <!-- User flow -->
+    <rect x="20" y="30" width="160" height="70" rx="12" fill="#F4F8F5" stroke="#2D5A3D" stroke-width="2"/>
+    <text x="100" y="58" text-anchor="middle" font-family="Noto Sans JP" font-size="13" font-weight="600" fill="#2D5A3D">👤 ユーザー</text>
+    <text x="100" y="78" text-anchor="middle" font-family="Noto Sans JP" font-size="10" fill="#8A8A8A">PWA / スマホ</text>
+
+    <line x1="180" y1="65" x2="280" y2="65" stroke="#2D5A3D" stroke-width="2" marker-end="url(#arrowG)"/>
+    <text x="230" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#8A8A8A">HTTPS</text>
+
+    <rect x="280" y="20" width="200" height="90" rx="12" fill="#EEF2F7" stroke="#2B4162" stroke-width="2"/>
+    <text x="380" y="50" text-anchor="middle" font-family="Noto Sans JP" font-size="13" font-weight="600" fill="#2B4162">Next.js</text>
+    <text x="380" y="70" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#8A8A8A">Vercel Edge</text>
+    <text x="380" y="88" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#B8860B">SSR + API Routes</text>
+
+    <line x1="480" y1="65" x2="580" y2="65" stroke="#2B4162" stroke-width="2" marker-end="url(#arrowB)"/>
+    <text x="530" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#8A8A8A">REST / RLS</text>
+
+    <rect x="580" y="10" width="200" height="110" rx="12" fill="#F4F8F5" stroke="#2D5A3D" stroke-width="2"/>
+    <text x="680" y="40" text-anchor="middle" font-family="Noto Sans JP" font-size="13" font-weight="600" fill="#2D5A3D">Supabase</text>
+    <text x="680" y="60" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#4A4A4A">PostgreSQL + Auth</text>
+    <text x="680" y="78" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#4A4A4A">Row Level Security</text>
+    <text x="680" y="96" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#4A4A4A">Edge Functions</text>
+    <text x="680" y="114" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#4A4A4A">Realtime</text>
+
+    <!-- Admin flow -->
+    <rect x="20" y="170" width="160" height="70" rx="12" fill="#FBF5E6" stroke="#B8860B" stroke-width="2"/>
+    <text x="100" y="198" text-anchor="middle" font-family="Noto Sans JP" font-size="13" font-weight="600" fill="#B8860B">🔑 管理者</text>
+    <text x="100" y="218" text-anchor="middle" font-family="Noto Sans JP" font-size="10" fill="#8A8A8A">ヒトキワスタッフ</text>
+
+    <line x1="180" y1="205" x2="280" y2="205" stroke="#B8860B" stroke-width="2" marker-end="url(#arrowA)"/>
+
+    <rect x="280" y="160" width="200" height="90" rx="12" fill="#EEF2F7" stroke="#2B4162" stroke-width="2"/>
+    <text x="380" y="190" text-anchor="middle" font-family="Noto Sans JP" font-size="13" font-weight="600" fill="#2B4162">Next.js /admin</text>
+    <text x="380" y="210" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#8A8A8A">Dashboard</text>
+    <text x="380" y="228" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#B8860B">CSV Export / Charts</text>
+
+    <line x1="480" y1="205" x2="580" y2="120" stroke="#2B4162" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrowB)"/>
+    <text x="540" y="170" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#8A8A8A">admin RLS</text>
+
+    <!-- Arrows -->
+    <defs>
+      <marker id="arrowG" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#2D5A3D"/></marker>
+      <marker id="arrowB" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#2B4162"/></marker>
+      <marker id="arrowA" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#B8860B"/></marker>
+    </defs>
+  </svg>
+</div>
+
+<div class="card card--green">
+  <div class="card__title">MVPスコープ（確定済み）</div>
+  <ul style="margin-bottom:0">
+    <li><strong>就活レッスン閲覧</strong>（4コース / 20レッスン）</li>
+    <li><strong>業種別Q&Aデータベース</strong>（5業種 / 30問 — 拡張予定）</li>
+    <li><strong>多言語対応</strong>（MVP: 英語 + ベトナム語 → 段階的に10言語）</li>
+    <li><strong>ユーザー進捗管理</strong>（レッスン完了・テスト結果・Q&A閲覧）</li>
+    <li><strong>管理者ダッシュボード</strong>（ヒトキワ側が学習状況を確認）</li>
+    <li>課金: <strong>なし</strong>（無料）</li>
+  </ul>
+</div>
+
+<h2 id="stack">2. 技術スタック</h2>
+
+<table>
+  <thead><tr><th>レイヤー</th><th>技術</th><th>選定理由</th></tr></thead>
+  <tbody>
+    <tr><td>フロントエンド</td><td><code>Next.js 14+ (App Router)</code></td><td>SSR/SSG, PWA対応, Vercelデプロイ</td></tr>
+    <tr><td>PWA</td><td><code>next-pwa / Workbox</code></td><td>オフライン学習, ホーム画面追加</td></tr>
+    <tr><td>バックエンド</td><td><code>Supabase</code></td><td>認証・DB・RLS・リアルタイム一体型</td></tr>
+    <tr><td>データベース</td><td><code>PostgreSQL (Supabase)</code></td><td>RLS, JSON型, 全文検索</td></tr>
+    <tr><td>認証</td><td><code>Supabase Auth</code></td><td>メール/OTP認証, カスタムClaims</td></tr>
+    <tr><td>ホスティング</td><td><code>Vercel</code></td><td>自動デプロイ, Edge Functions</td></tr>
+    <tr><td>多言語</td><td><code>next-intl</code></td><td>App Router対応, ICUメッセージ形式</td></tr>
+    <tr><td>UI</td><td><code>Tailwind CSS + shadcn/ui</code></td><td>高速開発, カスタマイズ性</td></tr>
+  </tbody>
+</table>
+
+<h2 id="auth">3. 認証・ユーザー管理</h2>
+
+<h3>3.1 認証フロー</h3>
+
+<div class="card card--blue">
+  <div class="card__title">認証方式: メール OTP（パスワードレス）</div>
+  <ol style="margin-bottom:0">
+    <li>ユーザーがメールアドレスを入力</li>
+    <li>Supabase Auth がワンタイムパスワード（6桁）をメール送信</li>
+    <li>ユーザーがOTPを入力 → セッション確立</li>
+    <li>初回ログイン時に CareerPath ID を紐づけ（任意）</li>
+  </ol>
+</div>
+
+<p>パスワードレスを選択する理由: 外国人留学生はパスワード管理に不慣れなケースが多い。OTPなら「メールを開いて数字を入力するだけ」でシンプル。</p>
+
+<h3>3.2 ユーザーロール</h3>
+
+<table>
+  <thead><tr><th>ロール</th><th>権限</th><th>対象者</th></tr></thead>
+  <tbody>
+    <tr><td><span class="pill pill--green">student</span></td><td>自分のデータの読み書き</td><td>留学生（一般ユーザー）</td></tr>
+    <tr><td><span class="pill pill--blue">admin</span></td><td>全ユーザーの進捗閲覧, コンテンツ管理</td><td>ヒトキワスタッフ（Admin等）</td></tr>
+    <tr><td><span class="pill pill--amber">school_admin</span></td><td>所属校の学生の進捗閲覧</td><td>学校の担当者（将来拡張）</td></tr>
+  </tbody>
+</table>
+
+<h2 id="db">4. データベース設計（Supabase）</h2>
+
+<h3>4.1 ER図（テキスト表現）</h3>
+
+<div class="card" style="padding:24px;margin:16px 0 24px">
+  <svg viewBox="0 0 760 320" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:0 auto;display:block">
+    <!-- profiles -->
+    <rect x="280" y="10" width="180" height="60" rx="10" fill="#F4F8F5" stroke="#2D5A3D" stroke-width="2"/>
+    <text x="370" y="35" text-anchor="middle" font-family="JetBrains Mono" font-size="13" font-weight="600" fill="#2D5A3D">profiles</text>
+    <text x="370" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#8A8A8A">id, name, support_id, role</text>
+
+    <!-- courses -->
+    <rect x="10" y="120" width="140" height="50" rx="8" fill="#EEF2F7" stroke="#2B4162" stroke-width="1.5"/>
+    <text x="80" y="143" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="600" fill="#2B4162">courses</text>
+    <text x="80" y="158" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#8A8A8A">slug, title JSONB</text>
+
+    <!-- lessons -->
+    <rect x="10" y="200" width="140" height="50" rx="8" fill="#EEF2F7" stroke="#2B4162" stroke-width="1.5"/>
+    <text x="80" y="223" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="600" fill="#2B4162">lessons</text>
+    <text x="80" y="238" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#8A8A8A">content, quiz (JSONB)</text>
+
+    <!-- lesson_progress -->
+    <rect x="220" y="130" width="170" height="50" rx="8" fill="#FBF5E6" stroke="#B8860B" stroke-width="1.5"/>
+    <text x="305" y="153" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="600" fill="#B8860B">lesson_progress</text>
+    <text x="305" y="168" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#8A8A8A">status, score, completed_at</text>
+
+    <!-- quiz_results -->
+    <rect x="220" y="210" width="170" height="50" rx="8" fill="#FBF5E6" stroke="#B8860B" stroke-width="1.5"/>
+    <text x="305" y="233" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="600" fill="#B8860B">quiz_results</text>
+    <text x="305" y="248" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#8A8A8A">score, total, answers</text>
+
+    <!-- qa_items -->
+    <rect x="470" y="120" width="140" height="50" rx="8" fill="#EEF2F7" stroke="#2B4162" stroke-width="1.5"/>
+    <text x="540" y="143" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="600" fill="#2B4162">qa_items</text>
+    <text x="540" y="158" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#8A8A8A">industry, question, answer</text>
+
+    <!-- qa_views -->
+    <rect x="470" y="200" width="140" height="50" rx="8" fill="#FBF5E6" stroke="#B8860B" stroke-width="1.5"/>
+    <text x="540" y="223" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="600" fill="#B8860B">qa_views</text>
+    <text x="540" y="238" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#8A8A8A">bookmarked, viewed_at</text>
+
+    <!-- daily_activity -->
+    <rect x="620" y="10" width="130" height="50" rx="8" fill="#FBF0ED" stroke="#C23A22" stroke-width="1.5"/>
+    <text x="685" y="33" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="600" fill="#C23A22">daily_activity</text>
+    <text x="685" y="48" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#8A8A8A">date, time_spent</text>
+
+    <!-- Lines: profiles → progress tables -->
+    <line x1="330" y1="70" x2="305" y2="130" stroke="#2D5A3D" stroke-width="1.5"/>
+    <line x1="360" y1="70" x2="305" y2="210" stroke="#2D5A3D" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <line x1="400" y1="70" x2="540" y2="200" stroke="#2D5A3D" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <line x1="460" y1="40" x2="620" y2="35" stroke="#2D5A3D" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+    <!-- Lines: courses → lessons -->
+    <line x1="80" y1="170" x2="80" y2="200" stroke="#2B4162" stroke-width="1.5"/>
+
+    <!-- Lines: lessons → progress/quiz -->
+    <line x1="150" y1="145" x2="220" y2="155" stroke="#B8860B" stroke-width="1" stroke-dasharray="3 2"/>
+    <line x1="150" y1="225" x2="220" y2="235" stroke="#B8860B" stroke-width="1" stroke-dasharray="3 2"/>
+
+    <!-- Lines: qa_items → qa_views -->
+    <line x1="540" y1="170" x2="540" y2="200" stroke="#2B4162" stroke-width="1.5"/>
+
+    <!-- Legend -->
+    <rect x="10" y="280" width="12" height="12" rx="2" fill="#F4F8F5" stroke="#2D5A3D" stroke-width="1.5"/>
+    <text x="28" y="291" font-family="Noto Sans JP" font-size="10" fill="#4A4A4A">マスタ</text>
+    <rect x="80" y="280" width="12" height="12" rx="2" fill="#EEF2F7" stroke="#2B4162" stroke-width="1.5"/>
+    <text x="98" y="291" font-family="Noto Sans JP" font-size="10" fill="#4A4A4A">コンテンツ</text>
+    <rect x="170" y="280" width="12" height="12" rx="2" fill="#FBF5E6" stroke="#B8860B" stroke-width="1.5"/>
+    <text x="188" y="291" font-family="Noto Sans JP" font-size="10" fill="#4A4A4A">トラッキング</text>
+    <rect x="280" y="280" width="12" height="12" rx="2" fill="#FBF0ED" stroke="#C23A22" stroke-width="1.5"/>
+    <text x="298" y="291" font-family="Noto Sans JP" font-size="10" fill="#4A4A4A">分析</text>
+  </svg>
+</div>
+
+<h3>4.2 テーブル定義（Supabase Migration SQL）</h3>
+
+<h4>profiles テーブル</h4>
+<pre>
+<span class="cm">-- Supabase Auth の auth.users と連携するプロフィール</span>
+<span class="kw">CREATE TABLE</span> <span class="ty">profiles</span> (
+  <span class="fn">id</span>           <span class="ty">UUID</span> <span class="kw">PRIMARY KEY REFERENCES</span> auth.users(id) <span class="kw">ON DELETE CASCADE</span>,
+  <span class="fn">display_name</span> <span class="ty">TEXT</span> <span class="kw">NOT NULL</span>,
+  <span class="fn">support_id</span>   <span class="ty">TEXT</span> <span class="kw">UNIQUE</span>,         <span class="cm">-- CareerPath ID (CP-XXXXX)</span>
+  <span class="fn">nationality</span>  <span class="ty">TEXT</span>,                  <span class="cm">-- ISO 3166-1 alpha-2 (VN, MM, NP...)</span>
+  <span class="fn">ui_language</span>  <span class="ty">TEXT</span> <span class="kw">DEFAULT</span> <span class="str">'en'</span>,   <span class="cm">-- en, vi, my, ne...</span>
+  <span class="fn">target_industry</span> <span class="ty">TEXT</span>,              <span class="cm">-- construction, manufacturing, food, hotel, other</span>
+  <span class="fn">role</span>         <span class="ty">TEXT</span> <span class="kw">DEFAULT</span> <span class="str">'student'</span> <span class="kw">CHECK</span>(role <span class="kw">IN</span> (<span class="str">'student'</span>,<span class="str">'admin'</span>,<span class="str">'school_admin'</span>)),
+  <span class="fn">school_id</span>    <span class="ty">UUID</span>,                  <span class="cm">-- 将来: 学校テーブルへのFK</span>
+  <span class="fn">created_at</span>   <span class="ty">TIMESTAMPTZ</span> <span class="kw">DEFAULT</span> now(),
+  <span class="fn">last_active_at</span> <span class="ty">TIMESTAMPTZ</span> <span class="kw">DEFAULT</span> now()
+);
+</pre>
+
+<h4>courses / lessons テーブル</h4>
+<pre>
+<span class="kw">CREATE TABLE</span> <span class="ty">courses</span> (
+  <span class="fn">id</span>          <span class="ty">UUID</span> <span class="kw">PRIMARY KEY DEFAULT</span> gen_random_uuid(),
+  <span class="fn">slug</span>        <span class="ty">TEXT</span> <span class="kw">UNIQUE NOT NULL</span>,   <span class="cm">-- 'grooming', 'resume', 'etiquette', 'strategy'</span>
+  <span class="fn">title</span>       <span class="ty">JSONB</span> <span class="kw">NOT NULL</span>,          <span class="cm">-- {"en":"...","ja":"...","vi":"..."}</span>
+  <span class="fn">icon</span>        <span class="ty">TEXT</span>,                    <span class="cm">-- emoji</span>
+  <span class="fn">sort_order</span>  <span class="ty">INT</span> <span class="kw">DEFAULT</span> <span class="num">0</span>
+);
+
+<span class="kw">CREATE TABLE</span> <span class="ty">lessons</span> (
+  <span class="fn">id</span>          <span class="ty">UUID</span> <span class="kw">PRIMARY KEY DEFAULT</span> gen_random_uuid(),
+  <span class="fn">course_id</span>   <span class="ty">UUID</span> <span class="kw">REFERENCES</span> courses(id),
+  <span class="fn">slug</span>        <span class="ty">TEXT</span> <span class="kw">NOT NULL</span>,
+  <span class="fn">title</span>       <span class="ty">JSONB</span> <span class="kw">NOT NULL</span>,          <span class="cm">-- {"en":"...","ja":"...","vi":"..."}</span>
+  <span class="fn">content</span>     <span class="ty">JSONB</span>,                  <span class="cm">-- 多言語レッスン内容 {sections: [{title:{en,ja,vi}, body:{en,ja,vi}, ...}]}</span>
+  <span class="fn">quiz</span>        <span class="ty">JSONB</span>,                  <span class="cm">-- テスト問題 [{question, options, correct, explanation}]</span>
+  <span class="fn">duration_min</span> <span class="ty">INT</span>,                   <span class="cm">-- 所要時間(分)</span>
+  <span class="fn">sort_order</span>  <span class="ty">INT</span> <span class="kw">DEFAULT</span> <span class="num">0</span>,
+  <span class="kw">UNIQUE</span>(course_id, slug)
+);
+</pre>
+
+<h4>qa_items テーブル</h4>
+<pre>
+<span class="kw">CREATE TABLE</span> <span class="ty">qa_items</span> (
+  <span class="fn">id</span>            <span class="ty">UUID</span> <span class="kw">PRIMARY KEY DEFAULT</span> gen_random_uuid(),
+  <span class="fn">industry</span>      <span class="ty">TEXT</span> <span class="kw">NOT NULL CHECK</span>(industry <span class="kw">IN</span>
+                  (<span class="str">'construction'</span>,<span class="str">'manufacturing'</span>,<span class="str">'food'</span>,<span class="str">'hotel'</span>,<span class="str">'retail'</span>,<span class="str">'common'</span>,<span class="str">'other'</span>)),
+  <span class="fn">question</span>      <span class="ty">JSONB</span> <span class="kw">NOT NULL</span>,      <span class="cm">-- {"ja":"...","en":"...","vi":"..."}</span>
+  <span class="fn">model_answer</span>  <span class="ty">JSONB</span> <span class="kw">NOT NULL</span>,      <span class="cm">-- {"ja":"模範回答","en":"...","vi":"..."}</span>
+  <span class="fn">ng_example</span>    <span class="ty">JSONB</span> <span class="kw">NOT NULL</span>,      <span class="cm">-- {"ja":"NG回答","en":"...","vi":"..."}</span>
+  <span class="fn">tip</span>           <span class="ty">JSONB</span> <span class="kw">NOT NULL</span>,      <span class="cm">-- {"ja":"...","en":"...","vi":"..."}</span>
+  <span class="fn">sort_order</span>    <span class="ty">INT</span> <span class="kw">DEFAULT</span> <span class="num">0</span>
+);
+</pre>
+
+<h4>lesson_progress テーブル</h4>
+<pre>
+<span class="kw">CREATE TABLE</span> <span class="ty">lesson_progress</span> (
+  <span class="fn">id</span>           <span class="ty">UUID</span> <span class="kw">PRIMARY KEY DEFAULT</span> gen_random_uuid(),
+  <span class="fn">user_id</span>      <span class="ty">UUID</span> <span class="kw">REFERENCES</span> profiles(id) <span class="kw">ON DELETE CASCADE</span>,
+  <span class="fn">lesson_id</span>    <span class="ty">UUID</span> <span class="kw">REFERENCES</span> lessons(id),
+  <span class="fn">status</span>       <span class="ty">TEXT</span> <span class="kw">DEFAULT</span> <span class="str">'not_started'</span>
+               <span class="kw">CHECK</span>(status <span class="kw">IN</span> (<span class="str">'not_started'</span>,<span class="str">'in_progress'</span>,<span class="str">'completed'</span>)),
+  <span class="fn">score</span>        <span class="ty">INT</span>,                       <span class="cm">-- テストスコア (0-100)</span>
+  <span class="fn">started_at</span>   <span class="ty">TIMESTAMPTZ</span>,
+  <span class="fn">completed_at</span> <span class="ty">TIMESTAMPTZ</span>,
+  <span class="kw">UNIQUE</span>(user_id, lesson_id)
+);
+</pre>
+
+<h4>qa_views テーブル</h4>
+<pre>
+<span class="kw">CREATE TABLE</span> <span class="ty">qa_views</span> (
+  <span class="fn">id</span>          <span class="ty">UUID</span> <span class="kw">PRIMARY KEY DEFAULT</span> gen_random_uuid(),
+  <span class="fn">user_id</span>     <span class="ty">UUID</span> <span class="kw">REFERENCES</span> profiles(id) <span class="kw">ON DELETE CASCADE</span>,
+  <span class="fn">qa_item_id</span>  <span class="ty">UUID</span> <span class="kw">REFERENCES</span> qa_items(id),
+  <span class="fn">bookmarked</span>  <span class="ty">BOOLEAN</span> <span class="kw">DEFAULT</span> <span class="kw">FALSE</span>,
+  <span class="fn">viewed_at</span>   <span class="ty">TIMESTAMPTZ</span> <span class="kw">DEFAULT</span> now(),
+  <span class="kw">UNIQUE</span>(user_id, qa_item_id)
+);
+</pre>
+
+<h4>quiz_results テーブル</h4>
+<pre>
+<span class="kw">CREATE TABLE</span> <span class="ty">quiz_results</span> (
+  <span class="fn">id</span>          <span class="ty">UUID</span> <span class="kw">PRIMARY KEY DEFAULT</span> gen_random_uuid(),
+  <span class="fn">user_id</span>     <span class="ty">UUID</span> <span class="kw">REFERENCES</span> profiles(id) <span class="kw">ON DELETE CASCADE</span>,
+  <span class="fn">lesson_id</span>   <span class="ty">UUID</span> <span class="kw">REFERENCES</span> lessons(id),
+  <span class="fn">score</span>       <span class="ty">INT</span> <span class="kw">NOT NULL</span>,            <span class="cm">-- 正答数</span>
+  <span class="fn">total</span>       <span class="ty">INT</span> <span class="kw">NOT NULL</span>,            <span class="cm">-- 問題数</span>
+  <span class="fn">answers</span>     <span class="ty">JSONB</span>,                    <span class="cm">-- [{question_idx, selected, correct}]</span>
+  <span class="fn">taken_at</span>    <span class="ty">TIMESTAMPTZ</span> <span class="kw">DEFAULT</span> now()
+);
+</pre>
+
+<h3>4.3 Row Level Security (RLS)</h3>
+
+<pre>
+<span class="cm">-- profiles: 自分のプロフィールのみ編集可。adminは全員閲覧可</span>
+<span class="kw">ALTER TABLE</span> profiles <span class="kw">ENABLE ROW LEVEL SECURITY</span>;
+
+<span class="kw">CREATE POLICY</span> <span class="str">"Users read own profile"</span> <span class="kw">ON</span> profiles
+  <span class="kw">FOR SELECT USING</span> (auth.uid() = id);
+
+<span class="kw">CREATE POLICY</span> <span class="str">"Users update own profile"</span> <span class="kw">ON</span> profiles
+  <span class="kw">FOR UPDATE USING</span> (auth.uid() = id);
+
+<span class="kw">CREATE POLICY</span> <span class="str">"Admin reads all profiles"</span> <span class="kw">ON</span> profiles
+  <span class="kw">FOR SELECT USING</span> (
+    <span class="kw">EXISTS</span>(<span class="kw">SELECT</span> <span class="num">1</span> <span class="kw">FROM</span> profiles <span class="kw">WHERE</span> id = auth.uid() <span class="kw">AND</span> role = <span class="str">'admin'</span>)
+  );
+
+<span class="cm">-- lesson_progress: 自分の進捗のみ。adminは全閲覧</span>
+<span class="kw">ALTER TABLE</span> lesson_progress <span class="kw">ENABLE ROW LEVEL SECURITY</span>;
+
+<span class="kw">CREATE POLICY</span> <span class="str">"Users manage own progress"</span> <span class="kw">ON</span> lesson_progress
+  <span class="kw">FOR ALL USING</span> (auth.uid() = user_id);
+
+<span class="kw">CREATE POLICY</span> <span class="str">"Admin reads all progress"</span> <span class="kw">ON</span> lesson_progress
+  <span class="kw">FOR SELECT USING</span> (
+    <span class="kw">EXISTS</span>(<span class="kw">SELECT</span> <span class="num">1</span> <span class="kw">FROM</span> profiles <span class="kw">WHERE</span> id = auth.uid() <span class="kw">AND</span> role = <span class="str">'admin'</span>)
+  );
+
+<span class="cm">-- 同様のパターンを qa_views, quiz_results にも適用</span>
+</pre>
+
+<h2 id="api">5. API設計</h2>
+
+<p>Supabaseの自動生成REST APIを使用。カスタムロジックはSupabase Edge Functionsで実装。</p>
+
+<table>
+  <thead><tr><th>エンドポイント</th><th>メソッド</th><th>説明</th><th>認証</th></tr></thead>
+  <tbody>
+    <tr><td><code>/rest/v1/courses</code></td><td>GET</td><td>コース一覧</td><td>student+</td></tr>
+    <tr><td><code>/rest/v1/lessons?course_id=eq.xxx</code></td><td>GET</td><td>コース内レッスン一覧</td><td>student+</td></tr>
+    <tr><td><code>/rest/v1/qa_items?industry=eq.food</code></td><td>GET</td><td>業種別Q&A取得</td><td>student+</td></tr>
+    <tr><td><code>/rest/v1/lesson_progress</code></td><td>POST/PATCH</td><td>進捗更新</td><td>student(own)</td></tr>
+    <tr><td><code>/rest/v1/qa_views</code></td><td>POST</td><td>Q&A閲覧記録</td><td>student(own)</td></tr>
+    <tr><td><code>/rest/v1/quiz_results</code></td><td>POST</td><td>テスト結果保存</td><td>student(own)</td></tr>
+    <tr><td><code>/functions/v1/admin-stats</code></td><td>GET</td><td>管理者KPIデータ</td><td>admin</td></tr>
+    <tr><td><code>/functions/v1/user-progress/:id</code></td><td>GET</td><td>特定ユーザーの詳細進捗</td><td>admin</td></tr>
+  </tbody>
+</table>
+
+<h2 id="progress">6. 学習進捗トラッキング</h2>
+
+<h3>6.1 トラッキング対象</h3>
+
+<table>
+  <thead><tr><th>アクション</th><th>記録先</th><th>トリガー</th></tr></thead>
+  <tbody>
+    <tr><td>レッスン開始</td><td><code>lesson_progress</code> status='in_progress'</td><td>レッスンページを開いた時</td></tr>
+    <tr><td>レッスン完了</td><td><code>lesson_progress</code> status='completed'</td><td>「Complete」ボタン押下</td></tr>
+    <tr><td>テスト受験</td><td><code>quiz_results</code></td><td>テスト送信時</td></tr>
+    <tr><td>Q&A閲覧</td><td><code>qa_views</code></td><td>アコーディオン展開時</td></tr>
+    <tr><td>Q&Aブックマーク</td><td><code>qa_views</code> bookmarked=true</td><td>ブックマークボタン</td></tr>
+    <tr><td>最終アクティブ</td><td><code>profiles</code> last_active_at</td><td>任意のAPI呼び出し時</td></tr>
+  </tbody>
+</table>
+
+<h3>6.2 プロフィール画面の進捗表示</h3>
+
+<div class="card card--green">
+  <div class="card__title">ユーザーが見る自分の進捗</div>
+  <ul style="margin-bottom:0">
+    <li><strong>Day Streak</strong>: daily_activity テーブルの連続日数カウント</li>
+    <li><strong>Interviews</strong>: quiz_results の受験回数</li>
+    <li><strong>Courses</strong>: lesson_progress で全レッスンcompleted のコース数</li>
+    <li><strong>Phrases</strong>: qa_views の閲覧済みQ&A数</li>
+    <li><strong>Job Hunting Progress</strong>: コース完了率に応じた4段階（準備→応募→面接→内定）</li>
+  </ul>
+</div>
+
+<h3>6.3 Supabase Edge Function: 管理者統計</h3>
+
+<pre>
+<span class="cm">// supabase/functions/admin-stats/index.ts</span>
+<span class="kw">import</span> { createClient } <span class="kw">from</span> <span class="str">'@supabase/supabase-js'</span>
+
+Deno.serve(<span class="kw">async</span> (req) => {
+  <span class="kw">const</span> supabase = createClient(
+    Deno.env.get(<span class="str">'SUPABASE_URL'</span>)!,
+    Deno.env.get(<span class="str">'SUPABASE_SERVICE_ROLE_KEY'</span>)!
+  )
+
+  <span class="cm">// KPIクエリ</span>
+  <span class="kw">const</span> [users, active, progress] = <span class="kw">await</span> Promise.all([
+    supabase.from(<span class="str">'profiles'</span>).select(<span class="str">'*'</span>, { count: <span class="str">'exact'</span> }),
+    supabase.from(<span class="str">'profiles'</span>)
+      .select(<span class="str">'*'</span>, { count: <span class="str">'exact'</span> })
+      .gte(<span class="str">'last_active_at'</span>, <span class="fn">sevenDaysAgo</span>()),
+    supabase.rpc(<span class="str">'avg_completion_rate'</span>)
+  ])
+
+  <span class="kw">return new</span> Response(JSON.stringify({
+    total_users: users.count,
+    active_7d: active.count,
+    avg_progress: progress.data,
+  }))
+})
+</pre>
+
+<h3>6.4 レッスンロック機能（順序強制）</h3>
+
+<div class="card card--amber">
+  <div class="card__title">設計方針: 「やらない人が出るので、強制させて全部完了で自由を与えたい」</div>
+  <ul style="margin-bottom:0">
+    <li><strong>レッスンロック</strong>: 同一コース内で、前のレッスン（sort_order が小さい方）が <code>completed</code> でなければ次のレッスンにアクセス不可</li>
+    <li><strong>コース順序強制</strong>: コース1（身だしなみ）の全レッスン完了 → コース2（履歴書）解放、のように段階的アンロック</li>
+    <li><strong>自由モード</strong>: 全4コースのレッスンをすべて完了すると、ロック解除。どのレッスンにも自由にアクセス可能に</li>
+    <li><strong>管理画面</strong>: 「誰がどこで止まっているか」を一覧表示</li>
+    <li><strong>アカウント発行</strong>: 管理者がアカウント作成 → 学生にURL+IDを共有（セルフサインアップなし）</li>
+  </ul>
+</div>
+
+<h4>ロック判定ロジック（フロントエンド）</h4>
+
+<pre>
+<span class="cm">// レッスンがアクセス可能かを判定する関数</span>
+<span class="kw">function</span> <span class="fn">isLessonUnlocked</span>(lessonId, courseId, userProgress) {
+  <span class="cm">// 全コース完了者は自由モード</span>
+  <span class="kw">if</span> (userProgress.allCoursesCompleted) <span class="kw">return true</span>;
+
+  <span class="cm">// 前のコースが未完了ならロック</span>
+  <span class="kw">const</span> course = courses.find(c => c.id === courseId);
+  <span class="kw">const</span> prevCourses = courses.filter(c => c.sort_order < course.sort_order);
+  <span class="kw">for</span> (<span class="kw">const</span> pc <span class="kw">of</span> prevCourses) {
+    <span class="kw">if</span> (!<span class="fn">isCourseCompleted</span>(pc.id, userProgress)) <span class="kw">return false</span>;
+  }
+
+  <span class="cm">// 同一コース内: 前のレッスンが完了しているか</span>
+  <span class="kw">const</span> lesson = lessons.find(l => l.id === lessonId);
+  <span class="kw">const</span> prevLessons = lessons.filter(
+    l => l.course_id === courseId && l.sort_order < lesson.sort_order
+  );
+  <span class="kw">return</span> prevLessons.every(pl =>
+    userProgress.lessons[pl.id]?.status === <span class="str">'completed'</span>
+  );
+}
+</pre>
+
+<h4>API: ロック状態取得</h4>
+
+<table>
+  <thead><tr><th>エンドポイント</th><th>メソッド</th><th>説明</th><th>権限</th></tr></thead>
+  <tbody>
+    <tr><td><code>/functions/v1/lesson-access</code></td><td>GET</td><td>全レッスンのロック状態を返す（unlocked/locked + 理由）</td><td>student(own)</td></tr>
+    <tr><td><code>/functions/v1/stuck-users</code></td><td>GET</td><td>ロック状態で停止しているユーザー一覧</td><td>admin</td></tr>
+  </tbody>
+</table>
+
+<h4>フロントエンド表示</h4>
+
+<table>
+  <thead><tr><th>状態</th><th>UI表示</th><th>操作</th></tr></thead>
+  <tbody>
+    <tr><td>unlocked + not_started</td><td>「開始」ボタン表示</td><td>タップでレッスン開始</td></tr>
+    <tr><td>unlocked + in_progress</td><td>「続ける」ボタン + 進捗バー</td><td>タップでレッスン再開</td></tr>
+    <tr><td>unlocked + completed</td><td>✅ 完了マーク</td><td>タップで復習可能</td></tr>
+    <tr><td>locked</td><td>🔒 ロックアイコン + 「前のレッスンを完了してください」</td><td>タップ不可（グレーアウト）</td></tr>
+  </tbody>
+</table>
+
+<h2 id="admin">7. 管理者ダッシュボード</h2>
+
+<div class="card card--blue">
+  <div class="card__title">管理画面の主要機能</div>
+  <ul style="margin-bottom:0">
+    <li><strong>KPI概要</strong>: 登録数・アクティブ数・平均進捗率・離脱リスク</li>
+    <li><strong>ユーザー一覧</strong>: 進捗バー付きテーブル。フィルタ（国籍/業種/状態）・ソート</li>
+    <li><strong>コース別分析</strong>: 各コースの完了率・離脱ポイント</li>
+    <li><strong>Q&A分析</strong>: 業種別閲覧率・人気問題ランキング</li>
+    <li><strong>アラート</strong>: 離脱リスクユーザーの自動検出（7日/14日未アクセス）</li>
+    <li><strong>CSV出力</strong>: 学習データの一括ダウンロード</li>
+  </ul>
+</div>
+
+<p>管理画面は <code>/admin</code> パスに配置。Supabase RLS + ロールチェックで認可。<br>デザインは <code>admin-dashboard.html</code> のモックを踏襲。</p>
+
+<h2 id="i18n">8. 多言語対応</h2>
+
+<table>
+  <thead><tr><th>フェーズ</th><th>対応言語</th><th>対象</th></tr></thead>
+  <tbody>
+    <tr><td><span class="pill pill--green">MVP</span></td><td>English + Tiếng Việt</td><td>UI文言・Q&A解説・レッスン説明</td></tr>
+    <tr><td><span class="pill pill--blue">Phase 2</span></td><td>+ ミャンマー語・ネパール語</td><td>同上</td></tr>
+    <tr><td><span class="pill pill--amber">Phase 3</span></td><td>+ 残り6言語</td><td>全10言語完了</td></tr>
+  </tbody>
+</table>
+
+<h3>実装方式</h3>
+<ul>
+  <li>UIテキスト: <code>next-intl</code> の JSON ファイル管理 (<code>/messages/en.json</code>, <code>/messages/vi.json</code>)</li>
+  <li>コンテンツ（レッスン・Q&A）: Supabase の JSONB カラムに言語別テキストを格納</li>
+  <li>日本語テキスト（模範回答など）: 全言語共通で表示（面接は日本語で行うため）</li>
+</ul>
+
+<pre>
+<span class="cm">// qa_items の多言語 JSONB カラム例</span>
+{
+  <span class="str">"question"</span>: {
+    <span class="str">"ja"</span>: <span class="str">"なぜ外食業界で働きたいのですか？"</span>,
+    <span class="str">"en"</span>: <span class="str">"Why do you want to work in food service?"</span>,
+    <span class="str">"vi"</span>: <span class="str">"Tại sao bạn muốn làm việc trong ngành ẩm thực?"</span>
+  },
+  <span class="str">"model_answer"</span>: {
+    <span class="str">"ja"</span>: <span class="str">"日本の『おもてなし』の精神に感動し…"</span>,
+    <span class="str">"en"</span>: <span class="str">"I was inspired by the Japanese spirit of 'omotenashi'..."</span>,
+    <span class="str">"vi"</span>: <span class="str">"Tôi được truyền cảm hứng bởi tinh thần 'omotenashi'..."</span>
+  },
+  <span class="str">"tip"</span>: {
+    <span class="str">"ja"</span>: <span class="str">"お客様への情熱を強調しましょう…"</span>,
+    <span class="str">"en"</span>: <span class="str">"Emphasize your passion for customer service..."</span>,
+    <span class="str">"vi"</span>: <span class="str">"Nhấn mạnh niềm đam mê phục vụ khách hàng..."</span>
+  }
+}
+</pre>
+
+<h2 id="pwa">9. PWA・オフライン対応</h2>
+
+<div class="card card--amber">
+  <div class="card__title">なぜPWAか</div>
+  <ul style="margin-bottom:0">
+    <li>留学生は App Store のアカウント問題（国の切り替え等）を抱えがち</li>
+    <li>URLをLINEやMessengerで共有するだけでアクセス可能</li>
+    <li>Apple 30%手数料が不要（課金時）</li>
+    <li>電車内（地下）でも学習可能なオフライン機能</li>
+  </ul>
+</div>
+
+<h3>キャッシュ戦略</h3>
+<table>
+  <thead><tr><th>リソース</th><th>戦略</th><th>理由</th></tr></thead>
+  <tbody>
+    <tr><td>HTMLシェル・CSS・JS</td><td>Cache First</td><td>即座に画面表示</td></tr>
+    <tr><td>レッスンコンテンツ</td><td>Stale While Revalidate</td><td>オフラインでも読める + 最新化</td></tr>
+    <tr><td>Q&Aデータ</td><td>Stale While Revalidate</td><td>同上</td></tr>
+    <tr><td>進捗データ</td><td>Network First</td><td>最新の進捗を優先</td></tr>
+    <tr><td>フォント・画像</td><td>Cache First (30日)</td><td>変更頻度が低い</td></tr>
+  </tbody>
+</table>
+
+<h2 id="phase">10. フェーズ計画</h2>
+
+<table>
+  <thead><tr><th>Phase</th><th>内容</th><th>技術要素</th><th>期間目安</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><span class="pill pill--green">1: MVP</span></td>
+      <td>レッスン閲覧 + Q&A + 進捗管理 + 管理画面 + 英語/ベトナム語</td>
+      <td>Next.js + Supabase + PWA</td>
+      <td>4-6週</td>
+    </tr>
+    <tr>
+      <td><span class="pill pill--blue">2: AI面接</span></td>
+      <td>AIロールプレイ面接（テキスト入力 → LLMフィードバック）</td>
+      <td>Claude API / GPT-4o-mini</td>
+      <td>3-4週</td>
+    </tr>
+    <tr>
+      <td><span class="pill pill--amber">3: 音声</span></td>
+      <td>音声入力(STT) + 音声応答(TTS)</td>
+      <td>Whisper API + TTS</td>
+      <td>3-4週</td>
+    </tr>
+    <tr>
+      <td><span class="pill pill--amber">4: 拡張</span></td>
+      <td>残り8言語 + 動画レッスン + プッシュ通知</td>
+      <td>next-intl + Mux + Web Push</td>
+      <td>4-6週</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="card card--green" style="margin-top:24px">
+  <div class="card__title">Phase 1 MVP のローンチまでのマイルストーン</div>
+  <ol style="margin-bottom:0">
+    <li><strong>Week 1</strong>: Supabase初期設定 + テーブル作成 + RLS + 認証</li>
+    <li><strong>Week 2</strong>: Next.jsプロジェクト初期化 + レッスン閲覧画面 + Q&A画面</li>
+    <li><strong>Week 3</strong>: 進捗トラッキング実装 + プロフィール画面</li>
+    <li><strong>Week 4</strong>: 管理者ダッシュボード + CSV出力</li>
+    <li><strong>Week 5</strong>: 多言語対応(en/vi) + PWA設定 + テスト</li>
+    <li><strong>Week 6</strong>: バグ修正 + デプロイ + Adminフィードバック</li>
+  </ol>
+</div>
+
+</div>
+
+</body>
+</html>
