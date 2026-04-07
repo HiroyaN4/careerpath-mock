@@ -440,7 +440,21 @@
     "dark_mode_desc": "Coming soon",
     "help": "Help & FAQ",
     "help_desc": "Get support",
-    "sign_out": "Sign Out"
+    "sign_out": "Sign Out",
+    "plan_label": "Current Plan",
+    "plan_name": "CareerPath Standard",
+    "plan_price": "Free · CareerPath Member",
+    "plan_upgrade": "Upgrade",
+    "promo_title": "Ready for the next step?",
+    "promo_desc": "Study in Japan at our partner school — full visa support included.",
+    "promo_cta": "Explore Programs →",
+    "account": "Account",
+    "account_desc": "Email, password, Support ID",
+    "learning_goals": "Learning Goals",
+    "learning_goals_desc": "Daily target, JLPT goal, reminders",
+    "study_history": "Study History",
+    "study_history_desc": "Past lessons, quiz scores, time spent",
+    "see_all": "See all"
   },
   "courses": {
     "title": "Lesson Courses",

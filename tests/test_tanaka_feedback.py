@@ -74,6 +74,52 @@ class TestProfileI18nComplete:
             assert f'id="{id_name}"' in profile, \
                 f"Profile stat label '{id_name}' missing i18n ID"
 
+    def test_profile_plan_card_has_i18n_ids(self, html):
+        """プランカードの全要素にi18n IDが付いていること"""
+        profile = self._get_profile_section(html)
+        required_ids = [
+            'profile-plan-label',
+            'profile-plan-name',
+            'profile-plan-price',
+            'profile-plan-upgrade',
+        ]
+        for id_name in required_ids:
+            assert f'id="{id_name}"' in profile, \
+                f"Plan card '{id_name}' missing i18n ID"
+
+    def test_profile_promo_has_i18n_ids(self, html):
+        """プロモーションセクションの全要素にi18n IDが付いていること"""
+        profile = self._get_profile_section(html)
+        required_ids = [
+            'profile-promo-title',
+            'profile-promo-desc',
+            'profile-promo-cta',
+        ]
+        for id_name in required_ids:
+            assert f'id="{id_name}"' in profile, \
+                f"Promo '{id_name}' missing i18n ID"
+
+    def test_profile_settings_items_have_i18n_ids(self, html):
+        """設定セクションの全項目(Account, Learning Goals, Study History)にi18n IDが付いていること"""
+        profile = self._get_profile_section(html)
+        required_ids = [
+            'profile-account-label',
+            'profile-account-desc',
+            'profile-goals-label',
+            'profile-goals-desc',
+            'profile-history-label',
+            'profile-history-desc',
+        ]
+        for id_name in required_ids:
+            assert f'id="{id_name}"' in profile, \
+                f"Settings item '{id_name}' missing i18n ID"
+
+    def test_profile_badges_see_all_has_i18n_id(self, html):
+        """バッジセクションの「See all」リンクにi18n IDが付いていること"""
+        profile = self._get_profile_section(html)
+        assert 'id="profile-badges-see-all"' in profile, \
+            "Badges 'See all' link missing i18n ID"
+
     def test_profile_member_badge_has_i18n_id(self, html):
         """メンバーバッジにi18n IDがあること"""
         profile = self._get_profile_section(html)
@@ -153,6 +199,20 @@ class TestProfileI18nComplete:
             'profile-phase-apply',
             'profile-phase-interview',
             'profile-phase-offer',
+            'profile-plan-label',
+            'profile-plan-name',
+            'profile-plan-price',
+            'profile-plan-upgrade',
+            'profile-promo-title',
+            'profile-promo-desc',
+            'profile-promo-cta',
+            'profile-account-label',
+            'profile-account-desc',
+            'profile-goals-label',
+            'profile-goals-desc',
+            'profile-history-label',
+            'profile-history-desc',
+            'profile-badges-see-all',
         ]
         for id_name in profile_ids_in_apply:
             assert f"'{id_name}'" in html, \
@@ -173,6 +233,12 @@ class TestProfileI18nComplete:
                 'badges', 'badge_first_lesson', 'badge_week_streak',
                 'badge_grooming_master', 'badge_50_phrases',
                 'badge_mock_interview', 'badge_all_industries',
+                'plan_label', 'plan_name', 'plan_price', 'plan_upgrade',
+                'promo_title', 'promo_desc', 'promo_cta',
+                'account', 'account_desc',
+                'learning_goals', 'learning_goals_desc',
+                'study_history', 'study_history_desc',
+                'see_all',
             ]
             for key in required_keys:
                 assert key in profile, \

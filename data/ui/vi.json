@@ -440,7 +440,21 @@
     "dark_mode_desc": "Sắp ra mắt",
     "help": "Trợ giúp & FAQ",
     "help_desc": "Nhận hỗ trợ",
-    "sign_out": "Đăng xuất"
+    "sign_out": "Đăng xuất",
+    "plan_label": "Gói hiện tại",
+    "plan_name": "CareerPath Tiêu chuẩn",
+    "plan_price": "Miễn phí · Thành viên CareerPath",
+    "plan_upgrade": "Nâng cấp",
+    "promo_title": "Sẵn sàng cho bước tiếp theo?",
+    "promo_desc": "Du học Nhật Bản tại trường đối tác — hỗ trợ visa đầy đủ.",
+    "promo_cta": "Khám phá chương trình →",
+    "account": "Tài khoản",
+    "account_desc": "Email, mật khẩu, ID hỗ trợ",
+    "learning_goals": "Mục tiêu học tập",
+    "learning_goals_desc": "Mục tiêu hàng ngày, mục tiêu JLPT, nhắc nhở",
+    "study_history": "Lịch sử học tập",
+    "study_history_desc": "Bài học trước, điểm kiểm tra, thời gian học",
+    "see_all": "Xem tất cả"
   },
   "courses": {
     "title": "Khóa học",

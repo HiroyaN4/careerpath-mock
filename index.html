@@ -3162,7 +3162,7 @@ body {
       </div>
 
       <!-- Achievements -->
-      <div class="section-head"><h2 id="profile-badges-title">Achievements</h2><a href="#" onclick="navigateTo('screen-lessons','forward');return false;">See all</a></div>
+      <div class="section-head"><h2 id="profile-badges-title">Achievements</h2><a href="#" id="profile-badges-see-all" onclick="navigateTo('screen-lessons','forward');return false;">See all</a></div>
       <div class="badges">
         <div class="badge-item badge-item--earned">
           <div class="badge-item__icon">🎯</div>
@@ -3194,11 +3194,11 @@ body {
       <div class="plan-card">
         <div class="plan-card__row">
           <div class="plan-card__info">
-            <div class="plan-card__label">Current Plan</div>
-            <div class="plan-card__name">CareerPath Standard</div>
-            <div class="plan-card__price">Free · CareerPath Member</div>
+            <div class="plan-card__label" id="profile-plan-label">Current Plan</div>
+            <div class="plan-card__name" id="profile-plan-name">CareerPath Standard</div>
+            <div class="plan-card__price" id="profile-plan-price">Free · CareerPath Member</div>
           </div>
-          <button class="plan-card__btn" onclick="alert('Upgrade plans coming soon!')">Upgrade</button>
+          <button class="plan-card__btn" id="profile-plan-upgrade" onclick="alert('Upgrade plans coming soon!')">Upgrade</button>
         </div>
       </div>
 
@@ -3207,11 +3207,11 @@ body {
         <div class="promo__top">
           <div class="promo__seal">学</div>
           <div class="promo__text">
-            <h4>Ready for the next step?</h4>
-            <p>Study in Japan at our partner school — full visa support included.</p>
+            <h4 id="profile-promo-title">Ready for the next step?</h4>
+            <p id="profile-promo-desc">Study in Japan at our partner school — full visa support included.</p>
           </div>
         </div>
-        <button class="promo__cta" onclick="alert('Visit our partner school programs')">Explore Programs →</button>
+        <button class="promo__cta" id="profile-promo-cta" onclick="alert('Visit our partner school programs')">Explore Programs →</button>
       </div>
 
       <!-- Settings -->
@@ -3220,16 +3220,16 @@ body {
         <div class="settings-item" onclick="alert('Settings: ' + this.querySelector('.settings-item__label').textContent)" style="cursor:pointer">
           <div class="settings-item__icon settings-item__icon--blue">👤</div>
           <div class="settings-item__text">
-            <div class="settings-item__label">Account</div>
-            <div class="settings-item__desc">Email, password, Support ID</div>
+            <div class="settings-item__label" id="profile-account-label">Account</div>
+            <div class="settings-item__desc" id="profile-account-desc">Email, password, Support ID</div>
           </div>
           <div class="settings-item__arrow">›</div>
         </div>
         <div class="settings-item" onclick="alert('Settings: ' + this.querySelector('.settings-item__label').textContent)" style="cursor:pointer">
           <div class="settings-item__icon settings-item__icon--green">🎯</div>
           <div class="settings-item__text">
-            <div class="settings-item__label">Learning Goals</div>
-            <div class="settings-item__desc">Daily target, JLPT goal, reminders</div>
+            <div class="settings-item__label" id="profile-goals-label">Learning Goals</div>
+            <div class="settings-item__desc" id="profile-goals-desc">Daily target, JLPT goal, reminders</div>
           </div>
           <div class="settings-item__arrow">›</div>
         </div>
@@ -3252,8 +3252,8 @@ body {
         <div class="settings-item" onclick="alert('Settings: ' + this.querySelector('.settings-item__label').textContent)" style="cursor:pointer">
           <div class="settings-item__icon settings-item__icon--orange">📊</div>
           <div class="settings-item__text">
-            <div class="settings-item__label">Study History</div>
-            <div class="settings-item__desc">Past lessons, quiz scores, time spent</div>
+            <div class="settings-item__label" id="profile-history-label">Study History</div>
+            <div class="settings-item__desc" id="profile-history-desc">Past lessons, quiz scores, time spent</div>
           </div>
           <div class="settings-item__arrow">›</div>
         </div>
@@ -3520,6 +3520,20 @@ function applyUIStrings() {
   s('profile-phase-apply', 'profile.phase_apply');
   s('profile-phase-interview', 'profile.phase_interview');
   s('profile-phase-offer', 'profile.phase_offer');
+  s('profile-plan-label', 'profile.plan_label');
+  s('profile-plan-name', 'profile.plan_name');
+  s('profile-plan-price', 'profile.plan_price');
+  s('profile-plan-upgrade', 'profile.plan_upgrade');
+  s('profile-promo-title', 'profile.promo_title');
+  s('profile-promo-desc', 'profile.promo_desc');
+  s('profile-promo-cta', 'profile.promo_cta');
+  s('profile-account-label', 'profile.account');
+  s('profile-account-desc', 'profile.account_desc');
+  s('profile-goals-label', 'profile.learning_goals');
+  s('profile-goals-desc', 'profile.learning_goals_desc');
+  s('profile-history-label', 'profile.study_history');
+  s('profile-history-desc', 'profile.study_history_desc');
+  s('profile-badges-see-all', 'profile.see_all');
 
   // Profile: dynamic text
   const joinedEl = document.getElementById('profile-joined');

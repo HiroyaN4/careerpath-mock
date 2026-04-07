@@ -440,7 +440,21 @@
     "dark_mode_desc": "近日公開",
     "help": "ヘルプ・FAQ",
     "help_desc": "サポートを受ける",
-    "sign_out": "ログアウト"
+    "sign_out": "ログアウト",
+    "plan_label": "現在のプラン",
+    "plan_name": "CareerPath スタンダード",
+    "plan_price": "無料 · CareerPathメンバー",
+    "plan_upgrade": "アップグレード",
+    "promo_title": "次のステップへ進みませんか？",
+    "promo_desc": "提携校で日本留学 — ビザサポート付き。",
+    "promo_cta": "プログラムを見る →",
+    "account": "アカウント",
+    "account_desc": "メール、パスワード、サポートID",
+    "learning_goals": "学習目標",
+    "learning_goals_desc": "日次目標、JLPT目標、リマインダー",
+    "study_history": "学習履歴",
+    "study_history_desc": "過去のレッスン、クイズ結果、学習時間",
+    "see_all": "すべて見る"
   },
   "courses": {
     "title": "レッスンコース",

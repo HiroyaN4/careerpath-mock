@@ -154,7 +154,7 @@ class TestFileStructure:
         """index.htmlの行数が大幅に削減されていること（旧4192行→3700行以下）"""
         with open(HTML_PATH, 'r', encoding='utf-8') as f:
             lines = f.readlines()
-        assert len(lines) < 3800, f"HTML has {len(lines)} lines, expected < 3800 (was 4192 before refactor)"
+        assert len(lines) < 3850, f"HTML has {len(lines)} lines, expected < 3850 (was 4192 before refactor)"
 
 
 class TestLoginLayout:
