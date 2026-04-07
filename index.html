@@ -3109,7 +3109,7 @@ body {
     <div class="profile__header">
       <div class="profile__avatar">MN</div>
       <div class="profile__name">Minh Nguyen</div>
-      <div class="profile__sub">Joined April 2025 · Ho Chi Minh City, Vietnam</div>
+      <div class="profile__sub" id="profile-joined">Joined April 2025 · Ho Chi Minh City, Vietnam</div>
       <div class="profile__member-badge" id="profile-member-badge">CareerPath Member</div>
     </div>
 
@@ -3166,27 +3166,27 @@ body {
       <div class="badges">
         <div class="badge-item badge-item--earned">
           <div class="badge-item__icon">🎯</div>
-          <div class="badge-item__name">First Lesson</div>
+          <div class="badge-item__name" data-i18n="profile.badge_first_lesson">First Lesson</div>
         </div>
         <div class="badge-item badge-item--earned">
           <div class="badge-item__icon">🔥</div>
-          <div class="badge-item__name">7-Day Streak</div>
+          <div class="badge-item__name" data-i18n="profile.badge_week_streak">7-Day Streak</div>
         </div>
         <div class="badge-item badge-item--earned">
           <div class="badge-item__icon">📝</div>
-          <div class="badge-item__name">Interview Ready</div>
+          <div class="badge-item__name" data-i18n="profile.badge_grooming_master">Grooming Master</div>
         </div>
         <div class="badge-item badge-item--locked">
           <div class="badge-item__icon">⭐</div>
-          <div class="badge-item__name">50 Phrases</div>
+          <div class="badge-item__name" data-i18n="profile.badge_50_phrases">50 Phrases</div>
         </div>
         <div class="badge-item badge-item--locked">
           <div class="badge-item__icon">🏆</div>
-          <div class="badge-item__name">First Mock Interview</div>
+          <div class="badge-item__name" data-i18n="profile.badge_mock_interview">First Mock Interview</div>
         </div>
         <div class="badge-item badge-item--locked">
           <div class="badge-item__icon">💎</div>
-          <div class="badge-item__name">All Industries</div>
+          <div class="badge-item__name" data-i18n="profile.badge_all_industries">All Industries</div>
         </div>
       </div>
 
@@ -3342,7 +3342,7 @@ function selectOption(el) {
 let qaData = null;
 let uiStrings = {};
 let currentLang = localStorage.getItem('careerpath-lang') || detectBrowserLang() || 'en';
-let qaContentLang = 'ja'; // Q&A question display language (separate from UI)
+let qaContentLang = localStorage.getItem('careerpath-lang') || detectBrowserLang() || 'en'; // Q&A question display language, synced with UI lang on init
 
 function detectBrowserLang() {
   const nav = navigator.language || navigator.userLanguage || '';
@@ -3376,10 +3376,14 @@ function t(path) {
 
 async function setLanguage(lang) {
   currentLang = lang;
+  qaContentLang = lang;
   localStorage.setItem('careerpath-lang', lang);
   await loadUIStrings(lang);
   applyUIStrings();
-  if (qaData) renderQAList();
+  if (qaData) {
+    renderQAFilters();
+    renderQAList();
+  }
 }
 
 function applyUIStrings() {
@@ -3518,6 +3522,8 @@ function applyUIStrings() {
   s('profile-phase-offer', 'profile.phase_offer');
 
   // Profile: dynamic text
+  const joinedEl = document.getElementById('profile-joined');
+  if (joinedEl) joinedEl.textContent = t('profile.joined').replace('{date}', 'April 2025').replace('{location}', 'Ho Chi Minh City, Vietnam');
   const langDescEl = document.getElementById('profile-lang-desc');
   if (langDescEl) {
     const langNames = { en: 'English', ja: '日本語', vi: 'Tiếng Việt' };
